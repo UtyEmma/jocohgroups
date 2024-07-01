@@ -8,4 +8,5 @@ Route::domain(env('APP_STORES_DOMAIN'))
     ->middleware('platform:stores')
     ->group(function(){
         Route::get('', [PageController::class, 'index'])->name('home');
+        Route::fallback(fn() => abort(404));
     });

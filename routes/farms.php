@@ -8,4 +8,5 @@ Route::domain(env('APP_FARMS_DOMAIN'))
     ->middleware('platform:farms')
     ->group(function(){
         Route::get('', [PageController::class, 'index'])->name('home');
+        Route::fallback(fn() => abort(404));
     });

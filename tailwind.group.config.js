@@ -29,7 +29,6 @@ export default {
 					900: '#334e75',
 					DEFAULT: '#5697d0',
 				},
-
 				secondary: '#303030',
 				muted: '#5B5B5B'
 			},

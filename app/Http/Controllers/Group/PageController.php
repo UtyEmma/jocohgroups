@@ -9,7 +9,11 @@ use Inertia\Inertia;
 class PageController extends Controller {
     
     function index(Request $request){
-        return Inertia::render('Index');
+        return Inertia::render('Home/Index');
+    }
+    
+    function about(Request $request){
+        return Inertia::render('About/Index');
     }
 
 }
