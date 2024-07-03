@@ -2,7 +2,7 @@
 import { Link } from '@inertiajs/vue3';
 import Header from '@/Group/Layouts/Partials/Header.vue';
 import Footer from '@/Group/Layouts/Partials/Footer.vue';
-import ScrollToTop from '@/Group/Layouts/Partials/ScrollToTop.vue';
+import ScrollToTop from '@/Shared/Components/ScrollToTop.vue';
 
 </script>
 

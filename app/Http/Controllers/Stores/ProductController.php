@@ -6,10 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class PageController extends Controller {
+class ProductController extends Controller {
     
-    function index(Request $request){
-        return Inertia::render('Home/Index');
+    function index(){
+        return Inertia::render('Products/Index');
     }
 
 }

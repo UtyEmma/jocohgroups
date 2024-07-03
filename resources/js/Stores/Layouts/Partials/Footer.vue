@@ -10,7 +10,7 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
 </script>
 
 <template>
-    <section class="bg-primary py-20">
+    <section class="bg-secondary py-20">
         <div class="max-w-6xl mx-auto space-y-10">
             <div class="flex divide-x border-y text-white border-[#ffffff30] divide-[#ffffff30]">
                 <div class="py-10 pe-20 space-y-5" >
@@ -51,7 +51,7 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                     <ul class="space-y-3 font-light text-[#C9D7D2]" >
                         <li class="flex space-x-2 items-center" >
                             <div>
-                                <CallIcon class="size-5 fill-white" />
+                                <CallIcon class="size-5 fill-primary" />
                             </div>
 
                             <div>
@@ -60,7 +60,7 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                         </li>
                         <li class="flex space-x-2 items-start">
                             <div>
-                                <MailIcon class="size-5 mt-1 stroke-white" />
+                                <MailIcon class="size-5 stroke-primary mt-1" />
                             </div>
 
                             <div>
@@ -70,7 +70,7 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                         </li>
                         <li class="flex space-x-2 items-center">
                             <div>
-                                <LocationIcon class="size-5 stroke-white" />
+                                <LocationIcon class="size-5 stroke-primary" />
                             </div>
 
                             <div>
