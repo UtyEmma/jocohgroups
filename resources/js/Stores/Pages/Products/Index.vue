@@ -10,9 +10,7 @@ import FaqItem from '@/Stores/Partials/Faqs/FaqItem.vue';
     <Head title="Welcome" />
     <GuestLayout>
         <section class="bg-primary ">
-            <div class="w-full py-20 h-full bg-opacity-5 bg-contain"
-                style="background-image: url('/assets/stores/images/banner/food-items-red.png');"
-            >
+            <div class="w-full py-20 h-full bg-opacity-5 bg-contain bg-[url('/assets/stores/images/banner/food-items-red.png')]" >
                 <div class="text-center space-y-3">
                     <h1 class="font-medium text-white italic leading-[78px] text-6xl">Our Products</h1>
                     <p class="text-white">Explore some of our best product selling fast in the markets.</p>

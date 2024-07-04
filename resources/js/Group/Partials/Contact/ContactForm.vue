@@ -1,8 +1,8 @@
 <script setup>
-import FacebookIcon from '@/Group/Icons/FacebookIcon.vue';
-import TwitterIcon from '@/Group/Icons/TwitterIcon.vue';
-import LinkedInIcon from '@/Group/Icons/LinkedInIcon.vue';
-import InstagramIcon from '@/Group/Icons/InstagramIcon.vue';
+import FacebookIcon from '@/Shared/Icons/FacebookIcon.vue';
+import TwitterIcon from '@/Shared/Icons/TwitterIcon.vue';
+import LinkedInIcon from '@/Shared/Icons/LinkedInIcon.vue';
+import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
 
 </script>
 

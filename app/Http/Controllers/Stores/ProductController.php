@@ -11,5 +11,10 @@ class ProductController extends Controller {
     function index(){
         return Inertia::render('Products/Index');
     }
+    
+
+    function show(){
+        return Inertia::render('Products/Show');
+    }
 
 }

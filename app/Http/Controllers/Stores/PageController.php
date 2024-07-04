@@ -11,5 +11,13 @@ class PageController extends Controller {
     function index(Request $request){
         return Inertia::render('Home/Index');
     }
+    
+    function about(Request $request){
+        return Inertia::render('About/Index');
+    }
+    
+    function contact(Request $request){
+        return Inertia::render('Contact/Index');
+    }
 
 }
