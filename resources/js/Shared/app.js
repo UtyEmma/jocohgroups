@@ -1,2 +1,2 @@
-export * from '@/Shared/Icons';
-export * from '@/Shared/Components';
+export * from './Icons/index.js';
+// export * from './Components';
