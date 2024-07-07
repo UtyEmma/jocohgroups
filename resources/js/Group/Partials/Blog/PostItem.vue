@@ -6,7 +6,7 @@
 
         <div class="p-5 space-y-7 border-b-2 rounded-b-xl border-x-2">
             <div class="space-y-2">
-                <p class="text-2xl font-black line-clamp-2">Jocoh Stores Partners with  SuperChef to deliver quality</p>
+                <a href="#" class="text-2xl font-bold line-clamp-2 hover:text-primary duration-150">Jocoh Stores Partners with  SuperChef to deliver quality</a>
                 <p class="line-clamp-3">We are always in the books for making something everybody will be happy to use at all times.</p>
             </div>
 

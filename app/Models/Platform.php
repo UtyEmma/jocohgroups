@@ -2,19 +2,19 @@
 
 namespace App\Models;
 
+use App\Enums\Platforms;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Platform extends Model {
-    use HasFactory;
+    use HasFactory, HasUuids;
 
-    protected $fillable = ['name', 'slug', 'logo', 'settings'];
+    protected $fillable = ['name', 'slug', 'logo', 'settings', 'content'];
 
     protected $casts = [
-        'settings' => 'array'
-    ];
-
-    protected $attributes = [
-        'settings' => []
+        'settings' => 'array',
+        'content' => 'array',
+        'slug' => Platforms::class
     ];
 }

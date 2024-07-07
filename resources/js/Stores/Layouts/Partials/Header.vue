@@ -48,7 +48,7 @@
 
         <div class="flex mx-auto py-5 max-w-[80%] justify-between items-center">
             <div class="flex space-x-5 items-center">
-                <Link :href="route('group.home')">
+                <Link :href="route('stores.home')">
                     <img src="/assets/stores/images/logo.png" class="h-[40px]" alt="">
                 </Link>
 
@@ -60,7 +60,7 @@
                         <Link class="hover:text-primary duration-500 font-medium" :href="route('stores.products')">Products</Link>
                     </li>
                     <li>
-                        <Link class="hover:text-primary duration-500 font-medium" :href="route('group.careers')">About Us</Link>
+                        <Link class="hover:text-primary duration-500 font-medium" :href="route('stores.about')">About Us</Link>
                     </li>
                 </ul>
             </div>

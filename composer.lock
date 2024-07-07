@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b17430d326f0f0a957f082463df3f61f",
+    "content-hash": "c5ec390700b22ab006d34f6727b0b0f7",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -745,6 +745,77 @@
                 }
             ],
             "time": "2024-02-05T11:56:58+00:00"
+        },
+        {
+            "name": "dotswan/filament-code-editor",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dotswan/filament-code-editor.git",
+                "reference": "79c380436bae6ec27fbb0932e3eb56595bd5c6ed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dotswan/filament-code-editor/zipball/79c380436bae6ec27fbb0932e3eb56595bd5c6ed",
+                "reference": "79c380436bae6ec27fbb0932e3eb56595bd5c6ed",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.0",
+                "illuminate/contracts": "^10.0 || ^11.0",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.9",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^8.0",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Dotswan\\FilamentCodeEditor\\FilamentCodeEditorServiceProvider"
+                    ],
+                    "aliases": {
+                        "FilamentCodeEditor": "Dotswan\\FilamentCodeEditor\\Facades\\FilamentCodeEditor"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dotswan\\FilamentCodeEditor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dotswan",
+                    "email": "tech@dotswan.com",
+                    "role": "Developer"
+                }
+            ],
+            "homepage": "https://github.com/dotswan/filament-code-editor",
+            "keywords": [
+                "dotswan",
+                "filament-code-editor",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/dotswan/filament-code-editor/issues",
+                "source": "https://github.com/dotswan/filament-code-editor"
+            },
+            "time": "2024-05-21T13:41:25+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",

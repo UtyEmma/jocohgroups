@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('logo');
             $table->json('settings');
+            $table->json('content')->nullable();
             $table->timestamps();
         });
     }
