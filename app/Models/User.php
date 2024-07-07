@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Concerns\Platforms\HasPlatform;
 use App\Enums\Platforms;
 use App\Enums\Roles;
 use App\Enums\Status;
@@ -21,7 +22,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Collection;
 
 class User extends Authenticatable implements FilamentUser, HasName {
-    use HasFactory, Notifiable, HasUuids;
+    use HasFactory, Notifiable, HasUuids, HasPlatform;
 
     /**
      * The attributes that are mass assignable.
@@ -51,7 +52,6 @@ class User extends Authenticatable implements FilamentUser, HasName {
             'password' => 'hashed',
             'status' => Status::class,
             'role' => Roles::class,
-            'platforms' => AsEnumArrayObject::of(Platforms::class)
         ];
     }
 
@@ -67,24 +67,11 @@ class User extends Authenticatable implements FilamentUser, HasName {
     }
 
     public function canAccessPanel(Panel $panel): bool {
-        return in_array($this->role, [Roles::ADMIN, Roles::SUPERADMIN, Roles::EDITOR, Roles::AUTHOR]);
+        return in_array($this->role, [Roles::ADMIN, Roles::SUPERADMIN]);
     }
 
     function getFilamentName(): string {
         return $this->name;
     }
-
-    public function platforms(){
-        return $this->belongsToMany(Platform::class);
-    }
- 
-    // public function getTenants(Panel $panel): Collection {
-    //     return $this->platforms;
-    // }
- 
-    // public function canAccessTenant(Model $tenant): bool
-    // {
-    //     return $this->platforms()->whereKey($tenant)->exists();
-    // }
 
 }

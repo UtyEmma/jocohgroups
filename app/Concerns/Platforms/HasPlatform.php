@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Concerns;
+namespace App\Concerns\Platforms;
 
 use App\Enums\Platforms;
 use App\Models\Platform;
@@ -12,11 +12,15 @@ trait HasPlatform {
     }
 
     function initializeHasPlatform(){
+        $this->fillable[] = 'platform_code';
+
         $this->mergeCasts([
             'platform_code' => Platforms::class
         ]);
 
-        $this->mergeFillable([ 'platform_code' ]);
+        $this->mergeAttributes([
+            'platform_code' => request()->platform()
+        ]);
     }
 
 }
