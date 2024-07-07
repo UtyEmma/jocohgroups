@@ -19,6 +19,16 @@ enum Roles:string {
             static::SUBSCRIBER => 'Subscriber',
         };
     }
+    
+    static function options(){
+        return [
+            static::ADMIN->value => self::ADMIN->label(),
+            static::SUPERADMIN->value => self::SUPERADMIN->label(),
+            // static::AUTHOR->value => self::AUTHOR->label(),
+            // static::EDITOR->value => self::EDITOR->label(),
+            // static::SUBSCRIBER->value => self::SUBSCRIBER->label(),
+        ];
+    }
 
     function isAdmin(){
         return in_array($this, [static::ADMIN, static::SUPERADMIN]);

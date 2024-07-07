@@ -2,11 +2,30 @@
 
 namespace App\Enums;
 
+use App\Models\Platform;
+
 enum Platforms:string {
 
     case GROUP = 'group';
     case FARMS = 'farms';
     case STORES = 'stores';
+
+    function model(){
+        return Platform::whereSlug($this)->first();
+    }
+
+    static function platform($name){
+        if(is_null($name)) return self::GROUP;
+        return self::tryFrom($name);
+    }
+
+    function domain() {
+        return match ($this) {
+            self::GROUP => env('APP_GROUP_DOMAIN'),
+            self::STORES => env('APP_STORES_DOMAIN'),
+            self::FARMS => env('APP_FARMS_DOMAIN'),
+        };
+    }
 
     function label(){
         return match ($this) {
@@ -16,6 +35,12 @@ enum Platforms:string {
         };
     }
 
-    
+    static function options(){
+        return [
+            self::GROUP->value => self::GROUP->label(),
+            self::FARMS->value => self::FARMS->label(),
+            self::STORES->value => self::STORES->label(),
+        ];
+    }
 
 } 

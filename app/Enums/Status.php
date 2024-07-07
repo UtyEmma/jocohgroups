@@ -21,7 +21,7 @@ enum Status:string {
         };
     }
 
-    function options(){
+    static function options(){
         return [
             self::ACTIVE->value => self::ACTIVE->label(),
             self::INACTIVE->value => self::INACTIVE->label(),

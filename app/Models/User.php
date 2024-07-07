@@ -9,15 +9,18 @@ use App\Enums\Roles;
 use App\Enums\Status;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasName;
+use Filament\Models\Contracts\HasTenants;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\AsEnumArrayObject;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Collection;
 
-class User extends Authenticatable implements FilamentUser, HasName{
+class User extends Authenticatable implements FilamentUser, HasName {
     use HasFactory, Notifiable, HasUuids;
 
     /**
@@ -70,5 +73,18 @@ class User extends Authenticatable implements FilamentUser, HasName{
     function getFilamentName(): string {
         return $this->name;
     }
+
+    public function platforms(){
+        return $this->belongsToMany(Platform::class);
+    }
+ 
+    // public function getTenants(Panel $panel): Collection {
+    //     return $this->platforms;
+    // }
+ 
+    // public function canAccessTenant(Model $tenant): bool
+    // {
+    //     return $this->platforms()->whereKey($tenant)->exists();
+    // }
 
 }

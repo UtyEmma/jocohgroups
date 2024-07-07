@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('type');
+            $table->string('role');
+            $table->string('workplace');
+            $table->string('type');
+            $table->string('location');
+            $table->string('description');
+            $table->string('platform_code');
+            $table->string('status');
+            $table->string('application_link')->nullable();
             $table->timestamps();
         });
     }
