@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('excerpt')->nullable();
             $table->mediumText('tags')->nullable();
             $table->text('description')->nullable();
+            $table->string('platform')->nullable();
             $table->string('status');
             $table->softDeletes();
             $table->timestamps();

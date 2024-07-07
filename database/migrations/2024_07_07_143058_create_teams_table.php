@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('role');
             $table->string('image');
+            $table->string('platform')->nullable();
             $table->text('bio')->nullable();
             $table->string('instagram');
             $table->string('facebook');
