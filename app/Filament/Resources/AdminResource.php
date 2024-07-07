@@ -9,6 +9,8 @@ use App\Filament\Resources\AdminResource\Pages;
 use App\Filament\Resources\AdminResource\RelationManagers;
 use App\Models\Admin;
 use App\Models\User;
+use App\Tables\Columns\RoleColumn;
+use App\Tables\Columns\StatusColumn;
 use Filament\Forms;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\FileUpload;
@@ -18,6 +20,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -77,7 +80,14 @@ class AdminResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('name')
+                    ->description(fn(User $user) => $user->email),
+                RoleColumn::make('role'),
+                StatusColumn::make('status'),
+                // TextColumn::make('platforms')
+                //     ->options,
+                TextColumn::make('created_at')
+                    ->dateTime(),
             ])
             ->filters([
                 //

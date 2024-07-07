@@ -15,8 +15,11 @@ enum Platforms:string {
     }
 
     static function platform($name){
-        if(is_null($name)) return self::GROUP;
-        return self::tryFrom($name);
+        return match ($name) {
+            self::STORES->value => self::STORES,
+            self::FARMS->value => self::FARMS,
+            default => self::GROUP
+        };
     }
 
     function domain() {

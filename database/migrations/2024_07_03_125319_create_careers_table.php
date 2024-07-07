@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('type');
             $table->string('role');
             $table->string('workplace');
-            $table->string('type');
             $table->string('location');
             $table->string('description');
             $table->string('platform_code');

@@ -11,13 +11,17 @@ trait InteractsWithPlatform {
     function initializeHasPlatform(){
         $this->fillable[] = 'platforms';
 
-        $this->mergeCasts([
-            'platforms' => AsEnumCollection::of(Platforms::class)
-        ]);
+        // $this->mergeCasts([
+        //     'platforms' => AsEnumArrayObject::of(Platforms::class)
+        // ]);
     }
 
     function hasPlatform($platform){
-        return $this->platforms->where(fn($item) => $item == $platform)->first();
+        return (bool) $this->platforms?->where(fn($item) => $item == $platform)->first();
+    }
+
+    function allowedOnPlatform($platform){
+        return (bool) $this->platforms?->where(fn($item) => $item == $platform)->first();
     }
 
 }

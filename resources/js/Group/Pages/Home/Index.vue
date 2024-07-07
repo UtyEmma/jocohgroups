@@ -74,8 +74,8 @@ defineProps({});
                             <div>
                                 <img src="/assets/stores/images/logo.png" class="h-10" alt="">
                             </div>
-                            <h3 class="text-4xl font-[900] !font-sans">Jocoh Stores</h3>
-                            <p class="text-xl md:w-3/5 font-medium">We believe in the transformative power of agriculture and its ability to shape sustainable future. our platform is more than just a digital space.</p>
+                            <h3 class="text-4xl font-bold !font-sans">Jocoh Stores</h3>
+                            <p class="text-lg text-muted md:w-3/5 font-medium">We believe in the transformative power of agriculture and its ability to shape sustainable future. our platform is more than just a digital space.</p>
                         </div>
 
                         <div class="w-20 h-20 absolute top-0 right-0 rounded-bl-[50px] items-center justify-center p-0 hidden group-hover:flex duration-500  bg-primary bg-opacity-30">
@@ -94,8 +94,8 @@ defineProps({});
                             <div>
                                 <img src="/assets/farms/images/logo.png" class="h-10" alt="">
                             </div>
-                            <h3 class="text-4xl font-[900] !font-sans">Jocoh Farms</h3>
-                            <p class="text-xl md:w-3/5 font-medium">We believe in the transformative power of agriculture and its ability to shape sustainable future. our platform is more than just a digital space.</p>
+                            <h3 class="text-4xl font-bold !font-sans">Jocoh Farms</h3>
+                            <p class="text-lg text-muted md:w-3/5 font-medium">We believe in the transformative power of agriculture and its ability to shape sustainable future. our platform is more than just a digital space.</p>
                         </div>
 
                         <div class="w-20 h-20 absolute top-0 right-0 rounded-bl-[50px] items-center justify-center p-0 hidden group-hover:flex duration-500  bg-primary bg-opacity-30">

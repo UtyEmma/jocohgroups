@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Concerns\Platforms\HasPlatform;
+use App\Enums\Platforms;
 use App\Enums\Status;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -22,4 +23,8 @@ class Testimonial extends Model
     protected $attributes = [
         'status' => Status::ACTIVE
     ];
+
+    function setPlatforms(): void {
+        $this->platforms = [Platforms::FARMS];
+    }
 }

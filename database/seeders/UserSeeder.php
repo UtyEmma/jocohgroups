@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\Platforms;
 use App\Enums\Roles;
 use App\Enums\Status;
 use App\Models\User;
@@ -21,7 +22,8 @@ class UserSeeder extends Seeder
             'email' => 'admin@'.env('APP_DOMAIN'),
             'password' => Hash::make('1234567890'),
             'status' => Status::ACTIVE,
-            'role' => Roles::SUPERADMIN
+            'role' => Roles::SUPERADMIN,
+            'platforms' => Platforms::cases()
         ]);
 
         $user->save();

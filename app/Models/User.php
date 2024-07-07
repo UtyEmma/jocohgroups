@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use App\Concerns\Platforms\HasPlatform;
+use App\Concerns\Platforms\InteractsWithPlatform;
 use App\Enums\Platforms;
 use App\Enums\Roles;
 use App\Enums\Status;
@@ -13,7 +14,7 @@ use Filament\Models\Contracts\HasName;
 use Filament\Models\Contracts\HasTenants;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Casts\AsEnumArrayObject;
+use Illuminate\Database\Eloquent\Casts\AsEnumCollection;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -22,7 +23,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Collection;
 
 class User extends Authenticatable implements FilamentUser, HasName {
-    use HasFactory, Notifiable, HasUuids, HasPlatform;
+    use HasFactory, Notifiable, HasUuids, InteractsWithPlatform;
 
     /**
      * The attributes that are mass assignable.
@@ -52,6 +53,7 @@ class User extends Authenticatable implements FilamentUser, HasName {
             'password' => 'hashed',
             'status' => Status::class,
             'role' => Roles::class,
+            'platforms' => AsEnumCollection::of(Platforms::class)
         ];
     }
 
@@ -67,7 +69,7 @@ class User extends Authenticatable implements FilamentUser, HasName {
     }
 
     public function canAccessPanel(Panel $panel): bool {
-        return in_array($this->role, [Roles::ADMIN, Roles::SUPERADMIN]);
+        return ($this->role == Roles::ADMIN && $this->hasPlatform(request()->platform())) || Roles::SUPERADMIN;
     }
 
     function getFilamentName(): string {
