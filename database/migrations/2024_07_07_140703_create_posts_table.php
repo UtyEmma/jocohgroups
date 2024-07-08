@@ -17,12 +17,14 @@ return new class extends Migration
             $table->string('slug');
             $table->string('author_id');
             $table->string('image');
+            $table->string('read_time')->nullable();
+            $table->string('category_id')->nullable();
             $table->longText('content');
             $table->string('published_at')->nullable();
             $table->text('excerpt')->nullable();
             $table->mediumText('tags')->nullable();
             $table->text('description')->nullable();
-            $table->string('platform')->nullable();
+            $table->string('platform_code');
             $table->string('status');
             $table->softDeletes();
             $table->timestamps();

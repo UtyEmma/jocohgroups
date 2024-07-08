@@ -3,8 +3,6 @@
 namespace App\Providers\Filament;
 
 use App\Http\Middleware\SetActivePlatformMiddleware;
-use App\Models\Platform;
-use Filament\Actions\Action;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -58,6 +56,5 @@ class AppPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ]);
-            // ->tenant(Platform::class);
     }
 }

@@ -15,7 +15,11 @@ class Post extends Model
 {
     use HasFactory, HasPlatform, HasUuids;
 
-    protected $fillable = ['title', 'slug', 'author_id', 'image', 'content', 'published_at', 'excerpt', 'tags', 'description', 'status'];
+    protected $fillable = ['title', 'slug', 'author_id', 'category_id', 'image', 'content', 'published_at', 'excerpt', 'tags', 'description', 'status', 'read_time'];
+
+    protected $with = ['category'];
+
+    protected $appends = ['publishing_date', 'month_and_day'];
 
     protected function casts() {
         return [
@@ -38,12 +42,16 @@ class Post extends Model
         return $this->belongsTo(User::class, 'author_id');
     }
 
-    function getRouteAttribute(){
-        return route('posts.details', ['post' => $this->slug]);
+    function category(){
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     function getPublishingDateAttribute(){
         return Date::parse($this->published_at)->format('jS F Y');
+    }
+
+    function getMonthAndDayAttribute(){
+        return Date::parse($this->published_at)->format('M j');
     }
 
     function setPlatforms(): void {

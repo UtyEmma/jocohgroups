@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\PostResource\Pages;
+namespace App\Filament\Resources\Blogs\PostResource\Pages;
 
-use App\Filament\Resources\PostResource;
+use App\Filament\Resources\Blogs\PostResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 

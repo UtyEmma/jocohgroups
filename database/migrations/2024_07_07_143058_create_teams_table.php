@@ -16,12 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('role');
             $table->string('image');
-            $table->string('platform')->nullable();
+            $table->string('platform_code')->nullable();
             $table->text('bio')->nullable();
-            $table->string('instagram');
-            $table->string('facebook');
-            $table->string('linkedin');
-            $table->string('twitter');
+            $table->string('instagram')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('twitter')->nullable();
             $table->string('status');
             $table->softDeletes();
             $table->timestamps();

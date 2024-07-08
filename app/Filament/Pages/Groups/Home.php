@@ -15,6 +15,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 
 class Home extends Page implements HasForms {
@@ -29,6 +30,11 @@ class Home extends Page implements HasForms {
     protected static string $view = 'filament.pages.groups.home';
 
     public ?array $data = [];
+
+    function mount(){     
+        $platform = request()->platform()->model();   
+        $this->form->fill($platform->content);
+    }
 
     public static function canAccess(): bool {
         return request()->platform() == Platforms::GROUP;
@@ -90,8 +96,11 @@ class Home extends Page implements HasForms {
                                     ])
                             ]),
                     ])
-                    ->addable(true)
+                    ->addable(false)
+                    ->reorderable(false)
+                    ->deletable(false)
                     ->collapsible()
+                    ->collapsed()
                     ->deleteAction(fn (Components\Actions\Action $action) => $action->requiresConfirmation(),)
             ])
             ->statePath('data');
@@ -100,12 +109,13 @@ class Home extends Page implements HasForms {
     public function submit(): void
     {
         $state = $this->form->getState();
-        
+
+        $platform = request()->platform()->model();
+        $platform->content['home'] = $state;
+        $platform->save();
        
-        // Notification::make()
-        //     ->success()
-        //     ->title('Update Successful')
-        //     ->send();
+        Notification::make()->success()
+            ->title('Page Updated Successfully')->send();
     }
 
 

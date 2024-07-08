@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('status');
-            $table->string('platform')->nullable();
+            $table->string('platform_code')->nullable();
             $table->timestamps();
         });
     }

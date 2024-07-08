@@ -1,41 +1,42 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Resources\Blogs;
 
-use App\Filament\Resources\TeamResource\Pages;
-use App\Filament\Resources\TeamResource\RelationManagers;
+use App\Filament\Resources\Blogs\CategoryResource\Pages;
+use App\Filament\Resources\Blogs\CategoryResource\RelationManagers;
+use App\Filament\Resources\Blogs\CategoryResource\RelationManagers\PostsRelationManager;
 use App\Forms\Components\SelectStatus;
-use App\Models\Team;
+use App\Models\Category;
 use App\Tables\Columns\StatusColumn;
 use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\SelectColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class TeamResource extends Resource
+class CategoryResource extends Resource
 {
-    protected static ?string $model = Team::class;
+    protected static ?string $model = Category::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-user-group';
+    protected static ?string $navigationIcon = 'heroicon-o-tag';
+    protected static ?string $navigationGroup = 'Blog';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                FileUpload::make('image')
-                    ->image(),
                 TextInput::make('name')
-                    ->columnSpanFull(),
-                TextInput::make('role'),
+                    ->live(onBlur: true)
+                    ->unique(column: 'slug', ignoreRecord: true)
+                    ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', str($state)->slug())),
+                TextInput::make('slug')
+                    ->unique(column: 'slug', ignoreRecord: true),
                 SelectStatus::make('status')
-                    ->native(false)
             ]);
     }
 
@@ -44,14 +45,16 @@ class TeamResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name'),
-                TextColumn::make('role'),
+                TextColumn::make('posts_count')
+                    ->label('Posts')
+                    ->counts('posts'),
                 StatusColumn::make('status')
+
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -64,17 +67,16 @@ class TeamResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            PostsRelationManager::class
         ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListTeams::route('/'),
-            'create' => Pages\CreateTeam::route('/create'),
-            'view' => Pages\ViewTeam::route('/{record}'),
-            'edit' => Pages\EditTeam::route('/{record}/edit'),
+            'index' => Pages\ListCategories::route('/'),
+            'create' => Pages\CreateCategory::route('/create'),
+            'edit' => Pages\EditCategory::route('/{record}/edit'),
         ];
     }
 }

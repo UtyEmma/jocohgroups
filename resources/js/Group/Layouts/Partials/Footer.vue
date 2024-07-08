@@ -6,6 +6,9 @@ import FacebookIcon from '@/Shared/Icons/FacebookIcon.vue';
 import TwitterIcon from '@/Shared/Icons/TwitterIcon.vue';
 import LinkedInIcon from '@/Shared/Icons/LinkedInIcon.vue';
 import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
+import { usePage } from '@inertiajs/vue3';
+
+const { props } = usePage();
 
 </script>
 
@@ -18,13 +21,13 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
 
                     <ul class="space-y-2 font-light text-[#C9D7D2]" >
                         <li>
-                            <a href="#" class="hover:text-white duration-500" >Jocoh Group</a>
+                            <a :href="route('group.home')" class="hover:text-white duration-500" >Jocoh Group</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:text-white duration-500" >Jocoh Farms</a>
+                            <a :href="route('farms.home')" class="hover:text-white duration-500" >Jocoh Farms</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:text-white duration-500" >Jocoh Stores</a>
+                            <a :href="route('stores.home')" class="hover:text-white duration-500" >Jocoh Stores</a>
                         </li>
                     </ul>
                 </div>
@@ -34,13 +37,13 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
 
                     <ul class="space-y-2 font-light text-[#C9D7D2]" >
                         <li>
-                            <a href="#" class="hover:text-white duration-500" >About Us</a>
+                            <a :href="route('group.about')" class="hover:text-white duration-500" >About Us</a>
                         </li>
                         <li>
                             <a href="#" class="hover:text-white duration-500" >Contact Us</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:text-white duration-500" >Blogs</a>
+                            <a :href="route('group.blog')" class="hover:text-white duration-500" >Blogs</a>
                         </li>
                     </ul>
                 </div>
@@ -55,7 +58,7 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                             </div>
 
                             <div>
-                                <a href="#" class="hover:text-white duration-500" >+234 818 329 5257</a>
+                                <a :href="`tel:${props.platform.settings.contact_phone}`" class="hover:text-white duration-500" >{{props.platform.settings.contact_phone}}</a>
                             </div>
                         </li>
                         <li class="flex space-x-2 items-start">
@@ -64,8 +67,8 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                             </div>
 
                             <div>
-                                <a href="#" class="hover:text-white duration-500 block" >info@jocohgroup.com</a>
-                                <a href="#" class="hover:text-white duration-500 block" >jocohgroup@gmail.com</a>
+                                <a :href="`mailto:${props.platform.settings.site_email}`" class="hover:text-white duration-500 block" >{{props.platform.settings.site_email}}</a>
+                                <!-- <a href="#" class="hover:text-white duration-500 block" >jocohgroup@gmail.com</a> -->
                             </div>
                         </li>
                         <li class="flex space-x-2 items-center">
@@ -74,30 +77,30 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                             </div>
 
                             <div>
-                                <a href="#" class="hover:text-white duration-500" >Old park ogbete, Enugu State Nigeria</a>
+                                <a href="#" class="hover:text-white duration-500" >{{props.platform.settings.contact_address}}</a>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="py-10 pl-10 space-y-5" >
                     <ul class="space-y-5 items-center" >
-                        <li>
-                            <a href="#" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                        <li v-if="props.platform.settings?.facebook_link">
+                            <a :href="props.platform.settings.facebook_link" target="_blank" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <FacebookIcon class="fill-white size-4"/>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                        <li v-if="props.platform.settings?.twitter_link">
+                            <a :href="props.platform.settings.twitter_link" target="_blank" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <TwitterIcon class="fill-white size-4"/>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                        <li v-if="props.platform.settings?.linkedin_link">
+                            <a :href="props.platform.settings.linkedin_link" target="_blank" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <LinkedInIcon class="fill-white size-4"/>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                        <li v-if="props.platform.settings?.instagram_link">
+                            <a :href="props.platform.settings?.instagram_link" target="_blank" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <InstagramIcon class="fill-white size-4"/>
                             </a>
                         </li>
