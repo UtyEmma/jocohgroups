@@ -27,7 +27,7 @@ const send = () => {
     loading.value = true
 
     try {
-        form.post(route('group.contact.message'), {
+        form.post(route('group.message'), {
             preserveScroll: true,
             onSuccess(){
                 status.value = {
