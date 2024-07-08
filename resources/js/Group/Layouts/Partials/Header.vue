@@ -19,7 +19,7 @@ import { Link } from '@inertiajs/vue3';
                         <Link class="hover:text-primary duration-500 font-medium" :href="route('group.about')">Business</Link>
                     </li>
                     <li>
-                        <Link class="hover:text-primary duration-500 font-medium" :href="route('group.careers')">Careers</Link>
+                        <Link class="hover:text-primary duration-500 font-medium" href="#">Careers</Link>
                     </li>
                 </ul>
             </div>

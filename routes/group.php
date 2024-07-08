@@ -13,8 +13,8 @@ Route::domain(env('APP_DOMAIN'))
         Route::get('', [PageController::class, 'index'])->name('home');
         Route::get('business', [PageController::class, 'about'])->name('about');
         
-        Route::prefix('careers')->group(function(){
-            Route::get('', [CareerController::class, 'index'])->name('careers');
+        Route::prefix('jobs')->group(function(){
+            Route::get('{career}', [CareerController::class, 'index'])->name('career.show');
         });
         
         Route::prefix('blog')->group(function(){

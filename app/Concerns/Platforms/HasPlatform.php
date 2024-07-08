@@ -4,6 +4,7 @@ namespace App\Concerns\Platforms;
 
 use App\Enums\Platforms;
 use App\Models\Platform;
+use Illuminate\Database\Eloquent\Builder;
 
 trait HasPlatform {
 
@@ -23,6 +24,12 @@ trait HasPlatform {
         $this->setAttribute('platform_code', request()->platform());
 
         $this->setPlatforms();
+    }
+
+    protected static function bootHasPlatform(): void {
+        static::addGlobalScope('onPlatform', function (Builder $builder, $platform = null) {
+            $builder->where('platform_code', $platform ?? request()->platform());
+        });
     }
 
     function setPlatforms() : void {

@@ -4,11 +4,18 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CareerResource\Pages;
 use App\Filament\Resources\CareerResource\RelationManagers;
+use App\Forms\Components\SelectStatus;
 use App\Models\Career;
+use App\Tables\Columns\StatusColumn;
 use Filament\Forms;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -18,12 +25,40 @@ class CareerResource extends Resource
     protected static ?string $model = Career::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-briefcase';
+    protected static ?string $navigationLabel = 'Jobs';
+    protected static ?string $label = 'Job';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                TextInput::make('role')
+                    ->label('Job Title')
+                    ->placeholder('Job title')
+                    ->required()
+                    ->columnSpanFull()
+                    ->maxLength(255),
+                TextInput::make('type')
+                    ->label('Job Type')
+                    ->placeholder('Full Time, Part time, etc'),
+                TextInput::make('workplace')
+                    ->placeholder('Remote, Hybrid, Physical etc'),
+                TextInput::make('location')
+                    ->nullable()
+                    ->placeholder('eg. Lagos Nigeria'),
+                TextInput::make('salary')
+                    ->prefix('NGN')
+                    ->placeholder('0.00'),
+                TextInput::make('deadline')
+                    ->type('date')
+                    ->label('Application Deadline'),
+                TextInput::make('application_link')
+                    ->url()->placeholder('https://')
+                    ->nullable(),
+                RichEditor::make('description')
+                    ->columnSpanFull(),
+                SelectStatus::make('status')
+                    ->native(false),
             ]);
     }
 
@@ -31,6 +66,12 @@ class CareerResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('role'),
+                TextColumn::make('salary')
+                    ->money('NGN'),
+                TextColumn::make('deadline')
+                    ->dateTime(),
+                StatusColumn::make('status'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

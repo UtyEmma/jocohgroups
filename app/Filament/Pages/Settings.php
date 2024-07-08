@@ -42,7 +42,6 @@ class Settings extends Page implements HasForms {
                             ->schema([
                                 TextInput::make('company_name')
                                     ->columnSpanFull(),
-                                // TextInput::make('site_name'),
                                 TextInput::make('site_email')
                                     ->columnSpan([
                                         'md' => 6

@@ -6,6 +6,10 @@ import JobItem from '@/Group/Partials/Jobs/JobItem.vue';
 import PrimaryButton from '@/Group/Components/Buttons/PrimaryButton.vue';
 import Banner from '@/Group/Svgs/Banner.vue';
 
+defineProps({
+    jobs: {type: []}
+})
+
 </script>
 
 <template>
@@ -88,13 +92,11 @@ import Banner from '@/Group/Svgs/Banner.vue';
             </div>
         </section>
 
-        <section class="py-32 max-w-[80%] mx-auto space-y-20">
+        <section v-if="jobs.length > 0" class="py-32 max-w-[80%] mx-auto space-y-20">
             <h1 class="text-6xl text-center" >Our Openings</h1>
 
             <div class="space-y-10" >
-                <JobItem />
-                <JobItem />
-                <JobItem />
+                <JobItem v-for="job in jobs" :job="job" />
             </div>
         </section>
 

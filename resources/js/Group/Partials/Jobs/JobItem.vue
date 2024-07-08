@@ -1,5 +1,10 @@
 <script setup>
 import PrimaryButton from '@/Group/Components/Buttons/PrimaryButton.vue';
+import { Link } from '@inertiajs/vue3';
+
+defineProps({
+    job: {type: {}}
+})
 </script>
 
 <template>
@@ -10,18 +15,20 @@ import PrimaryButton from '@/Group/Components/Buttons/PrimaryButton.vue';
 
         <div class="flex-1 py-2 h-full">
             <div class="flex flex-col h-full justify-between">
-                <p class="text-2xl text-primary font-bold mb-6">Sale Specialist</p>
+                <p class="text-2xl text-primary font-bold mb-6">{{job.role}}</p>
                 <div class="flex space-x-5 bottom-0">
-                    <p>Location: Lagos</p>
-                    <p>Salary: 300K</p>
-                    <p>Deadline: 2 Feb 2025</p>
-                    <p>Type: Remote</p>
+                    <p v-if="job.location">Location: {{job.location}}</p>
+                    <p v-if="job.salary">Salary: ₦ {{job.salary.toLocaleString()}}</p>
+                    <p v-if="job.deadline">Deadline: {{job.deadline}}</p>
+                    <p v-if="job.type">Type: {{job.type}}</p>
                 </div>
             </div>
         </div>
 
         <div class="shrink-0" >
-            <PrimaryButton>Details</PrimaryButton>
+            <Link :href="route('group.career.show', {'id': job.id})">
+                <PrimaryButton>Details</PrimaryButton>
+            </Link>
         </div>
     </div>
 </template>
