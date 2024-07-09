@@ -3,6 +3,7 @@
 namespace App\Filament\Pages\Groups;
 
 use App\Enums\Platforms;
+use App\Models\Platform;
 use Filament\Forms\Components;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Builder;
@@ -30,10 +31,11 @@ class Home extends Page implements HasForms {
     protected static string $view = 'filament.pages.groups.home';
 
     public ?array $data = [];
+    public Platform $platform;
 
     function mount(){     
-        $platform = request()->platform()->model();   
-        $this->form->fill($platform->content);
+        $this->platform = request()->platform()->model();   
+        $this->form->fill($this->platform->content);
     }
 
     public static function canAccess(): bool {
@@ -109,10 +111,8 @@ class Home extends Page implements HasForms {
     public function submit(): void
     {
         $state = $this->form->getState();
-
-        $platform = request()->platform()->model();
-        $platform->content['home'] = $state;
-        $platform->save();
+        $this->platform['content->home'] = $state;
+        $this->platform->save();
        
         Notification::make()->success()
             ->title('Page Updated Successfully')->send();

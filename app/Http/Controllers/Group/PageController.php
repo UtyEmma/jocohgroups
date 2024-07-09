@@ -14,7 +14,8 @@ class PageController extends Controller {
     
     function index(Request $request){
         $posts = Post::whereStatus(Status::ACTIVE)->latest()->limit(3)->get();
-        $team = Team::whereStatus(Status::ACTIVE)->limit(3)->get();
+        $team = Team::whereStatus(Status::ACTIVE)->limit(3)->get();    
+            
         return Inertia::render('Home/Index', compact('posts', 'team'));
     }
     

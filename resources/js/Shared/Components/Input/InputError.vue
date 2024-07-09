@@ -1,7 +1,7 @@
 <script setup>
-    // const props = defineProps({
-    //     message: {}
-    // })
+    defineProps({
+        message: {type: ''}
+    })
 </script>
 
 <template>

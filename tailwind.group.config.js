@@ -1,5 +1,6 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
+import plugin from 'tailwindcss';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -36,5 +37,22 @@ export default {
         },
     },
 
-    plugins: [forms, require('@tailwindcss/typography')],
+    plugins: [
+        forms, 
+        require('@tailwindcss/typography'),
+        plugin(function ({ addVariant, e, postcss }) {
+            const generateVariant = (variantName, elements) => {
+              addVariant(variantName, ({ container, separator }) => {
+                elements.forEach(element => {
+                  container.walkRules(rule => {
+                    const className = rule.selector.slice(1); // remove leading dot
+                    rule.selector = `.${e(`${variantName}${separator}${className}`)} > ${element}`;
+                  });
+                });
+              });
+            };
+      
+            generateVariant('highlight', ['em', 'strong', 'a', 'span', 'code', 'blockquote', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre']);
+        }),
+    ],
 };

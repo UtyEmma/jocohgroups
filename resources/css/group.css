@@ -13,3 +13,7 @@
         font-family: "Crimson Pro", system-ui, sans-serif !important;
     }
 }
+
+.about-title span {
+    @apply text-[#AAAAAA] underline decoration-2;
+}

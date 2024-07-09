@@ -1,15 +1,20 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link, usePage } from '@inertiajs/vue3';
 import GuestLayout from '@/Group/Layouts/GuestLayout.vue';
 import TeamItem from '@/Group/Partials/Team/TeamItem.vue';
 import PostItem from '@/Group/Partials/Blog/PostItem.vue';
 import ContactForm from '@/Group/Partials/Contact/ContactForm.vue';
 import { ArrowUpRightIcon, ArrowLongRightIcon, ArrowRightIcon } from '@heroicons/vue/24/solid'
+import usePlatform from '@/Shared/Hooks/usePlatform';
+import AboutSection from './Partials/AboutSection.vue'
+import BannerSection from './Partials/BannerSection.vue'
 
 defineProps({
     posts: {type: []},
     team: {type: []}
 });
+
+
 
 </script>
 
@@ -17,31 +22,9 @@ defineProps({
     <Head title="Welcome" />
     
     <GuestLayout >
-        <div class="h-[110vh] bg-[url('/assets/group/images/banners/farmers-in-the-field.jpeg')] bg-[15%] bg-cover no-repeat" >
-            <div class="max-w-7xl mx-auto flex items-end  h-full py-20">
-                <div class="w-9/12 space-y-3">
-                    <h1 class="text-[74px] leading-[80px] text-white">Facilitating  the production and delivery of <span class="bg-primary inline-block p-2"> agricultural </span> produce across Africa</h1>
-                    <p class="text-2xl w-4/5 text-white"> Founded on the belief that farming can be both profitable and environmentally responsible, we integrate innovation, technology, and community engagement to drive positive change in the agricultural sector.</p>
-                </div>
-            </div>
-        </div>
+        <BannerSection />
         
-        <div class="max-w-7xl mx-auto py-20 space-y-20">
-            <div class="w-11/12 space-y-3">
-                <h1 class="text-[74px] leading-[80px]">We Are Leading the Charge for Sustainable Agriculture <span class="text-[#AAAAAA] underline decoration-2">Join us today.</span></h1>
-                <p class="text-[24px] w-9/12 text-muted">Redefining food production with technology and collaboration to combat climate change, food insecurity, and environmental degradation.</p>
-            </div>
-
-            <div class="grid grid-cols-2 gap-x-10">
-                <div>
-                    <div class="w-full aspect-[4/3] bg-[url('/assets/group/images/banners/factory.jpeg')] bg-bottom bg-cover no-repeat"></div>
-                </div>
-                <div>
-                    <div class="w-full aspect-[4/3] bg-[url('/assets/group/images/banners/harvesting.jpeg')] bg-[15%] bg-cover no-repeat"></div>
-                </div>
-            </div>
-
-        </div>
+        <AboutSection />
 
         <div class="bg-primary-100 py-20 text-center">
             <div class="max-w-7xl mx-auto space-y-10">
