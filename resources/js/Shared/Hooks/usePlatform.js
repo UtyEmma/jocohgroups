@@ -1,12 +1,16 @@
 import { usePage } from "@inertiajs/vue3"
 
-export default function usePlatform () {
+export default function usePlatform ($page) {
     const {props} = usePage()
     const {logo, name, slug, settings, content: platform_content,  ...platform} = props.platform
 
     const render = ({default_value = null, key = null, value = null, classes = '', element = 'span'}) => {
-        const item = platform_content.sections;
-        if(!Array.isArray(item)) return item;
+        const item = platform_content[$page];
+        if(!Array.isArray(item) && item !== undefined) {
+            return item
+        }else{
+            return defaultValue(default_value, element, classes)
+        }
 
         const content = item.find(val => val.type == key);
         if(!content) return defaultValue(default_value, element, classes)

@@ -56,7 +56,7 @@ class Home extends Page implements HasForms {
                 TextInput::make('title'),
                 TextInput::make('tags'),
                 Textarea::make('description'),
-                Builder::make('sections')
+                Builder::make('home')
                     ->label('Edit Page Sections')
                     ->blocks([
                         Block::make('hero_section')
@@ -111,7 +111,7 @@ class Home extends Page implements HasForms {
     public function submit(): void
     {
         $state = $this->form->getState();
-        $this->platform['content->home'] = $state;
+        $this->platform->content = $state;
         $this->platform->save();
        
         Notification::make()->success()

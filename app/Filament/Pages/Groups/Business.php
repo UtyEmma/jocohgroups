@@ -3,14 +3,24 @@
 namespace App\Filament\Pages\Groups;
 
 use App\Enums\Platforms;
+use App\Forms\Components\SelectRoute;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Dotswan\FilamentCodeEditor\Fields\CodeEditor;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
+use App\Models\Platform;
+use Filament\Forms\Components;
+use Filament\Actions\Action;
+use Filament\Forms\Components\Builder;
+use Filament\Forms\Components\Builder\Block;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\KeyValue;
+use Filament\Forms\Components\Repeater;
+use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 
 class Business extends Page implements HasForms {
@@ -22,79 +32,69 @@ class Business extends Page implements HasForms {
 
     protected static string $view = 'filament.pages.groups.business';
 
-    public static function canAccess(): bool {
-        return request()->platform() == Platforms::GROUP;
+    public ?array $data = [];
+    public Platform $platform;
+
+    function mount(){     
+        $this->platform = request()->platform()->model(); 
+        dd($this->platform->content);  
+        $this->form->fill($this->platform->content);
     }
 
-    public ?array $data = [];
-
-    function mount(){
-        // $settings = Setting::all();
-        
-        // $this->form->fill($settings->reduce(function($carry, $setting) {
-        //     $carry[$setting->slug] = $setting->value;
-        //     return $carry;
-        // }, []));
+    public static function canAccess(): bool {
+        return request()->platform() == Platforms::GROUP;
     }
 
     function form(Form $form) : Form{
         return $form
             ->schema([
-                Tabs::make('Settings')
-                    ->tabs([
-                        Tab::make('Site')
-                            ->columns([
-                                'md' => 12,
+                Builder::make('sections')
+                    ->label('Edit Page Sections')
+                    ->blocks([
+                        Block::make('banner_section')
+                            ->schema([
+                                Repeater::make('sliders')
+                                    ->addable()
+                                    ->schema([
+                                        FileUpload::make('image')
+                                            ->columnSpan(2),
+                                        TextInput::make('title'),
+                                        Textarea::make('caption')
+                                            ->columnSpanFull(),
+                                        Grid::make()
+                                            ->columns(2)
+                                            ->schema([
+                                                TextInput::make('button_text'),
+                                                SelectRoute::make('button_link')
+                                                    ->searchable()
+                                            ]),
+                                    ])
+                            ]),
+                        Block::make('about_section')
+                            ->schema([
+                                TextInput::make('title'),
+                                Textarea::make('description'),
+                            ]),
+                        Block::make('uniqueness_section')
+                            ->schema([
+                                TextInput::make('title'),
+                                Repeater::make('uniqueness')
+                                    ->schema([
+                                        TextInput::make('title'),
+                                        Textarea::make('caption')
+                                    ]),
+                            ]),
+                        Block::make('career_section')
+                            ->schema([
+                                TextInput::make('title')
                             ])
-                            ->schema([
-                                TextInput::make('company_name')
-                                    ->columnSpanFull(),
-                                // TextInput::make('site_name'),
-                                TextInput::make('site_email')
-                                    ->columnSpan([
-                                        'md' => 6
-                                    ])
-                                    ->email(),
-                                TextInput::make('contact_phone')
-                                    ->columnSpan([
-                                        'md' => 6
-                                    ])
-                                    ->tel(),
-                                TextInput::make('contact_address')
-                                    ->columnSpanFull(),
-                                Textarea::make('site_description')
-                                    ->columnSpanFull(),
-                            ]),
-                        Tab::make('Social Media')
-                            ->schema([
-                                TextInput::make('twitter_link')
-                                    ->url(),
-                                TextInput::make('instagram_link')
-                                    ->url(),
-                                TextInput::make('linkedin_link')
-                                    ->url(),
-                                TextInput::make('facebook_link')
-                                ->url(),
-                            ]),
-                        Tab::make('SEO')
-                            ->schema([
-                                TextInput::make('site_title'),
-                                TextInput::make('seo_tags'),
-                                Textarea::make('seo_description')
-                            ]),
-                        Tab::make('Configuration')
-                            ->schema([
-                                CodeEditor::make('header_scripts')
-                                    ->showCopyButton(true)
-                                    ->darkModeTheme('gruvbox-dark')
-                                    ->lightModeTheme('basic-light'),
-                                CodeEditor::make('footer_scripts')
-                                    ->showCopyButton(true)
-                                    ->darkModeTheme('gruvbox-dark')
-                                    ->lightModeTheme('basic-light')
-                            ]),
                     ])
-                    ->persistTabInQueryString()
+                    ->addable(true)
+                    ->reorderable(false)
+                    ->deletable(false)
+                    ->collapsible()
+                    ->collapsed()
+                    ->deleteAction(fn (Components\Actions\Action $action) => $action->requiresConfirmation(),)
             ])
             ->statePath('data');
     }

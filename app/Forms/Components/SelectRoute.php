@@ -10,12 +10,9 @@ class SelectRoute extends Select {
     protected function setUp() : void {
         parent::setUp();
         $menu = [
-            'home' => 'Home page',
-            'about' => 'About Us',
-            'services' => 'What We do',
-            'faqs' => 'Frequently Asked Questions',
-            'posts' => "Blog",
-            'contact' => 'Contact Us',
+            'group.home' => 'Home page',
+            'group.about' => 'About Us',
+            'group.blog' => 'Blog',
         ];
 
         $this->options = $menu;
