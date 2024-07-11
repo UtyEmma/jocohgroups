@@ -2,7 +2,7 @@
 import usePlatform from '@/Shared/Hooks/usePlatform';
 
 
-const { render } = usePlatform()
+const { render } = usePlatform('home')
 
 const impacts = render({
                     default_value: {

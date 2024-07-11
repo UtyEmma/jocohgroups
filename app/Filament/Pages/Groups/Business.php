@@ -37,8 +37,7 @@ class Business extends Page implements HasForms {
 
     function mount(){     
         $this->platform = request()->platform()->model(); 
-        dd($this->platform->content);  
-        $this->form->fill($this->platform->content);
+        $this->form->fill($this->platform->content['about'] ?? []);
     }
 
     public static function canAccess(): bool {
@@ -100,15 +99,8 @@ class Business extends Page implements HasForms {
     }
 
     public function submit(): void {
-        $state = $this->form->getState();
-        
-        // foreach($state as $key => $item) {
-        //     Setting::where('slug', $key)->update(['value' => $item]);
-        // }
-
-        // Notification::make()
-        //     ->success()
-        //     ->title('Update Successful')
-        //     ->send();
+        $this->platform['content->about'] = $this->form->getState();
+        $this->platform->save();
+        Notification::make()->success()->title('Page Updated Successfully')->send();
     }
 }

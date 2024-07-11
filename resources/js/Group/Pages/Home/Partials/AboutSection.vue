@@ -1,7 +1,7 @@
 <script setup>
 import usePlatform from '@/Shared/Hooks/usePlatform';
 
-const { render, content } = usePlatform()
+const { render, content } = usePlatform('home')
 
 const title = render({
                 default_value: 'We Are Leading the Charge for Sustainable Agriculture **Join us today.**', 

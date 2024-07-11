@@ -108,14 +108,11 @@ class Home extends Page implements HasForms {
             ->statePath('data');
     }
 
-    public function submit(): void
-    {
-        $state = $this->form->getState();
-        $this->platform->content = $state;
+    public function submit(): void {
+        $this->platform->content['home'] = $this->form->getState();
         $this->platform->save();
        
-        Notification::make()->success()
-            ->title('Page Updated Successfully')->send();
+        Notification::make()->success()->title('Page Updated Successfully')->send();
     }
 
 

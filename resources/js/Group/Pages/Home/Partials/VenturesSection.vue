@@ -2,7 +2,7 @@
 import usePlatform from '@/Shared/Hooks/usePlatform';
 import { ArrowUpRightIcon } from '@heroicons/vue/24/solid';
 
-const { render } = usePlatform()
+const { render } = usePlatform('home')
 
 const ventures = render({
                     default_value: [

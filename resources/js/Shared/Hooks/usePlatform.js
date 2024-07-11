@@ -1,15 +1,14 @@
 import { usePage } from "@inertiajs/vue3"
 
-export default function usePlatform ($page) {
+export default function usePlatform (page) {
     const {props} = usePage()
     const {logo, name, slug, settings, content: platform_content,  ...platform} = props.platform
 
     const render = ({default_value = null, key = null, value = null, classes = '', element = 'span'}) => {
-        const item = platform_content[$page];
-        if(!Array.isArray(item) && item !== undefined) {
-            return item
-        }else{
-            return defaultValue(default_value, element, classes)
+        const item = platform_content[page].sections;
+
+        if(!Array.isArray(item)) {
+            return item == undefined ? defaultValue(default_value, element, classes) : item;
         }
 
         const content = item.find(val => val.type == key);
@@ -17,7 +16,7 @@ export default function usePlatform ($page) {
         const val = content.data[value] ?? null;
 
         if(val) {
-            if(typeof val == 'string') return val.replace(/\*\*(.*?)\*\*/g, `<${element} :class="${classes}">$1</${element}>`);
+            if(typeof val == 'string') return formatText(val, element, classes);
             if(Array.isArray(val) && item.length > 0) return val;
             return val;
         }
@@ -26,13 +25,17 @@ export default function usePlatform ($page) {
     }
 
     return { 
-        render, logo, name, code: slug, content: platform_content, settings 
+        render, logo, name, code: slug, content: platform_content, settings, page, format: formatText
     }
 
 }
 
+const formatText = (text, element = 'span', classes = '') => {
+    return text.replace(/\*\*(.*?)\*\*/g, `<${element} :class="${classes}">$1</${element}>`)
+}
+
 function defaultValue(value, element, classes = null) {
     // if(Array.isArray(value)) return value;
-    if(typeof value == 'string') return value.replace(/\*\*(.*?)\*\*/g, `<${element} :class="${classes}">$1</${element}>`);
+    if(typeof value == 'string') return formatText(value, element, classes);
     return value;
 }
