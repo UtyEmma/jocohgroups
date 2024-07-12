@@ -45,7 +45,7 @@ export default {
                     '950': '#08205c',
 					DEFAULT: '#08205c',
 				},
-				muted: '#5B5B5B'
+				muted: '#5A5753'
 			},
         },
     },

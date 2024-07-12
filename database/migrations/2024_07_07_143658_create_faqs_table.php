@@ -16,7 +16,7 @@ return new class extends Migration
             $table->mediumText('question');
             $table->text('answer');
             $table->string('status');
-            $table->string('platform')->nullable();
+            $table->string('platform_code');
             $table->timestamps();
         });
     }

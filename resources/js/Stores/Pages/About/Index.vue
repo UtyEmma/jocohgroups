@@ -3,7 +3,9 @@
     import GuestLayout from '@/Stores/Layouts/GuestLayout.vue';
     import FaqItem from '@/Stores/Partials/Faqs/FaqItem.vue';
 
-
+    defineProps({
+        faqs: {type: []}
+    })
 </script>
 
 <template>
@@ -103,10 +105,7 @@
             </div>
 
             <div class="space-y-10">
-                <FaqItem question="Do you sell in wholesale and retails ?" answer="" />
-                <FaqItem question="Do you accept payment in other currencies ?" answer="" />
-                <FaqItem question="Are you open to partnerships for each products?" answer="" />
-                <FaqItem question="Is there a merchant part of this where we can sell on your platform?" answer="" />
+                <FaqItem v-for="(faq) in faqs" :question="faq.question" :answer="faq.answer" />
             </div>
         </div>
     </GuestLayout>

@@ -5,13 +5,14 @@ import ProductItem from '@/Stores/Partials/Products/ProductItem.vue';
 import FaqItem from '@/Stores/Partials/Faqs/FaqItem.vue';
 
 const props = defineProps({
-    products: {type: []}
+    products: {type: []},
+    faqs: {type: []}
 })
 
 </script>
 
 <template>
-    <Head title="Welcome" />
+    <Head title="Products" />
     <GuestLayout>
         <section class="bg-primary ">
             <div class="w-full py-20 h-full bg-opacity-5 bg-contain bg-[url('/assets/stores/images/banner/food-items-red.png')]" >
@@ -37,10 +38,7 @@ const props = defineProps({
             </div>
 
             <div class="space-y-10">
-                <FaqItem question="Do you sell in wholesale and retails ?" answer="" />
-                <FaqItem question="Do you accept payment in other currencies ?" answer="" />
-                <FaqItem question="Are you open to partnerships for each products?" answer="" />
-                <FaqItem question="Is there a merchant part of this where we can sell on your platform?" answer="" />
+                <FaqItem v-for="(faq) in faqs" :question="faq.question" :answer="faq.answer" />
             </div>
         </div>
     </GuestLayout>

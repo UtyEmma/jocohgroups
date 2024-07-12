@@ -12,7 +12,8 @@
 </script>
 
 <template>
-    <Head title="Welcome" />
+    <Head :title="product.title" />
+    
     <GuestLayout>
         <section class="py-20 bg-primary-50">
             <div class="max-w-[80%] mx-auto space-y-10">

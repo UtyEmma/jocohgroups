@@ -4,7 +4,10 @@ import GuestLayout from '@/Stores/Layouts/GuestLayout.vue';
 import ProductItem from '@/Stores/Partials/Products/ProductItem.vue';
 import FaqItem from '@/Stores/Partials/Faqs/FaqItem.vue';
 
-defineProps({});
+defineProps({
+    products: {type: []},
+    faqs: {type: []}
+});
 
 </script>
 
@@ -102,12 +105,7 @@ defineProps({});
                 </div>
 
                 <div class="grid grid-cols-3 gap-20 w-11/12 mx-auto">
-                    <ProductItem />
-                    <ProductItem />
-                    <ProductItem />
-                    <ProductItem />
-                    <ProductItem />
-                    <ProductItem />
+                    <ProductItem v-for="(product) in products" :product="product" />
                 </div>
             </div>
         </div>
@@ -119,10 +117,7 @@ defineProps({});
             </div>
 
             <div class="space-y-10">
-                <FaqItem question="Do you sell in wholesale and retails ?" answer="" />
-                <FaqItem question="Do you accept payment in other currencies ?" answer="" />
-                <FaqItem question="Are you open to partnerships for each products?" answer="" />
-                <FaqItem question="Is there a merchant part of this where we can sell on your platform?" answer="" />
+                <FaqItem v-for="(faq) in faqs" :question="faq.question" :answer="faq.answer" />
             </div>
         </div>
     </GuestLayout>

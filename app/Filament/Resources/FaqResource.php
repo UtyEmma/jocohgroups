@@ -2,58 +2,38 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProductResource\Pages;
-use App\Filament\Resources\ProductResource\RelationManagers;
+use App\Filament\Resources\FaqResource\Pages;
+use App\Filament\Resources\FaqResource\RelationManagers;
 use App\Forms\Components\SelectStatus;
-use App\Models\Product;
+use App\Models\Faq;
 use App\Tables\Columns\StatusColumn;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ProductResource extends Resource
+class FaqResource extends Resource
 {
-    protected static ?string $model = Product::class;
+    protected static ?string $model = Faq::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
+    protected static ?string $navigationIcon = 'heroicon-o-question-mark-circle';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->required(),
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->placeholder('Product Title')
-                    ->live(onBlur: true)
-                    ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', str($state)->slug()))
-                    ->columnSpanFull()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('slug')
-                    ->required()
-                    ->columnSpanFull()
-                    ->placeholder('Slug')
-                    ->unique(column: 'slug', ignoreRecord: true)
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('excerpt')
-                    ->columnSpanFull(),
-                Forms\Components\RichEditor::make('description')
+                Forms\Components\TextInput::make('question')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('price')
-                    ->numeric()
-                    ->default(null)
-                    ->prefix('₦'),
+                Forms\Components\Textarea::make('answer')
+                    ->required()
+                    ->columnSpanFull(),
                 SelectStatus::make('status')
+                    ->native(false)
                     ->required()
-                    ->native(false),
             ]);
     }
 
@@ -61,11 +41,12 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')
+                Tables\Columns\TextColumn::make('question')
+                    ->limit(40)
                     ->searchable(),
-                Tables\Columns\TextColumn::make('price')
-                    ->money('NGN')
-                    ->sortable(),
+                Tables\Columns\TextColumn::make('answer')
+                    ->limit(40)
+                    ->searchable(),
                 StatusColumn::make('status')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
@@ -100,10 +81,10 @@ class ProductResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListProducts::route('/'),
-            'create' => Pages\CreateProduct::route('/create'),
-            'view' => Pages\ViewProduct::route('/{record}'),
-            'edit' => Pages\EditProduct::route('/{record}/edit'),
+            'index' => Pages\ListFaqs::route('/'),
+            'create' => Pages\CreateFaq::route('/create'),
+            'view' => Pages\ViewFaq::route('/{record}'),
+            'edit' => Pages\EditFaq::route('/{record}/edit'),
         ];
     }
 }
