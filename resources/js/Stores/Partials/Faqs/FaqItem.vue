@@ -21,13 +21,11 @@
             <MinusIcon v-show="show" class="size-5 text-primary " />
             <PlusIcon v-show="!show" class="size-5 text-primary " />
         </div>
-        <div class="space-y-5">
-            <div role="button" v-on:click="toggle" class="font-bold underline decoration-gray-200 underline-offset-[10px]">{{question}}</div>
+        <div class="space-y-2 pb-2 border-b border-gray-300">
+            <button role="button" v-on:click="toggle" class="font-bold decoration-gray-200">{{question}}</button>
             
-            <Transition>
-                <div v-if="show" >
-                    {{ answer }}
-                </div>
+            <Transition >
+                <div v-if="show"  >{{ answer }}</div>
             </Transition>
         </div>
     </div>

@@ -1,0 +1,32 @@
+<script setup>
+import usePlatform from '@/Shared/Hooks/usePlatform';
+
+const { render, content } = usePlatform('home')
+
+const title = render({
+                default_value: 'We are providing you with everyday fresh & organic Products.',
+                key: 'hero_section',
+                value: 'title'
+            })
+
+const image = render({
+                default_value: '/assets/stores/images/banner/food-stuffs.png',
+                key: 'hero_section',
+                value: 'image',
+                prepend: 'storage/',
+            })
+</script>
+
+<template>
+    <div class="pt-20 min-h-[75vh] bg-[#FFFBED] bg-contain bg-[100px] bg-[url('/assets/stores/images/banner/food-items.png')] bg-opacity-10" >
+        <div class="max-w-[80%] mx-auto">
+            <div class="w-10/12 mx-auto">
+                <h1 class="text-center italic font-medium text-primary leading-[78px] text-6xl">{{ title }}</h1>
+            </div>
+
+            <div class="w-7/12 mx-auto" >
+                <img :src="image" alt="">
+            </div>
+        </div>
+    </div>
+</template>

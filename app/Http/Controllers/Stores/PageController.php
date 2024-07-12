@@ -13,7 +13,6 @@ class PageController extends Controller {
     function index(Request $request){
         $products = Product::isActive()->limit(6)->get();
         $faqs = Faq::isActive()->limit(5)->get();
-
         return Inertia::render('Home/Index', compact('products', 'faqs'));
     }
     

@@ -6,11 +6,15 @@
     import FaqItem from '@/Stores/Partials/Faqs/FaqItem.vue';
     import ContactForm from '@/Stores/Partials/Contact/ContactForm.vue';
 
+    const props = defineProps({
+        faqs: {type: []}
+    })
 
 </script>
 
 <template>
-    <Head title="Welcome" />
+    <Head title="Contact Us" />
+
     <GuestLayout>
 
         <ContactForm />
@@ -22,10 +26,7 @@
             </div>
 
             <div class="space-y-10">
-                <FaqItem question="Do you sell in wholesale and retails ?" answer="" />
-                <FaqItem question="Do you accept payment in other currencies ?" answer="" />
-                <FaqItem question="Are you open to partnerships for each products?" answer="" />
-                <FaqItem question="Is there a merchant part of this where we can sell on your platform?" answer="" />
+                <FaqItem v-for="(faq) in faqs" :question="faq.question" :answer="faq.answer" />
             </div>
         </div>
     </GuestLayout>
