@@ -7,15 +7,16 @@ use App\Enums\Status;
 trait HasStatus {
 
     function initializeHasStatus() {
+        $this->fillable[] = 'status';
         $this->mergeCasts([
             'status' => Status::class
         ]);
 
-        $this->mergeAttributes([
-            'status' => Status::ACTIVE
-        ]);
+        $this->setAttribute('status', Status::ACTIVE);
+    }
 
-        $this->mergeFillables(['status']);
+    function scopeIsActive($query){
+        $query->whereStatus(Status::ACTIVE);
     }
 
 }

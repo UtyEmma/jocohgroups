@@ -15,7 +15,7 @@ Route::domain(env('APP_STORES_DOMAIN'))
         
         Route::prefix('products')->group(function(){
             Route::get('', [ProductController::class, 'index'])->name('products');
-            Route::get('{product}', [ProductController::class, 'show'])->name('products.show');
+            Route::get('{product:slug}', [ProductController::class, 'show'])->name('products.show');
         });
 
         Route::fallback(fn() => abort(404));

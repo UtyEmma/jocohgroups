@@ -1,14 +1,24 @@
+<script setup >
+
+const props = defineProps({
+    product: {type: {}}
+})
+
+</script>
+
 <template>
     <div>
-        <div class="p-3 bg-white rounded-2xl">
+        <a :href="route('stores.products.show', {
+            product: product.slug
+        })" class="p-3 block bg-white rounded-2xl">
 
             <div class="border-2 border-gray-300 bg-gray-100 h-96 overflow-hidden rounded-xl flex items-center justify-center">
-                <img src="/assets/stores/images/products/condensed-milk.png" class="w-2/3" alt="">
+                <img :src="product.image" class="w-full h-full object-cover" alt="">
             </div>
 
             <div class="pt-3 text-center">
-                <p class="font-semibold">Pure Condensed Milk</p>
+                <p class="font-semibold">{{ product.title }}</p>
             </div>
-        </div>
+        </a>
     </div>
 </template>

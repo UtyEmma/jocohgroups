@@ -4,6 +4,10 @@ import GuestLayout from '@/Stores/Layouts/GuestLayout.vue';
 import ProductItem from '@/Stores/Partials/Products/ProductItem.vue';
 import FaqItem from '@/Stores/Partials/Faqs/FaqItem.vue';
 
+const props = defineProps({
+    products: {type: []}
+})
+
 </script>
 
 <template>
@@ -21,12 +25,7 @@ import FaqItem from '@/Stores/Partials/Faqs/FaqItem.vue';
         <div class="py-20 bg-primary-50">
             <div class="space-y-20 max-w-[80%] mx-auto">
                 <div class="grid grid-cols-3 gap-20 w-11/12 mx-auto">
-                    <ProductItem />
-                    <ProductItem />
-                    <ProductItem />
-                    <ProductItem />
-                    <ProductItem />
-                    <ProductItem />
+                    <ProductItem v-for="(product, index) in products.data" :product="product" />
                 </div>
             </div>
         </div>

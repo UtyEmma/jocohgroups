@@ -71,7 +71,7 @@
                         <Link class="hover:text-primary duration-500 font-medium" :href="route('group.blog')">FAQs</Link>
                     </li>
                     <li>    
-                        <Link class="hover:text-primary duration-500 font-medium" :href="route('group.blog')">Contact Us</Link>
+                        <Link class="hover:text-primary duration-500 font-medium" :href="route('stores.contact')">Contact Us</Link>
                     </li>
                 </ul>
             </div>
