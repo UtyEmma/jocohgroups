@@ -31,7 +31,7 @@ class Post extends Model
     protected function image(): Attribute {
         return Attribute::make(
             get: function(string $value) {
-                if(file_exists('storage/'.$value)) return asset('storage/'.$value);
+                if(file_exists("storage/{$value}")) return asset("storage/{$value}");
                 if(file_exists($value)) return asset($value);
                 return $value;
             },

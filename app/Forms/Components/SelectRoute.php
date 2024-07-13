@@ -10,12 +10,25 @@ class SelectRoute extends Select {
     protected function setUp() : void {
         parent::setUp();
         $menu = [
-            'group.home' => 'Home page',
-            'group.about' => 'About Us',
-            'group.blog' => 'Blog',
+            'Jocoh Group' => [
+                'group.home' => 'Home page',
+                'group.about' => 'About Us',
+                'group.blog' => 'Blog',
+            ],
+            'Jocoh Stores' => [
+                'stores.home' => 'Home page',
+                'stores.about' => 'About Us',
+                'stores.products' => 'Products',
+                'stores.contact' => 'Contact Us',
+            ],
+            'Jocoh Farms' => [
+                'farms.home' => 'Home page'
+            ],
+            
         ];
 
         $this->options = $menu;
+        // $this->native(false);
     }
 
 }

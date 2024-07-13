@@ -2,10 +2,10 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\TestimonialResource\Pages;
-use App\Filament\Resources\TestimonialResource\RelationManagers;
+use App\Filament\Resources\PartnerResource\Pages;
+use App\Filament\Resources\PartnerResource\RelationManagers;
 use App\Forms\Components\SelectStatus;
-use App\Models\Testimonial;
+use App\Models\Partner;
 use App\Tables\Columns\StatusColumn;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -15,32 +15,30 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class TestimonialResource extends Resource
+class PartnerResource extends Resource
 {
-    protected static ?string $model = Testimonial::class;
+    protected static ?string $model = Partner::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-megaphone';
+    protected static ?string $navigationIcon = 'heroicon-o-user';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+                Forms\Components\FileUpload::make('image')
+                    ->image()
+                    ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->columnSpanFull()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('company')
-                    ->label('Location')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('role')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\Textarea::make('message')
+                Forms\Components\TextInput::make('website')
+                    ->url()
                     ->required()
-                    ->columnSpanFull(),
+                    ->maxLength(255),
                 SelectStatus::make('status')
-                    ->required()
+                    ->native(false)
+                    ->required(),
             ]);
     }
 
@@ -50,15 +48,11 @@ class TestimonialResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('company')
-                    ->label('Location')
+                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('website')
                     ->searchable(),
                 StatusColumn::make('status')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -92,10 +86,9 @@ class TestimonialResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListTestimonials::route('/'),
-            'create' => Pages\CreateTestimonial::route('/create'),
-            'view' => Pages\ViewTestimonial::route('/{record}'),
-            'edit' => Pages\EditTestimonial::route('/{record}/edit'),
+            'index' => Pages\ListPartners::route('/'),
+            'create' => Pages\CreatePartner::route('/create'),
+            'edit' => Pages\EditPartner::route('/{record}/edit'),
         ];
     }
 }

@@ -5,48 +5,21 @@ import LeafIcon from '@/Shared/Icons/LeafIcon.vue';
 import BadgeIcon from '@/Shared/Icons/BadgeIcon.vue';
 import PrimaryButton from '@/Farms/Components/Buttons/PrimaryButton.vue';
 import { ArrowLeftIcon, ArrowRightIcon, MinusIcon, PlusIcon, StarIcon } from '@heroicons/vue/24/solid';
+import HeroSection from './Partials/HeroSection.vue';
+import AboutSection from './Partials/AboutSection.vue';
 
-defineProps({});
+defineProps({
+    
+});
 
 </script>
 
 <template>
     <Head title="Welcome" />
     <GuestLayout>
-        <section style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('/assets/group/images/banners/tomato-harvesters.png');"
-            class="h-[110vh] bg-[15%] bg-cover no-repeat" 
-        >
-            <div class="max-w-7xl mx-auto flex items-end  h-full pb-20">
-                <div class="w-10/12 space-y-10">
-                    <div class="space-y-3">
-                        <p class="text-[74px] leading-[80px] font-semibold  text-white"><span class="font-playfair text-accent italic ">Organic</span> food products from the ground to your table.</p>
-                        <p class="text-xl w-3/4 text-white">From precision farming to smart irrigation our platform offers a suite of tools designed to the enhance efficiency and increase yields</p>
-                    </div>
+        <HeroSection />
 
-                    <PrimaryButton class="pr-3 pl-7 py-3 group font-semibold bg-primary text-white">    
-                        <span class="">Contact Us</span>
-                        <span class="flex items-center justify-center text-white duration-300 group-hover:text-primary group-hover:bg-white  w-10 h-10 rounded-full bg-white/30">
-                            <ArrowRightIcon class="w-5 h-auto" />
-                        </span>
-                    </PrimaryButton>
-                </div>
-            </div>
-        </section>
-
-        <div class="py-20 max-w-[80%] mx-auto space-y-10">
-            <div class="text-center space-y-2">
-                <img src="/assets/farms/images/icon.png" class="mx-auto" alt="">
-                <p class="text-primary text-lg font-semibold">Jocoh Farms</p>
-            </div>
-
-            <div class="w-[65%] mx-auto space-y-5">
-                <h2 class="!font-inter text-4xl text-center font-bold">The best producer of <span class="text-[#F9B132] font-playfair italic font-medium">organic</span> food imported and shipped across Africa</h2>
-
-                <div class="w-3/4 mx-auto">
-                    <img src="/assets/farms/images/african-network-map.png"  alt="">
-                </div>
-            </div>
-        </div>
+        <AboutSection />
 
         <div class="py-20 mb-20 max-w-[80%] mx-auto space-y-10">
             <div>

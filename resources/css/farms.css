@@ -13,3 +13,7 @@
         font-family: "Playfair Display", serif !important;
     }
 }
+
+.hero-title span {
+    @apply font-playfair text-accent italic;
+}
