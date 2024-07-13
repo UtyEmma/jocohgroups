@@ -17,7 +17,7 @@ class Product extends Model
     protected $fillable = ['title', 'slug', 'image', 'excerpt', 'description', 'price', 'status'];
 
     function setPlatforms(): void {
-        $this->platforms = [Platforms::STORES];
+        $this->platforms = [Platforms::STORES, Platforms::FARMS];
     }
 
     protected function image(): Attribute {
