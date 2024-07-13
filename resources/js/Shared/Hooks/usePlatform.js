@@ -24,7 +24,7 @@ export default function usePlatform (page = '') {
         const val = content.data[value] ?? null;
 
         if(val) {
-            if(typeof val == 'string') return `${prepend}${formatText(val, element, classes)}${append}`;
+            if(typeof val == 'string') return formatText(val, { append, classes, element, prepend });
             if(Array.isArray(val) && item.length > 0) return val;
             return val;
         }
@@ -36,8 +36,9 @@ export default function usePlatform (page = '') {
 
 }
 
-const formatText = (text, { element = 'span', classes = '', append = '', prepend = ''}) => {
-    return `${prepend}${text.replace(/\*\*(.*?)\*\*/g, `<${element} >$1</${element}>`)}${append}`
+const formatText = (text, items = {}) => {
+    const options = { element: 'span', classes: '', append: '', prepend: '', ...items}
+    return `${options.prepend}${text.replace(/\*\*(.*?)\*\*/g, `<${options.element} >$1</${options.element}>`)}${options.append}`
 }
 
 function defaultValue(value, element, classes = null) {

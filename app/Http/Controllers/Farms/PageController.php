@@ -17,6 +17,7 @@ class PageController extends Controller
         $testimonials = Testimonial::isActive()->limit(3)->get();
         $partners = Partner::isActive()->get();
         $processes = Process::isActive()->get();
+        
         return Inertia::render('Home/Index', compact(['faqs', 'testimonials', 'partners', 'processes']));
     }
 }

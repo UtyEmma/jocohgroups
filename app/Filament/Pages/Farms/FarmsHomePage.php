@@ -129,7 +129,8 @@ class FarmsHomePage extends Page implements HasForms {
                             ->schema([
                                 TextInput::make('title'),
                                 TextInput::make('heading'),
-                                Textarea::make('caption')
+                                Textarea::make('caption'),
+                                FileUpload::make('image')
                             ]),
                     ])
                     ->addable(true)

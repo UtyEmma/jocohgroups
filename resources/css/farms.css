@@ -15,5 +15,9 @@
 }
 
 .hero-title span {
-    @apply font-playfair text-accent italic;
+    @apply font-playfair text-accent italic !important;
+}
+
+.heading-title span {
+    @apply text-[#F9B132] font-playfair italic font-medium !important;
 }
