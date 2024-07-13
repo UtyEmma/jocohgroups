@@ -6,6 +6,9 @@ import FacebookIcon from '@/Shared/Icons/FacebookIcon.vue';
 import TwitterIcon from '@/Shared/Icons/TwitterIcon.vue';
 import LinkedInIcon from '@/Shared/Icons/LinkedInIcon.vue';
 import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
+import usePlatform from '@/Shared/Hooks/usePlatform';
+
+const { settings } = usePlatform()
 
 </script>
 
@@ -55,7 +58,7 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                             </div>
 
                             <div>
-                                <a href="#" class="hover:text-white duration-500" >+234 818 329 5257</a>
+                                <a href="#" class="hover:text-white duration-500" >{{settings.contact_phone}}</a>
                             </div>
                         </li>
                         <li class="flex space-x-2 items-start">
@@ -64,8 +67,7 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                             </div>
 
                             <div>
-                                <a href="#" class="hover:text-white duration-500 block" >info@jocohgroup.com</a>
-                                <a href="#" class="hover:text-white duration-500 block" >jocohgroup@gmail.com</a>
+                                <a href="#" class="hover:text-white duration-500 block" >{{settings.site_email}}</a>
                             </div>
                         </li>
                         <li class="flex space-x-2 items-center">
@@ -74,30 +76,30 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                             </div>
 
                             <div>
-                                <a href="#" class="hover:text-white duration-500" >Old park ogbete, Enugu State Nigeria</a>
+                                <a href="#" class="hover:text-white duration-500" >{{settings.contact_address}}</a>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="py-10 pl-10 space-y-5" >
                     <ul class="space-y-5 items-center" >
-                        <li>
-                            <a href="#" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                        <li v-if="settings.facebook_link">
+                            <a :href="settings.facebook_link" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <FacebookIcon class="fill-white size-4"/>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                        <li v-if="settings.twitter_link">
+                            <a :href="settings.twitter_link" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <TwitterIcon class="fill-white size-4"/>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                        <li v-if="settings.linkedin_link">
+                            <a :href="settings.linkedin_link" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <LinkedInIcon class="fill-white size-4"/>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                        <li v-if="settings.instagram_link">
+                            <a :href="settings.instagram_link" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <InstagramIcon class="fill-white size-4"/>
                             </a>
                         </li>
@@ -106,7 +108,7 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
             </div>
 
             <div class="text-center pt-10 text-[#C9D7D2]">
-                <p>© Copyright - <a href="" class="text-[#F2C200]" >Jocoh Group</a> | 2024</p>
+                <p>© Copyright - <a :href="route('stores.home')" class="text-[#F2C200]" >{{settings.company_name}}</a> | 2024</p>
             </div>
         </div>
     </section>

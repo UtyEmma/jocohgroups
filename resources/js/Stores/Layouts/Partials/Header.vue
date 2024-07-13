@@ -6,12 +6,15 @@
     import TwitterIcon from "@/Shared/Icons/TwitterIcon.vue";
     import LinkedInIcon from "@/Shared/Icons/LinkedInIcon.vue";
     import { Link } from '@inertiajs/vue3';
+    import usePlatform from "@/Shared/Hooks/usePlatform";
+
+    const { settings } = usePlatform()
 </script>
 
 <template>
     <header>
         <div class="flex">
-            <div class="w-8/12 py-4 text-white space-x-10 flex bg-secondary pl-[16%]">
+            <div class="w-10/12 py-4 text-white space-x-10 flex bg-secondary pl-[10%]">
                 <div>
                     <p>That’s right, we only sell 100% organic</p>
                 </div>
@@ -20,27 +23,27 @@
                 
                 <div class="flex items-center space-x-3">
                     <LocationIcon class="size-5 stroke-white" />
-                    <span>Lagos Nigeria</span>
+                    <span>{{settings.contact_address}}</span>
                 </div>
                 
                 <div class="border-l-2"></div>
                 
                 <div class="flex items-center space-x-3">
                     <CallIcon class="size-5 fill-white" />
-                    <span>(808) 555-0111</span>
+                    <span>{{settings.contact_phone}}</span>
                 </div>
             </div>
             <div class="w-4/12 bg-primary flex space-x-7 items-center pl-[5%]">
-                <a href="#">
+                <a  href="#">
                     <SkypeIcon class="size-5 fill-white" />
                 </a>
-                <a href="#">
+                <a v-if="settings.facebook_link" :href="settings.facebook_link">
                     <FacebookIcon class="size-5 fill-white" />
                 </a>
-                <a href="#">
+                <a v-if="settings.twitter_link" :href="settings.twitter_link">
                     <TwitterIcon class="size-5 fill-white" />
                 </a>
-                <a href="#">
+                <a v-if="settings.linkedin_link" :href="settings.linkedin_link" >
                     <LinkedInIcon class="size-5 fill-white" />
                 </a>
             </div>

@@ -20,7 +20,7 @@ class Team extends Model
     protected function image(): Attribute {
         return Attribute::make(
             get: function(string $value) {
-                if(file_exists('storage/'.$value)) return asset('storage/'.$value);
+                if(file_exists("storage/{$value}")) return asset("storage/{$value}");
                 if(file_exists($value)) return asset($value);
                 return $value;
             },
@@ -35,8 +35,7 @@ class Team extends Model
         'status' => Status::ACTIVE
     ];
 
-    function setPlatforms(): void
-    {
+    function setPlatforms(): void {
         $this->platforms = [Platforms::GROUP];
     }
 }

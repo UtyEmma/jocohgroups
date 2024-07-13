@@ -2,6 +2,7 @@
 
 namespace App\Filament\Pages;
 
+use App\Models\Platform;
 use Dotswan\FilamentCodeEditor\Fields\CodeEditor;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
@@ -10,6 +11,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 
 class Settings extends Page implements HasForms {
@@ -19,15 +21,11 @@ class Settings extends Page implements HasForms {
     protected static string $view = 'filament.pages.settings';
 
     public ?array $data = [];
+    public Platform $platform;
 
     function mount(){
-        $platform = request()->platform()->model();
-        $settings = collect($platform->settings);
-
-        $this->form->fill($settings->reduce(function($carry, $setting, $index) {
-            $carry[$index] = $setting['value'];
-            return $carry;
-        }, []));
+        $this->platform = request()->platform()->model();        
+        $this->form->fill($this->platform->settings);
     }
 
     function form(Form $form) : Form{
@@ -92,16 +90,13 @@ class Settings extends Page implements HasForms {
     }
 
     public function submit(): void {
-        $state = $this->form->getState();
-        
-        // foreach($state as $key => $item) {
-        //     Setting::where('slug', $key)->update(['value' => $item]);
-        // }
+        $this->platform->settings = $this->form->getState();
+        $this->platform->save();
 
-        // Notification::make()
-        //     ->success()
-        //     ->title('Update Successful')
-        //     ->send();
+        Notification::make()
+            ->success()
+            ->title('Update Successful')
+            ->send();
     }
     
 }

@@ -19,11 +19,4 @@ class Platform extends Model {
         'slug' => Platforms::class
     ];
 
-    protected function settings(): Attribute {
-        return Attribute::make(
-            get: function(string $item) {
-                return collect(json_decode($item))->reduce(fn($carry, $value, $index) => array_merge($carry, [$index => $value->value]) , []);                
-            },
-        );
-    }
 }

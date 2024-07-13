@@ -7,6 +7,7 @@ import PrimaryButton from '@/Farms/Components/Buttons/PrimaryButton.vue';
 import { ArrowLeftIcon, ArrowRightIcon, MinusIcon, PlusIcon, StarIcon } from '@heroicons/vue/24/solid';
 
 defineProps({});
+
 </script>
 
 <template>

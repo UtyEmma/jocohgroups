@@ -83,9 +83,21 @@ onMounted(() => {
                             <div class="text-xl font-bold">{{item.title}}</div>
                         </button>
                         
-                        <div class="space-y-2 h-full" v-if="step == index">
-                            <p class="text-muted">{{item.caption}}</p>
-                            <div class="py-[3px] bg-gradient-to-r from-primary via-primary-100 to-primary-50"></div>
+                        <div class="h-auto overflow-hidden">
+                            <!-- <Transition
+                                class="duration-1000 h-auto"
+                                name="custom-classes"
+                                enter-from-class="-translate-y-full"
+                                enter-to-class="translate-y-0"
+                                leave-from-class="translate-y-0"
+                                leave-to-class="-translate-y-full"
+                                leave-active-class=""
+                            > -->
+                                <div class="space-y-2 duration-1000" v-if="step == index">
+                                    <p class="text-muted">{{item.caption}}</p>
+                                    <div class="py-[3px] bg-gradient-to-r from-primary via-primary-100 to-primary-50"></div>
+                                </div>
+                            <!-- </Transition> -->
                         </div>
                     </div>
                 </div>
