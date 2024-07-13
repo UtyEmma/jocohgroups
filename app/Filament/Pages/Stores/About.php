@@ -29,7 +29,7 @@ class About extends Page implements HasForms {
 
     function mount(){     
         $this->platform = request()->platform()->model();   
-        $this->form->fill($this->platform->content);
+        $this->form->fill($this->platform->content['about'] ?? []);
     }
 
     public static function canAccess(): bool {

@@ -40,23 +40,34 @@ onMounted(() => {
         </div>
 
         <div>
-            <div class="grid grid-cols-4 mb-5">
-                <div v-for="(journey, index) in steps" class="pe-5" >
-                    <div v-if="index == step">
-                        <div class="bg-gray-100 p-4 h-80 mb-3 bg-cover bg-center" 
-                            :style="{
-                                backgroundImage: `url(${format(journey.image, {prepend: 'storage/'})})`
-                            }"
-                        ></div>
-                        <p class="font-semibold">{{journey.title}}</p>
-                    </div>
+            <div class="grid grid-cols-4 mb-5 overflow-hidden">
+                <div v-for="(journey, index) in steps" class="" >
+                    <Transition
+                        class="duration-1000 "
+                        name="custom-classes"
+                        enter-from-class="-translate-x-full opacity-0"
+                        enter-to-class="translate-x-0 opacity-full"
+                        leave-from-class="translate-x-0 opacity-full"
+                        leave-to-class="translate-x-full"
+                        leave-active-class="opacity-[300]"
+                    >
+                        <div v-if="index == step">
+                            <div class="bg-gray-100 p-4 h-80 mb-3 bg-cover bg-center" 
+                                :style="{
+                                    backgroundImage: `url(${format(journey.image, {prepend: 'storage/'})})`
+                                }"
+                            ></div>
+                            <p class="font-semibold">{{journey.title}}</p>
+                        </div>
+                    </Transition>
+
                 </div>
             </div>
 
             <div class=" grid grid-cols-4 mb-3">
                 <div  v-for="(journey, index) in steps" class="space-y-2">
                     <div class="h-[4px] bg-gray-200 w-full">
-                        <div class="h-full bg-black w-10"></div>
+                        <div :class="`h-full transition-all duration-500 bg-black ${index <= step ? 'w-16' : 'w-6'}`"></div>
                     </div>
                     <p>{{ journey.date }}</p>
                 </div>

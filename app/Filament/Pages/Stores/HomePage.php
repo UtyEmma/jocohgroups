@@ -30,7 +30,7 @@ class HomePage extends Page implements HasForms {
 
     function mount(){     
         $this->platform = request()->platform()->model();   
-        $this->form->fill($this->platform->content);
+        $this->form->fill($this->platform->content['home'] ?? []);
     }
 
     public static function canAccess(): bool {
