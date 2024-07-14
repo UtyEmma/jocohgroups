@@ -14,11 +14,11 @@ const date = new Date();
 </script>
 
 <template>
-    <section class="bg-secondary py-20 bg-[url(/assets/farms/images/windmill.png)] bg-cover bg-bottom">
+    <section class="bg-secondary md:py-20 py-10 bg-[url(/assets/farms/images/windmill.png)] bg-cover bg-bottom">
         <div class="max-w-6xl mx-auto space-y-10">
 
-            <div class="flex justify-between items-center mb-10">
-                <div class="w-1/3 text-[#C9D7D2] space-y-5">
+            <div class="md:flex px-4 space-y-5 md:space-y-0 justify-between items-center mb-10">
+                <div class="md:w-1/3 text-[#C9D7D2] space-y-5">
                     <img src="/assets/farms/images/logo.png" class="w-32" alt="">
                     <div>
                         <p>{{settings.site_description}}</p>
@@ -50,8 +50,9 @@ const date = new Date();
                     </ul>
                 </div>
             </div>
-            <div class="flex divide-x border-y text-white border-[#ffffff30] divide-[#ffffff30]">
-                <div class="py-10 pe-20 space-y-5" >
+
+            <div class="md:flex px-4 md:divide-x space-y-10 py-10 md:py-0 md:space-y-0 border-y text-white border-[#ffffff30] divide-[#ffffff30]">
+                <div class="md:py-10 md:pe-20 space-y-5" >
                     <p class="text-xl " >Businesses</p>
 
                     <ul class="space-y-2 font-light text-[#C9D7D2]" >
@@ -67,7 +68,7 @@ const date = new Date();
                     </ul>
                 </div>
 
-                <div class="py-10 pl-20 pr-32 space-y-5" >
+                <div class="md:py-10 md:pl-20 md:pr-32 space-y-5" >
                     <p class="text-xl" >Company</p>
 
                     <ul class="space-y-2 font-light text-[#C9D7D2]" >
@@ -83,7 +84,7 @@ const date = new Date();
                     </ul>
                 </div>
 
-                <div class="py-10 pl-16 pr-20 space-y-5" >
+                <div class="md:py-10 md:pl-16 md:pr-20 space-y-5" >
                     <p class="text-xl" >Contact Info.</p>
 
                     <ul class="space-y-3 font-light text-[#C9D7D2]" >
@@ -116,12 +117,12 @@ const date = new Date();
                         </li>
                     </ul>
                 </div>
-                <div class="py-10 pl-10 space-y-5" >
+                <div class="hidden md:block py-10 pl-10 space-y-5" >
                     
                 </div>
             </div>
 
-            <div class="text-center pt-10 text-[#C9D7D2]">
+            <div class="text-center md:pt-10 text-sm md:text-base pb-20 md:pb-0 text-[#C9D7D2]">
                 <p>© Copyright - <a :href="route('farms.home')" class="text-[#F2C200]" >{{settings.company_name}}</a> | {{date.getFullYear()}}</p>
             </div>
         </div>

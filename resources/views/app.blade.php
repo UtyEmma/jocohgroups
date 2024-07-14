@@ -34,13 +34,13 @@
             @default
         @endswitch
 
+        {!! $platform->settings['header_scripts'] !!}
+
         @inertiaHead
     </head>
     <body >
         @inertia
 
-        <div>
-            {{request()->platform}}
-        </div>
+        {!! $platform->settings['footer_scripts'] !!}
     </body>
 </html>

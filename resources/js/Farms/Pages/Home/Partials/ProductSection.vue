@@ -34,24 +34,24 @@ const active = ref('')
 
 <template>
     <div class="py-20 bg-[#FAF7F0]">
-        <div class="max-w-[80%] mx-auto space-y-10">
-            <div class="space-y-5 w-3/5 text-center mx-auto">
+        <div class="md:max-w-[80%] px-4 mx-auto space-y-10">
+            <div class="md:space-y-5 md:w-3/5 text-center mx-auto">
                 <p class="uppercase text-primary">{{ title }}</p>
-                <h2 class="!font-inter text-5xl font-semibold heading-title" v-html="heading"></h2>
-                <p class="text-muted md:px-10">{{ caption }}</p>
+                <h2 class="!font-inter text-2xl md:text-5xl font-semibold heading-title" v-html="heading"></h2>
+                <p class="text-muted text-sm md:text-base md:px-10">{{ caption }}</p>
             </div>
 
-            <div class="flex justify-center gap-5">
+            <div class="flex justify-center gap-2 md:gap-5">
                 <div>
-                    <button v-on:click="active = ''" class="px-6 py-2 font-medium" :class="active == '' ? 'bg-[#4CAE47] text-white' : 'bg-white'">All</button>
+                    <button v-on:click="active = ''" class="md:px-6 px-4 md:py-2 py-1 text-sm md:text-base duration-500 hover:bg-[#4CAE47] hover:text-white font-medium text-muted" :class="active == '' ? 'bg-[#4CAE47] text-white' : 'bg-white'">All</button>
                 </div>
                 
                 <div v-for="category in categories">
-                    <button  v-on:click="active = category.slug" class="px-6 py-2  duration-500 hover:bg-[#4CAE47] hover:text-white font-medium text-muted" :class="category.slug == active ? 'text-white bg-[#4CAE47]' : 'bg-white'">{{category.name}}</button>
+                    <button  v-on:click="active = category.slug" class="md:px-6 px-4 md:py-2 py-1 text-sm md:text-base  duration-500 hover:bg-[#4CAE47] hover:text-white font-medium text-muted" :class="category.slug == active ? 'text-white bg-[#4CAE47]' : 'bg-white'">{{category.name}}</button>
                 </div>
             </div>
 
-            <div v-if="active == ''" class="grid grid-cols-3 gap-20">
+            <div v-if="active == ''" class="grid md:grid-cols-3 gap-10 md:gap-20">
                 <div v-for="product in products">
                     <div class="group p-4 bg-white w-full box-border aspect-[9/11] relative">
                         <img :src="product.image" :alt="product.title" >

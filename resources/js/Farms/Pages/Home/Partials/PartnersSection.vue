@@ -29,19 +29,19 @@ const caption = render({
 </script>
 
 <template>
-    <div class="py-20 bg-[#FAF7F0]">
-        <div class="mx-auto max-w-[80%] space-y-10">
-            <div class="space-y-5 w-3/5 text-center mx-auto">
+    <div class="md:py-20 py-10 bg-[#FAF7F0]">
+        <div class="mx-auto md:max-w-[80%] px-4 space-y-5 md:space-y-10">
+            <div class="space-y-2 md:space-y-5 md:w-3/5 text-center mx-auto">
                 <p class="uppercase text-primary">{{title}}</p>
-                <h2 class="!font-inter text-5xl font-semibold heading-title" v-html="heading"></h2>
-                <p class="text-muted md:px-10">{{caption}}</p>
+                <h2 class="!font-inter text-2xl md:text-5xl font-semibold heading-title" v-html="heading"></h2>
+                <p class="text-muted text-sm md:px-10">{{caption}}</p>
             </div>
 
-            <div class="border border-gray-200"></div>
+            <div class="border-[1px] border-gray-200"></div>
 
-            <div class="flex flex-wrap justify-center space-x-10">
-                <a :href="partner.website" v-for="partner in partners" target="_blank" class="block">
-                    <div  class="w-[140px] h-[140px] bg-white flex items-center justify-center">
+            <div class="flex flex-wrap justify-center gap-5 md:gap-10">
+                <a :href="partner.website" v-for="partner in partners" target="_blank" class="block w-1/4">
+                    <div  class="md:w-[140px] md:h-[140px] bg-white flex items-center aspect-square md:aspect-auto justify-center">
                         <img :src="partner.image" class="w-3/4" alt="">
                     </div>
                 </a>

@@ -43,16 +43,16 @@ const button_link = render({
 </script>
 
 <template>
-    <div class="py-20 bg-secondary space-y-20 bg-[url(/assets/farms/images/ridges-transparent.png)]">
-        <div class="mx-auto max-w-[80%]">
-            <div class="flex items-center mt-3">
-                <div class="w-4/6">
+    <div class="md:py-20 py-10 bg-secondary space-y-10 md:space-y-20 bg-[url(/assets/farms/images/ridges-transparent.png)]">
+        <div class="mx-auto md:max-w-[80%] px-4">
+            <div class="md:flex items-center space-y-5 md:space-y-0 mt-3">
+                <div class="md:w-4/6">
                     <p class="uppercase text-[#4CAE47] mb-3">{{ title }}</p>
-                    <h2 class="!font-inter text-5xl font-semibold heading-title text-white w-4/5" v-html="heading"></h2>
+                    <h2 class="!font-inter text-2xl md:text-5xl font-semibold heading-title text-white md:w-4/5" v-html="heading"></h2>
                 </div>
 
-                <div class="w-2/6 space-y-4">
-                    <p class="text-white" >{{caption}}</p>
+                <div class="md:w-2/6 space-y-4">
+                    <p class="text-white text-sm font-light md:text-base" >{{caption}}</p>
 
                     <a :href="route(button_link)" class="block">
                         <PrimaryButton class="pr-3 pl-7 py-2 group font-semibold bg-primary text-white">    
@@ -67,9 +67,9 @@ const button_link = render({
         </div>
 
         <div class="overflow-x-auto scrollbar-none">
-            <div class="pl-[10%]">
-                <div class="flex gap-10">
-                    <div v-for="process in processes" class="shrink-0 w-[344px]">
+            <div class="pl-4 md:pl-[10%]">
+                <div class="flex gap-5 md:gap-10">
+                    <div v-for="process in processes" class="shrink-0 w-full md:w-[344px]">
                         <div class="bg-white w-full box-border aspect-[9/11] relative">
                             <img :src="process.image" class="h-full w-full object-cover" alt="">
                             <div class="z-50 absolute top-0 bottom-0 left-0 right-0  h-full items-end text-white flex"
@@ -85,14 +85,14 @@ const button_link = render({
             </div>
         </div>
 
-        <div class="mx-auto max-w-[80%] flex space-x-7 ">
+        <div class="mx-auto md:max-w-[80%] px-4 flex space-x-5">
             <div>
-                <button class="size-14 border border-white/20 rounded-full flex justify-center items-center ">
+                <button class="md:size-14 size-12 border border-white/20 rounded-full flex justify-center items-center ">
                     <ArrowLeftIcon class="w-6 text-white/20" />
                 </button>
             </div>
             <div>
-                <button class="size-14 border border-white/20 rounded-full flex justify-center items-center ">
+                <button class="md:size-14 size-12 border border-white/20 rounded-full flex justify-center items-center ">
                     <ArrowLeftIcon class="w-6 text-white rotate-180" />
                 </button>
             </div>

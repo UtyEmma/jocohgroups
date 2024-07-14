@@ -33,17 +33,17 @@ const active = ref(0)
 </script>
 
 <template>
-    <div class="py-20 max-w-[80%] mx-auto space-y-20">
-        <div class="space-y-5 w-3/5 text-center mx-auto">
+    <div class="md:py-20 py-10 md:max-w-[80%] px-4 mx-auto space-y-10 md:space-y-20">
+        <div class="space-y-5 md:w-3/5 text-center mx-auto">
             <p class="uppercase text-primary">{{title}}</p>
-            <h2 class="!font-inter text-5xl font-semibold heading-title" v-html="heading"></h2>
+            <h2 class="!font-inter text-2xl md:text-5xl font-semibold heading-title" v-html="heading"></h2>
             <p class="text-muted md:px-10">{{caption}}</p>
         </div>
 
-        <div class="flex gap-10">
-            <div class="w-3/5">
-                <div v-for="(testimonial, index) in testimonials" class="h-[500px] bg-[url(/assets/farms/images/farmer-in-a-farm.jpeg)] bg-cover bg-center p-5 flex items-end">
-                    <div class="p-5 bg-white w-full space-y-5">
+        <div class="md:flex space-y-5 md:space-y-10">
+            <div class="md:w-3/5">
+                <div v-for="(testimonial, index) in testimonials" class="h-[450px] md:h-[500px] bg-[url(/assets/farms/images/farmer-in-a-farm.jpeg)] bg-cover bg-center p-3 flex items-end">
+                    <div class="p-3 bg-white w-full space-y-5">
                         <div class="flex space-x-2 items-center">
                             <div class="flex text-accent">
                                 <StarIcon class="size-5" />
@@ -67,22 +67,22 @@ const active = ref(0)
                     </div>
                 </div>
             </div>
-            <div class="w-1/5">
+            <div class="md:w-1/5 hidden">
                 <div class="h-[500px] bg-[url(/assets/farms/images/cake-icing.jpeg)] bg-cover bg-center"></div>
             </div>
-            <div class="w-1/5">
+            <div class="md:w-1/5 hidden">
                 <div class="h-[500px] bg-[url(/assets/farms/images/black-ladies.jpeg)] bg-cover bg-center"></div>
             </div>
         </div>
 
         <div class="flex justify-center space-x-5">
             <div>
-                <button class="size-14 border group border-gray-200 rounded-full flex justify-center items-center ">
+                <button class="md:size-14 size-10 border group border-gray-200 rounded-full flex justify-center items-center ">
                     <ArrowLeftIcon class="w-6 text-gray-200 duration-500 group-hover:text-[#4CAE47]" />
                 </button>
             </div>
             <div>
-                <button class="size-14 border border-gray-200 group rounded-full flex justify-center items-center ">
+                <button class="md:size-14 size-10 border border-gray-200 group rounded-full flex justify-center items-center ">
                     <ArrowRightIcon class="w-6 text-gray-200 duration-500 group-hover:text-[#4CAE47]" />
                 </button>
             </div>
