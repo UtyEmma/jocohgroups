@@ -8,13 +8,16 @@
     import { Link } from '@inertiajs/vue3';
     import usePlatform from "@/Shared/Hooks/usePlatform";
 import { Bars2Icon } from "@heroicons/vue/24/solid";
+import { ref } from "vue";
 
     const { settings } = usePlatform()
+
+    const show = ref(false)
 </script>
 
 <template>
     <header>
-        <div class="md:flex">
+        <div class="md:flex ">
             <div class="md:w-8/12 py-4 text-white md:space-x-10 space-y-3 md:space-y-0 flex flex-col md:flex-row items-center bg-secondary md:pl-[16%]">
                 <div>
                     <p class="text-sm md:text-base">That’s right, we only sell 100% organic</p>
@@ -52,16 +55,34 @@ import { Bars2Icon } from "@heroicons/vue/24/solid";
             </div>
         </div>
 
-        <div class="md:flex mx-auto px-4 py-5 md:max-w-[80%] justify-between items-center">
+        <div class="md:flex mx-auto px-4 py-5 md:max-w-[80%] relative justify-between items-center">
             <div class="flex space-x-5 justify-between md:justify-normal items-center">
                 <Link :href="route('stores.home')">
                     <img src="/assets/stores/images/logo.png" class="h-8 md:h-[40px]" alt="">
                 </Link>
 
                 <div class="block md:hidden">
-                    <button class="bg-primary p-2 active:scale-90 duration-500">
+                    <button v-on:click="show = !show" class="bg-primary p-2 active:scale-90 duration-500">
                         <Bars2Icon class="h-6 w-6 text-white" />
                     </button>
+
+                    <ul v-if="show" v-on:click.outside="show = false" class="absolute z-50 border-y px-4 py-3 shadow-sm divide-y-[1px] top-[100%] left-0 right-0 bg-white">
+                        <li>
+                            <a class="py-4 block" :href="route('stores.home')">Home</a>
+                        </li>
+                        <li >
+                            <a class="py-4 block" :href="route('stores.about')">About Us</a>
+                        </li>
+                        <li >
+                            <a class="py-4 block" :href="route('stores.products')">Products</a>
+                        </li>
+                        <li >
+                            <a class="py-4 block" href="">FAQs</a>
+                        </li>
+                        <li >
+                            <a class="py-4 block" href="">Contact Us</a>
+                        </li>
+                    </ul>
                 </div>
 
                 <ul class="hidden md:flex space-x-5 border-l-2 px-5 h-full items-center">
