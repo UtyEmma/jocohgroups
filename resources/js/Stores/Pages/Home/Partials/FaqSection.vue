@@ -23,13 +23,13 @@ defineProps({
 </script>
 
 <template>
-    <div class="py-20 max-w-[80%] mx-auto space-y-20">
+    <div class="md:py-20 py-10 md:max-w-[80%] px-4 mx-auto space-y-10 md:space-y-20">
         <div class="space-y-4">
-            <p class="text-4xl font-bold leading-tight">{{ title }}</p>
-            <p class="mx-auto text-lg text-muted font-medium leading-[23.04px]">{{ caption }}</p>
+            <p class="text-2xl md:text-4xl font-bold leading-tight">{{ title }}</p>
+            <p class="mx-auto md:text-lg text-muted font-medium leading-[23.04px]">{{ caption }}</p>
         </div>
 
-        <div class="space-y-10">
+        <div class="md:space-y-10 space-y-5">
             <FaqItem v-for="(faq) in faqs" :question="faq.question" :answer="faq.answer" />
         </div>
     </div>

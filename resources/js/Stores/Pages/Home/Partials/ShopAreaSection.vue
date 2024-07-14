@@ -31,13 +31,13 @@ const left_image = render({
 </script>
 
 <template>
-    <div class="py-20 space-y-10 max-w-[80%] mx-auto">
-        <div class="space-y-4">
-            <p class="text-4xl font-bold text-center leading-tight">{{ title }}</p>
-            <p class="text-center w-3/4 mx-auto text-muted font-medium">{{ caption }}</p>
+    <div class="md:py-20 py-10 px-4 md:space-y-10 space-y-5 md:max-w-[80%] mx-auto">
+        <div class="md:space-y-4 space-y-2">
+            <p class="md:text-4xl text-2xl font-bold text-center leading-tight">{{ title }}</p>
+            <p class="text-center md:w-3/4 mx-auto text-muted font-medium">{{ caption }}</p>
         </div>
 
-        <div class="grid grid-cols-2 gap-x-10">
+        <div class="grid grid-cols-2 gap-2 md:gap-x-10">
             <div>
                 <div 
                     class="w-full aspect-[4/3] bg-bottom bg-cover no-repeat" 

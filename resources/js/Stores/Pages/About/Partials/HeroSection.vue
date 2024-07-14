@@ -25,13 +25,13 @@ const image = render({
 </script>
 
 <template>
-    <div class="pt-20 bg-[#FFFBED]">
-        <div class="max-w-[80%] mx-auto">
-            <p class="text-muted font-semibold">{{ caption }}</p>
-            <h1 class="text-primary italic font-medium text-7xl md:leading-[78.26px] md:w-4/5">{{ title }}</h1>
+    <div class="md:pt-20 pt-10 bg-[#FFFBED]">
+        <div class="md:max-w-[80%] px-4 mx-auto">
+            <p class="text-muted md:text-base text-sm font-semibold">{{ caption }}</p>
+            <h1 class="text-primary italic font-medium text-2xl md:text-7xl md:leading-[78.26px] md:w-4/5">{{ title }}</h1>
 
-            <div class="ml-auto">
-                <div class="w-7/12 ml-auto" >
+            <div class="md:ml-auto">
+                <div class="md:w-7/12 md:ml-auto" >
                     <img :src="image" class="md:ml-20" alt="">
                 </div>
             </div>

@@ -57,14 +57,14 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="py-24 space-y-10">
-        <div class="w-7/12 mx-auto space-y-4">
-            <p class="text-4xl font-bold text-center leading-tight">{{ title }}</p>
-            <p class="text-center w-3/4 mx-auto text-lg text-muted font-medium leading-[23.04px]">{{ caption }}</p>
+    <div class="md:py-20 py-10 space-y-10">
+        <div class="md:w-7/12 px-4 mx-auto space-y-4">
+            <p class="md:text-4xl text-2xl font-bold text-center md:leading-tight">{{ title }}</p>
+            <p class="text-center md:w-3/4 mx-auto md:text-lg text-muted font-medium leading-[23.04px]">{{ caption }}</p>
         </div>
 
-        <div class="max-w-[80%] mx-auto md:px-20 px-4">
-            <div class="grid grid-cols-2 gap-x-16 items-center">
+        <div class="md:max-w-[80%] mx-auto md:px-20 px-4">
+            <div class="grid md:grid-cols-2 gap-5 md:gap-16 items-center">
                 <div>
                     <div v-for="(item, index) in steps">
                         <img  :src="format(item.image, {
@@ -73,31 +73,21 @@ onMounted(() => {
                     </div>
                 </div>
 
-                <div class="space-y-7">
+                <div class="md:space-y-7 space-y-4">
                     <div v-for="(item, index) in steps" :key="`slider-${index}`" class="space-y-2">
-                        <button @click="step = index" class="flex space-x-4 items-center">
+                        <button @click="step = index" class="flex space-x-2 md:space-x-4 items-center">
                             <div>
-                                <span class="w-12 h-12 flex items-center justify-center font-semibold text-xl text-white bg-primary rounded-full">{{index + 1}}</span>
+                                <span class="md:w-12 md:h-12 w-10 h-10 flex items-center justify-center font-semibold text-xl text-white bg-primary rounded-full">{{index + 1}}</span>
                             </div>
 
-                            <div class="text-xl font-bold">{{item.title}}</div>
+                            <div class="md:text-xl text-lg font-semibold">{{item.title}}</div>
                         </button>
                         
                         <div class="h-auto overflow-hidden">
-                            <!-- <Transition
-                                class="duration-1000 h-auto"
-                                name="custom-classes"
-                                enter-from-class="-translate-y-full"
-                                enter-to-class="translate-y-0"
-                                leave-from-class="translate-y-0"
-                                leave-to-class="-translate-y-full"
-                                leave-active-class=""
-                            > -->
-                                <div class="space-y-2 duration-1000" v-if="step == index">
-                                    <p class="text-muted">{{item.caption}}</p>
-                                    <div class="py-[3px] bg-gradient-to-r from-primary via-primary-100 to-primary-50"></div>
-                                </div>
-                            <!-- </Transition> -->
+                            <div class="space-y-2 duration-1000" v-if="step == index">
+                                <p class="text-muted md:text-base text-sm">{{item.caption}}</p>
+                                <div class="py-[3px] bg-gradient-to-r from-primary via-primary-100 to-primary-50"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -34,13 +34,13 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="py-20 mb-20 max-w-[80%] mx-auto space-y-28">
+    <div class="md:py-20 py-10 mb-20 px-4 md:max-w-[80%] mx-auto space-y-10 md:space-y-28">
         <div>
-            <p class="text-center bg-gradient-to-b from-black to-primary bg-clip-text text-transparent text-4xl font-bold" >{{ title }}</p>
+            <p class="text-center bg-gradient-to-b from-black to-primary bg-clip-text text-transparent text-xl md:text-4xl font-bold" >{{ title }}</p>
         </div>
 
         <div>
-            <div class="grid grid-cols-4 mb-5 overflow-hidden">
+            <div class="flex md:grid md:grid-cols-4 mb-5 overflow-hidden">
                 <div v-for="(journey, index) in steps" class="" >
                     <Transition
                         class="duration-1000 "
