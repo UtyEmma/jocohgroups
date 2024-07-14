@@ -6,8 +6,10 @@ use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Forms\Components\SelectStatus;
 use App\Models\Product;
+use App\Models\ProductCategory;
 use App\Tables\Columns\StatusColumn;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
@@ -43,15 +45,18 @@ class ProductResource extends Resource
                     ->placeholder('Slug')
                     ->unique(column: 'slug', ignoreRecord: true)
                     ->maxLength(255),
+                Select::make('category_id')
+                    ->label('Category')
+                    ->options(ProductCategory::pluck('name', 'id')),
+                Forms\Components\TextInput::make('price')
+                    ->numeric()
+                    ->default(null)
+                    ->prefix('₦'),
                 Forms\Components\Textarea::make('excerpt')
                     ->columnSpanFull(),
                 Forms\Components\RichEditor::make('description')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('price')
-                    ->numeric()
-                    ->default(null)
-                    ->prefix('₦'),
                 SelectStatus::make('status')
                     ->required()
                     ->native(false),

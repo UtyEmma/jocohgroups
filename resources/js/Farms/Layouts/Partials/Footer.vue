@@ -6,7 +6,11 @@ import FacebookIcon from '@/Shared/Icons/FacebookIcon.vue';
 import TwitterIcon from '@/Shared/Icons/TwitterIcon.vue';
 import LinkedInIcon from '@/Shared/Icons/LinkedInIcon.vue';
 import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
+import usePlatform from '@/Shared/Hooks/usePlatform';
 
+const {settings} = usePlatform()
+
+const date = new Date();
 </script>
 
 <template>
@@ -17,29 +21,29 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                 <div class="w-1/3 text-[#C9D7D2] space-y-5">
                     <img src="/assets/farms/images/logo.png" class="w-32" alt="">
                     <div>
-                        <p>We understand the challenges faced by farmers every day and recognize the pivotal role they play in sustaining communities and feeding the world.</p>
+                        <p>{{settings.site_description}}</p>
                     </div>
                 </div>
 
                 <div>
                     <ul class="flex space-x-3 items-center" >
-                        <li>
-                            <a href="#" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                        <li v-if="settings.facebook_link" >
+                            <a :href="settings.facebook_link" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <FacebookIcon class="fill-white size-4"/>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                        <li v-if="settings.twitter_link">
+                            <a :href="settings.twitter_link" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <TwitterIcon class="fill-white size-4"/>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                        <li v-if="settings.linkedin_link">
+                            <a :href="settings.linkedin_link" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <LinkedInIcon class="fill-white size-4"/>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                        <li v-if="settings.instagram_link">
+                            <a :href="settings.instagram_link" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <InstagramIcon class="fill-white size-4"/>
                             </a>
                         </li>
@@ -52,13 +56,13 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
 
                     <ul class="space-y-2 font-light text-[#C9D7D2]" >
                         <li>
-                            <a href="#" class="hover:text-white duration-500" >Jocoh Group</a>
+                            <a :href="route('group.home')" target="_blank" class="hover:text-white duration-500" >Jocoh Group</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:text-white duration-500" >Jocoh Farms</a>
+                            <a :href="route('farms.home')" target="_blank" class="hover:text-white duration-500" >Jocoh Farms</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:text-white duration-500" >Jocoh Stores</a>
+                            <a :href="route('stores.home')" target="_blank" class="hover:text-white duration-500" >Jocoh Stores</a>
                         </li>
                     </ul>
                 </div>
@@ -89,7 +93,7 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                             </div>
 
                             <div>
-                                <a href="#" class="hover:text-white duration-500" >+234 818 329 5257</a>
+                                <a href="#" class="hover:text-white duration-500" >{{settings.contact_phone}}</a>
                             </div>
                         </li>
                         <li class="flex space-x-2 items-start">
@@ -98,8 +102,7 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                             </div>
 
                             <div>
-                                <a href="#" class="hover:text-white duration-500 block" >info@jocohgroup.com</a>
-                                <a href="#" class="hover:text-white duration-500 block" >jocohgroup@gmail.com</a>
+                                <a href="#" class="hover:text-white duration-500 block" >{{settings.site_email}}</a>
                             </div>
                         </li>
                         <li class="flex space-x-2 items-center">
@@ -108,7 +111,7 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                             </div>
 
                             <div>
-                                <a href="#" class="hover:text-white duration-500" >Old park ogbete, Enugu State Nigeria</a>
+                                <a href="#" class="hover:text-white duration-500" >{{settings.contact_address}}</a>
                             </div>
                         </li>
                     </ul>
@@ -119,7 +122,7 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
             </div>
 
             <div class="text-center pt-10 text-[#C9D7D2]">
-                <p>© Copyright - <a href="" class="text-[#F2C200]" >Jocoh Group</a> | 2024</p>
+                <p>© Copyright - <a :href="route('farms.home')" class="text-[#F2C200]" >{{settings.company_name}}</a> | {{date.getFullYear()}}</p>
             </div>
         </div>
     </section>

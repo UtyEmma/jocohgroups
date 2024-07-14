@@ -15,7 +15,9 @@ defineProps({
     faqs: {},
     testimonials: {},
     partners: {},
-    processes: {}
+    processes: {},
+    categories: {},
+    products: {}
 });
 
 </script>
@@ -29,7 +31,7 @@ defineProps({
 
         <MissionSection />
 
-        <ProductSection />
+        <ProductSection :products="products" :categories="categories" />
 
         <ProcessSection :processes="processes" />
 

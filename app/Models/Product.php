@@ -14,7 +14,7 @@ class Product extends Model
 {
     use HasFactory, HasUuids, HasStatus, HasPlatform;
 
-    protected $fillable = ['title', 'slug', 'image', 'excerpt', 'description', 'price', 'status'];
+    protected $fillable = ['title', 'slug', 'image', 'excerpt', 'category_id', 'description', 'price', 'status'];
 
     function setPlatforms(): void {
         $this->platforms = [Platforms::STORES, Platforms::FARMS];

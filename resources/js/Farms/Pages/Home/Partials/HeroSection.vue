@@ -1,11 +1,10 @@
 <script setup>
 import PrimaryButton from '@/Farms/Components/Buttons/PrimaryButton.vue';
 import usePlatform from '@/Shared/Hooks/usePlatform';
-import { ArrowLeftIcon, ArrowRightIcon, MinusIcon, PlusIcon, StarIcon } from '@heroicons/vue/24/solid';
-import { onMounted, ref } from 'vue';
+import { ArrowRightIcon } from '@heroicons/vue/24/solid';
 import 'vue3-carousel/dist/carousel.css'
 
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { Carousel, Slide } from 'vue3-carousel'
 
 const { render, format } = usePlatform('home')
 
@@ -28,7 +27,8 @@ const sliders = render({
 <template>
     <section>
         <div >
-            <Carousel :autoplay="true" :autoplayTimeout="50000" >
+            
+            <Carousel  >
                 <Slide v-for="(slider, index) in sliders" :key="`slide-${index}`"   >
                     <div :style="{
                             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('${format(slider.image, {

@@ -10,6 +10,7 @@ use App\Tables\Columns\StatusColumn;
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
@@ -21,7 +22,7 @@ class ProductCategoryResource extends Resource
 {
     protected static ?string $model = ProductCategory::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-tag';
 
     protected static ?string $navigationGroup = "Products";
 
@@ -29,8 +30,13 @@ class ProductCategoryResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name'),
-                TextInput::make('slug'),
+                TextInput::make('name')
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', str($state)->slug()))
+                    ->columnSpanFull(),
+                TextInput::make('slug')
+                    ->unique(column: 'slug', ignoreRecord: true)
+                    ->columnSpanFull(),
                 SelectStatus::make('status')
             ]);
     }

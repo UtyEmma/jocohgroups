@@ -21,6 +21,7 @@ return new class extends Migration
             $table->longText('description');
             $table->integer('price')->nullable();
             $table->string('status');
+            $table->string('category_id')->nullable();
             $table->timestamps();
         });
     }

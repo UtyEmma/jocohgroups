@@ -1,5 +1,11 @@
 <script setup>
 import usePlatform from '@/Shared/Hooks/usePlatform';
+import { ref } from 'vue';
+
+defineProps({
+    categories: {},
+    products: {}
+})
 
 const { render, format } = usePlatform('home')
 
@@ -21,6 +27,9 @@ const caption = render({
     value: 'caption'
 })
 
+const active = ref('')
+
+
 </script>
 
 <template>
@@ -33,60 +42,34 @@ const caption = render({
             </div>
 
             <div class="flex justify-center gap-5">
-                <div class="px-6 py-2 bg-[#4CAE47] font-medium text-white">All</div>
-                <div class="px-6 py-2 bg-white font-medium text-muted">Dairy Products</div>
-                <div class="px-6 py-2 bg-white font-medium text-muted">Tomato Paste</div>
-                <div class="px-6 py-2 bg-white font-medium text-muted">Food Seasoning</div>
-                <div class="px-6 py-2 bg-white font-medium text-muted">Milk</div>
-                <div class="px-6 py-2 bg-white font-medium text-muted">Edible oil</div>
+                <div>
+                    <button v-on:click="active = ''" class="px-6 py-2 font-medium" :class="active == '' ? 'bg-[#4CAE47] text-white' : 'bg-white'">All</button>
+                </div>
+                
+                <div v-for="category in categories">
+                    <button  v-on:click="active = category.slug" class="px-6 py-2  duration-500 hover:bg-[#4CAE47] hover:text-white font-medium text-muted" :class="category.slug == active ? 'text-white bg-[#4CAE47]' : 'bg-white'">{{category.name}}</button>
+                </div>
             </div>
 
-            <div class="grid grid-cols-3 gap-20">
-                <div class="">
+            <div v-if="active == ''" class="grid grid-cols-3 gap-20">
+                <div v-for="product in products">
                     <div class="group p-4 bg-white w-full box-border aspect-[9/11] relative">
-                        <img src="/assets/stores/images/products/vegetable-oil.png" alt="">
-                        <div class="z-50 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b h-full duration-300 ease-in-out from-gray-600/50 to-secondary items-end text-white p-7 opacity-0 group-hover:opacity-100 flex">
-                            <p class="text-lg text-gray-100">Product Name</p>
+                        <img :src="product.image" :alt="product.title" >
+                        <div class="z-50 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b h-full duration-300 ease-in-out from-gray-500/50 to-secondary items-end text-white p-7 opacity-0 group-hover:opacity-100 flex">
+                            <p class="text-lg text-gray-100">{{product.title}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="">
-                    <div class="group p-4 bg-white w-full box-border aspect-[9/11] relative">
-                        <img src="/assets/stores/images/products/vegetable-oil.png" alt="">
-                        <div class="z-50 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b h-full duration-300 ease-in-out from-gray-600/50 to-secondary items-end text-white p-7 opacity-0 group-hover:opacity-100 flex">
-                            <p class="text-lg text-gray-100">Product Name</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="">
-                    <div class="group p-4 bg-white w-full box-border aspect-[9/11] relative">
-                        <img src="/assets/stores/images/products/vegetable-oil.png" alt="">
-                        <div class="z-50 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b h-full duration-300 ease-in-out from-gray-600/50 to-secondary items-end text-white p-7 opacity-0 group-hover:opacity-100 flex">
-                            <p class="text-lg text-gray-100">Product Name</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="">
-                    <div class="group p-4 bg-white w-full box-border aspect-[9/11] relative">
-                        <img src="/assets/stores/images/products/vegetable-oil.png" alt="">
-                        <div class="z-50 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b h-full duration-300 ease-in-out from-gray-600/50 to-secondary items-end text-white p-7 opacity-0 group-hover:opacity-100 flex">
-                            <p class="text-lg text-gray-100">Product Name</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="">
-                    <div class="group p-4 bg-white w-full box-border aspect-[9/11] relative">
-                        <img src="/assets/stores/images/products/vegetable-oil.png" alt="">
-                        <div class="z-50 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b h-full duration-300 ease-in-out from-gray-600/50 to-secondary items-end text-white p-7 opacity-0 group-hover:opacity-100 flex">
-                            <p class="text-lg text-gray-100">Product Name</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="">
-                    <div class="group p-4 bg-white w-full box-border aspect-[9/11] relative">
-                        <img src="/assets/stores/images/products/vegetable-oil.png" alt="">
-                        <div class="z-50 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b h-full duration-300 ease-in-out from-gray-600/50 to-secondary items-end text-white p-7 opacity-0 group-hover:opacity-100 flex">
-                            <p class="text-lg text-gray-100">Product Name</p>
+            </div>
+
+            <div v-for="category in categories" >
+                <div v-if="category.slug == active" class="grid grid-cols-3 gap-20">
+                    <div v-for="product in category.products">
+                        <div class="group p-4 bg-white w-full box-border aspect-[9/11] relative">
+                            <img :src="product.image" :alt="product.title" >
+                            <div class="z-50 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b h-full duration-300 ease-in-out from-gray-500/50 to-secondary items-end text-white p-7 opacity-0 group-hover:opacity-100 flex">
+                                <p class="text-lg text-gray-100">{{product.title}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

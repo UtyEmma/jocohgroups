@@ -12,12 +12,16 @@ use Illuminate\Database\Eloquent\Model;
 class ProductCategory extends Model {
     use HasFactory, HasUuids, HasStatus;
 
-    protected $category = ['name', 'slug', 'status'];
+    protected $fillable = ['name', 'slug','status'];
 
     protected array $platforms = [Platforms::FARMS, Platforms::STORES];
 
     function allowedByPlatform(Platforms $platform) {
         return in_array($platform, $this->platforms);
+    }
+
+    function products(){
+        return $this->hasMany(Product::class, 'category_id');
     }
 
 }
