@@ -52,12 +52,12 @@ const send = () => {
 </script>
 
 <template>
-    <section class="py-40 bg-[#3333331A] bg-[url('/assets/group/images/svgs/waves.svg')] bg-no-repeat" >
-        <div class="mx-auto max-w-7xl">
-            <div class="grid grid-cols-2 gap-20 items-center">
+    <section class="md:py-40 py-10 bg-[#3333331A] bg-[url('/assets/group/images/svgs/waves.svg')] bg-no-repeat" >
+        <div class="mx-auto max-w-7xl px-4">
+            <div class="grid md:grid-cols-2 md:gap-20 gap-10 items-center">
                 <div class="space-y-4" >
-                    <p class="font-black text-4xl">Contact Us</p>
-                    <p class="w-3/4 text-[18px] text-[#79746F]">For inquires and complaint, drop a message for us and we would reach out to you, or visit our</p>
+                    <p class="font-bold text-3xl md:text-4xl">Contact Us</p>
+                    <p class="md:w-3/4 text-[18px] text-[#79746F]">For inquires and complaint, drop a message for us and we would reach out to you, or visit our</p>
 
                     <div class="flex space-x-5 items-center" >
                         <div v-if="props.platform.settings.facebook_link">
@@ -87,10 +87,10 @@ const send = () => {
                 </div>
                 
                 <div>
-                    <form @submit.prevent="send" class="rounded-[16px] bg-white p-14 space-y-8">
-                        <p class="font-black text-3xl">Contact Us</p>
+                    <form @submit.prevent="send" class="rounded-lg md:rounded-[16px] bg-white md:p-14 p-5 md:space-y-10 space-y-5">
+                        <p class="font-bold text-2xl md:text-3xl">Contact Us</p>
 
-                        <div class="space-y-5">
+                        <div class="md:space-y-5 space-y-3">
                             <div class="space-y-1">
                                 <label class="text-muted font-medium">Your Name</label>
                                 <input v-model="form.name" class="p-3 rounded-[8px] bg-[#F9F9F9] hover:bg-[#ededed] border border-[#F3F3F3] w-full" placeholder="Your Name" type="text">

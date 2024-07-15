@@ -13,9 +13,9 @@ const { props } = usePage();
 </script>
 
 <template>
-    <section class="bg-primary py-20">
-        <div class="max-w-6xl mx-auto space-y-10">
-            <div class="flex divide-x border-y text-white border-[#ffffff30] divide-[#ffffff30]">
+    <section class="bg-primary md:py-20 pb-10">
+        <div class="max-w-6xl mx-auto space-y-5 px-4 md:space-y-10">
+            <div class="md:flex md:divide-x border-y text-white border-[#ffffff30] divide-[#ffffff30]">
                 <div class="py-10 pe-20 space-y-5" >
                     <p class="text-xl " >Businesses</p>
 
@@ -32,7 +32,7 @@ const { props } = usePage();
                     </ul>
                 </div>
 
-                <div class="py-10 pl-20 pr-32 space-y-5" >
+                <div class="md:py-10 md:pl-20 md:pr-32 space-y-5" >
                     <p class="text-xl" >Company</p>
 
                     <ul class="space-y-2 font-light text-[#C9D7D2]" >
@@ -48,7 +48,7 @@ const { props } = usePage();
                     </ul>
                 </div>
 
-                <div class="py-10 pl-16 pr-20 space-y-5" >
+                <div class="md:py-10 md:pl-16 md:pr-20 space-y-5" >
                     <p class="text-xl" >Contact Info.</p>
 
                     <ul class="space-y-3 font-light text-[#C9D7D2]" >
@@ -82,8 +82,8 @@ const { props } = usePage();
                         </li>
                     </ul>
                 </div>
-                <div class="py-10 pl-10 space-y-5" >
-                    <ul class="space-y-5 items-center" >
+                <div class="md:py-10 md:pl-10 space-y-5" >
+                    <ul class="space-y-5 flex md:block items-center" >
                         <li v-if="props.platform.settings?.facebook_link">
                             <a :href="props.platform.settings.facebook_link" target="_blank" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <FacebookIcon class="fill-white size-4"/>
@@ -108,7 +108,7 @@ const { props } = usePage();
                 </div>
             </div>
 
-            <div class="text-center pt-10 text-[#C9D7D2]">
+            <div class="text-center md:pt-10 text-[#C9D7D2]">
                 <p>© Copyright - <a href="" class="text-[#F2C200]" >Jocoh Group</a> | 2024</p>
             </div>
         </div>

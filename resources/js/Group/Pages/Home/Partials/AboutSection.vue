@@ -29,13 +29,13 @@ const images = render({
 </script>
 
 <template>
-    <div class="max-w-7xl mx-auto py-20 space-y-20">
-        <div class="w-11/12 space-y-3">
-            <h1 class="text-[74px] leading-[80px] about-title" v-html="title" ></h1>
-            <p class="text-[24px] w-9/12 text-muted" v-html="caption"></p>
+    <div class="max-w-7xl mx-auto md:py-20 py-10 px-4 space-y-10 md:space-y-20">
+        <div class="md:w-11/12 space-y-3">
+            <h1 class="md:text-6xl text-xl font-semibold about-title" v-html="title" ></h1>
+            <p class="md:text-2xl md:w-9/12 text-muted" v-html="caption"></p>
         </div>
 
-        <div class="grid grid-cols-2 gap-x-10">
+        <div class="grid grid-cols-2 gap-x-5 md:gap-x-10">
             <div v-for="image in images">
                 <div class="w-full aspect-[4/3] bg-bottom bg-cover no-repeat" :class="image"
                     v-bind:style="{
@@ -43,9 +43,6 @@ const images = render({
                     }"
                 ></div>
             </div>
-            <!-- <div>
-                <div class="w-full aspect-[4/3] bg-[url('/assets/group/images/banners/harvesting.jpeg')] bg-[15%] bg-cover no-repeat"></div>
-            </div> -->
         </div>
     </div>
 </template>

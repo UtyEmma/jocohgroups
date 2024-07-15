@@ -22,14 +22,14 @@ const title = render({
 </script>
 
 <template>
-    <div class="bg-primary-100 py-20 text-center">
-        <div class="max-w-7xl mx-auto space-y-10">
-            <h3 class="text-5xl" v-html="title" ></h3>
+    <div class="bg-primary-100 py-10 md:py-20 text-center">
+        <div class="max-w-7xl mx-auto px-4 space-y-5 md:space-y-10">
+            <h3 class="md:text-5xl text-2xl" v-html="title" ></h3>
 
-            <div class="grid grid-cols-3 gap-10 text-center">
+            <div class="grid md:grid-cols-3 gap-5 md:gap-10 text-center">
                 <div v-for="(impact, index) in impacts" >
-                    <h1 class="text-[170px] leading-[180px] text-primary">{{index}}</h1>
-                    <p class="text-xl text-muted font-medium">{{impact}}</p>
+                    <h1 class="text-7xl md:text-[170px] md:leading-[180px] leading-normal font-semibold text-primary">{{index}}</h1>
+                    <p class="md:text-xl text-lg text-muted font-medium">{{impact}}</p>
                 </div>
             </div>
         </div>
