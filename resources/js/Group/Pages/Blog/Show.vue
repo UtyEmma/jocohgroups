@@ -11,9 +11,9 @@ const props = defineProps({
 
 <template>
     <GuestLayout>        
-        <section class="py-20 max-w-[80%] mx-auto space-y-10 px-4">
-            <div class="space-y-10">
-                <Link :href="route('group.blog')" class="inline-flex space-x-3 rounded-l-full rounded-r-full shadow hover:text-primary-700  justify-center px-4 py-2 bg-white text-primary font-medium">
+        <section class="md:py-20 md:max-w-[80%] mx-auto space-y-5 md:space-y-10 px-4 py-4">
+            <div class="md:space-y-10 space-y-5">
+                <Link :href="route('group.blog')" class="inline-flex space-x-2 md:space-x-3 rounded-l-full rounded-r-full shadow hover:text-primary-700  justify-center px-4 py-2 bg-white md:text-base text-sm text-primary font-medium">
                     <ArrowLeftIcon class="w-5" /> <span>Back to Blog</span>
                 </Link>
     
@@ -24,14 +24,14 @@ const props = defineProps({
             </div>
 
 
-            <div class="space-y-10">
-                <h1 class="text-6xl font-semibold">{{post.title}}</h1>
+            <div class="md:space-y-10 space-y-5">
+                <h1 class="text-4xl md:text-6xl font-semibold">{{post.title}}</h1>
 
                 <div>
-                    <img :src="post.image" class="aspect-[16/7] w-full rounded-xl object-cover" alt="">
+                    <img :src="post.image" class="aspect-video md:aspect-[16/7] w-full rounded-xl object-cover" alt="">
                 </div>
 
-                <div class="space-y-10 text-[18px] leading-relaxed prose max-w-full" v-html="post.content" >
+                <div class="space-y-10 md:text-[18px] leading-relaxed prose max-w-full" v-html="post.content" >
                     
                 </div>
             </div>

@@ -15,14 +15,18 @@ defineProps({
 <template>
     <Head :title="job.role" />
     <GuestLayout>
-        <section class="py-20 bg-primary-50 relative overflow-hidden">
-            <div class="max-w-[80%] mx-auto space-y-20" >
-                <Link :href="`${route('group.about')}#jobs`" class="inline-flex space-x-3 rounded-l-full rounded-r-full shadow hover:text-primary-700  justify-center px-4 py-2 bg-white text-primary font-medium">
-                    <ArrowLeftIcon class="w-5" /> <span>Back to Careers</span>
+        <section class="pt-20 pb-10 md:pb-20 bg-primary-50 relative overflow-hidden">
+            <Flower class="absolute size-[34rem] z-0 -bottom-[30%] -right-[10%]" />
+
+            <div class="md:max-w-[80%] px-4 mx-auto space-y-10 md:space-y-20 z-50 relative" >
+                <Link :href="`${route('group.about')}#jobs`">
+                    <button class="inline-flex space-x-3 rounded-l-full rounded-r-full shadow hover:text-primary-700  justify-center px-4 py-2 bg-white text-primary font-medium">
+                        <ArrowLeftIcon class="w-5" /> <span>Back to Careers</span>
+                    </button>
                 </Link>
 
                 <div class="space-y-5">
-                    <h1 class="text-6xl text-primary font-semibold">{{job.role}}</h1>
+                    <h1 class="md:text-6xl text-4xl text-primary font-semibold">{{job.role}}</h1>
                     <p class="text-[18px]">{{job.workplace}} • {{job.location}}</p>
 
                     <div v-if="job.application_link">
@@ -32,12 +36,10 @@ defineProps({
                     </div>
                 </div>
             </div>
-
-            <Flower class="absolute size-[34rem] -bottom-[30%] -right-[10%]" />
         </section>
 
-        <div class="py-20 max-w-[80%] mx-auto space-y-4">
-            <h1 class="text-3xl">Job description</h1>
+        <div class="md:py-20 py-10 md:max-w-[80%] px-4 mx-auto space-y-4">
+            <h1 class="text-3xl font-semibold">Job description</h1>
             <div class="whitespace-pre-line prose prose-base min-w-full" v-html="job.description"></div>
         </div>
 

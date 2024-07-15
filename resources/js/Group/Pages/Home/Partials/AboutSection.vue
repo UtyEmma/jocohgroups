@@ -31,7 +31,7 @@ const images = render({
 <template>
     <div class="max-w-7xl mx-auto md:py-20 py-10 px-4 space-y-10 md:space-y-20">
         <div class="md:w-11/12 space-y-3">
-            <h1 class="md:text-6xl text-xl font-semibold about-title" v-html="title" ></h1>
+            <h1 class="md:text-6xl text-3xl font-semibold about-title" v-html="title" ></h1>
             <p class="md:text-2xl md:w-9/12 text-muted" v-html="caption"></p>
         </div>
 
