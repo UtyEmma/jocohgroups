@@ -114,7 +114,7 @@ const date = new Date();
     </section> -->
     <section class="bg-secondary md:py-20 py-10 pt-0 md:pt-20 ">
         <div class="md:max-w-6xl mx-auto space-y-10">
-            <div class="md:flex px-4 md:divide-x space-y-10 py-10 md:py-0 md:space-y-0 border-y text-white border-[#ffffff30] divide-[#ffffff30]">
+            <div class="md:flex px-4 md:divide-x space-y-10 md:space-y-0 py-10 md:py-0 border-y text-white border-[#ffffff30] divide-[#ffffff30]">
                 <div class="md:py-10 md:pe-20 space-y-5" >
                     <p class="text-xl " >Businesses</p>
 

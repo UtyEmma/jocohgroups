@@ -31,10 +31,10 @@ const title = render({
 </script>
 
 <template>
-    <section class="py-32 max-w-[80%] mx-auto space-y-20">
-        <h1 class="text-6xl" >{{ title }}</h1>
+    <section class="md:py-32 md:max-w-[80%] px-4 mx-auto space-y-8 md:space-y-20">
+        <h1 class="text-4xl font-medium md:text-6xl" >{{ title }}</h1>
 
-        <div class="grid grid-cols-3 gap-20">
+        <div class="grid md:grid-cols-3 gap-10 md:gap-20">
             <div class="space-y-2" >
                 <svg width="55" height="55" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="40" height="40" rx="20" fill="#EBF6FF"/>
@@ -46,9 +46,9 @@ const title = render({
                     <path opacity="0.2" d="M31.5092 24.2391C31.7802 24.2391 31.9999 22.3412 31.9999 20C31.9999 17.6588 31.7802 15.7609 31.5092 15.7609C31.2382 15.7609 31.0186 17.6588 31.0186 20C31.0186 22.3412 31.2382 24.2391 31.5092 24.2391Z" stroke="#5697D0" stroke-width="1.07106" stroke-miterlimit="10"/>
                 </svg>
 
-                <p class="text-primary text-2xl font-semibold">{{first.title}}</p>
+                <p class="text-primary md:text-2xl text-xl font-semibold">{{first.title}}</p>
 
-                <p class="text-muted text-lg font-medium" >{{ first.caption }}</p>
+                <p class="text-muted md:text-lg font-medium" >{{ first.caption }}</p>
             </div>
             <div class="space-y-2" >
                 <svg width="55" height="55" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,9 +57,9 @@ const title = render({
                 </svg>
 
 
-                <p class="text-primary text-2xl font-semibold">{{second.title}}</p>
+                <p class="text-primary md:text-2xl text-xl font-semibold">{{second.title}}</p>
 
-                <p class="text-muted text-lg font-medium" >{{second.caption}}</p>
+                <p class="text-muted md:text-lg font-medium" >{{second.caption}}</p>
             </div>
             <div class="space-y-2" >
                 <svg width="55" height="55" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -74,9 +74,9 @@ const title = render({
                 </svg>
 
 
-                <p class="text-primary text-2xl font-semibold">{{third.title}}</p>
+                <p class="text-primary md:text-2xl text-xl font-semibold">{{third.title}}</p>
 
-                <p class="text-muted text-lg font-medium" >{{ third.caption }}</p>
+                <p class="text-muted md:text-lg font-medium" >{{ third.caption }}</p>
             </div>
         </div>
     </section>

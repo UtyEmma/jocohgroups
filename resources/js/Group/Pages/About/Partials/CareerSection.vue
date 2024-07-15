@@ -18,10 +18,10 @@ console.log(props.jobs);
 </script>
 
 <template>
-    <section v-if="jobs.length > 0" class="py-32 max-w-[80%] mx-auto space-y-20">
-        <h1 class="text-6xl text-center" >{{ title }}</h1>
+    <section v-if="jobs.length > 0" class="md:py-32 py-10 md:max-w-[80%] px-4 mx-auto space-y-10 md:space-y-20">
+        <h1 class="text-4xl font-medium md:text-6xl text-center" >{{ title }}</h1>
 
-        <div class="space-y-10" >
+        <div class="md:space-y-10 space-y-5" >
             <JobItem v-for="job in props.jobs" :job="job" />
         </div>
     </section>

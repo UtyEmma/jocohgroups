@@ -22,13 +22,13 @@ const show = ref(false)
 
                     <ul v-if="show" v-on:click.outside="show = false" class="absolute z-50 border-y px-4 py-3 shadow-sm divide-y-[1px] top-[100%] left-0 right-0 bg-white">
                         <li>
-                            <a class="py-4 block" :href="route('stores.home')">Home</a>
+                            <Link class="py-4 block" :href="route('group.home')">Home</Link>
                         </li>
                         <li >
-                            <a class="py-4 block" :href="route('stores.about')">About Us</a>
+                            <Link class="py-4 block" :href="route('group.about')">About Us</Link>
                         </li>
                         <li >
-                            <a class="py-4 block" :href="route('stores.products')">Products</a>
+                            <Link class="py-4 block" :href="route('group.blog')">Our Blog</Link>
                         </li>
                         <li >
                             <a class="py-4 block" href="">FAQs</a>

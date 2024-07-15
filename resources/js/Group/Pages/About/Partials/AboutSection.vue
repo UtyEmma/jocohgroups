@@ -19,14 +19,15 @@ const caption = render({
 </script>
 
 <template>
-    <section class="pt-36 space-y-10">
+    <section class="md:pt-36 py-10 space-y-10">
 
-        <div class="space-y-10 max-w-[80%] mx-auto " >
-            <h1 class="text-6xl" >{{ title }}</h1>
-            <p class="text-lg text-muted font-medium" >{{ caption }}</p>
+        <div class="md:space-y-10 space-y-5 px-4 md:max-w-[80%] mx-auto " >
+            <h1 class="text-4xl md:text-6xl" >{{ title }}</h1>
+            <p class="md:text-lg text-muted font-medium" >{{ caption }}</p>
         </div>
 
-
-        <Banner class="ms-[10%]"/>
+        <div class="w-full overflow-hidden">
+            <Banner class="ms-4 h-20"/>
+        </div>
     </section>
 </template>

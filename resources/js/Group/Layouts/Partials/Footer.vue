@@ -15,8 +15,8 @@ const { props } = usePage();
 <template>
     <section class="bg-primary md:py-20 pb-10">
         <div class="max-w-6xl mx-auto space-y-5 px-4 md:space-y-10">
-            <div class="md:flex md:divide-x border-y text-white border-[#ffffff30] divide-[#ffffff30]">
-                <div class="py-10 pe-20 space-y-5" >
+            <div class="md:flex md:divide-x border-y pt-10 md:pt-0 space-y-10 md:space-y-0  text-white border-[#ffffff30] divide-[#ffffff30]">
+                <div class="md:py-10 md:pe-20 space-y-5" >
                     <p class="text-xl " >Businesses</p>
 
                     <ul class="space-y-2 font-light text-[#C9D7D2]" >
@@ -82,6 +82,7 @@ const { props } = usePage();
                         </li>
                     </ul>
                 </div>
+
                 <div class="md:py-10 md:pl-10 space-y-5" >
                     <ul class="space-y-5 flex md:block items-center" >
                         <li v-if="props.platform.settings?.facebook_link">
