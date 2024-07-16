@@ -13,7 +13,8 @@ export default function usePlatform (page = '') {
         prepend = '',
         append = ''
     }) => {
-        const item = platform_content[page].sections;
+        const item = platform_content[page]?.sections;
+        if(!item) return defaultValue(default_value, element, classes);
 
         if(!Array.isArray(item)) {
             return item == undefined ? defaultValue(default_value, element, classes) : item;
