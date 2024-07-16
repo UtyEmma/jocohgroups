@@ -17,9 +17,10 @@ class ProductController extends Controller {
         return Inertia::render('Products/Index', compact('products', 'faqs'));
     }
     
-
+    
     function show(Product $product){
-        return Inertia::render('Products/Show', compact('product'));
+        $faqs = Faq::isActive()->get();
+        return Inertia::render('Products/Show', compact('product', 'faqs'));
     }
 
 }

@@ -29,42 +29,44 @@ const badge = render({
 </script>
 
 <template>
-    <section class="py-40 bg-[#FFFBED] bg-[url('/assets/group/images/svgs/waves.svg')] bg-no-repeat" >
-        <div class="mx-auto max-w-[80%]">
-            <div class="grid grid-cols-2 gap-20 items-center">
-                <div class="space-y-4" >
-                    <p class="font-bold text-4xl leading-relaxed text-primary">{{ title }}</p>
-                    <p class="w-3/4 text-[18px] text-[#79746F]">{{ caption }}</p>
-
-                    <div class="flex space-x-5 items-center" >
-                        <div>
-                            <a href="#" class="size-12 rounded-full border-primary group border hover:bg-primary flex items-center justify-center">
-                                <FacebookIcon class="fill-primary group-hover:fill-white size-5"/>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#" class="size-12 rounded-full border-primary group border hover:bg-primary flex items-center justify-center">
-                                <TwitterIcon class="fill-primary group-hover:fill-white size-5"/>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#" class="size-12 rounded-full border-primary group border hover:bg-primary flex items-center justify-center">
-                                <LinkedInIcon class="fill-primary group-hover:fill-white size-5"/>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#" class="size-12 rounded-full border-primary group border hover:bg-primary flex items-center justify-center">
-                                <InstagramIcon class="fill-primary group-hover:fill-white size-5"/>
-                            </a>
-                        </div>
-                        <div>
-                            <p class="text-xl font-medium">{{ badge }}</p>
+    <section class="md:py-40 py-10 px-4 bg-[rgb(255,251,237)] bg-[url('/assets/group/images/svgs/waves.svg')] bg-no-repeat" >
+        <div class="mx-auto md:max-w-[80%] ">
+            <div class="md:grid space-y-20 md:grid-cols-2 gap-10 md:gap-20 items-center">
+                <div>
+                    <div class="space-y-4 text-wrap" >
+                        <p class="font-bold md:text-4xl text-2xl leading-relaxed text-primary">{{ title }}</p>
+                        <p class="md:w-3/4 text-[18px] text-[#79746F]">{{ caption }}</p>
+    
+                        <div class="flex flex-wrap gap-5 items-center" >
+                            <div>
+                                <a href="#" class="size-12 rounded-full border-primary group border hover:bg-primary flex items-center justify-center">
+                                    <FacebookIcon class="fill-primary group-hover:fill-white size-5"/>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="size-12 rounded-full border-primary group border hover:bg-primary flex items-center justify-center">
+                                    <TwitterIcon class="fill-primary group-hover:fill-white size-5"/>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="size-12 rounded-full border-primary group border hover:bg-primary flex items-center justify-center">
+                                    <LinkedInIcon class="fill-primary group-hover:fill-white size-5"/>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="size-12 rounded-full border-primary group border hover:bg-primary flex items-center justify-center">
+                                    <InstagramIcon class="fill-primary group-hover:fill-white size-5"/>
+                                </a>
+                            </div>
+                            <div>
+                                <p class="text-xl font-medium">{{ badge }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div>
-                    <div class="rounded-[16px] bg-white p-14 space-y-8">
+                    <div class="md:rounded-[16px] rounded-lg bg-white md:p-14 p-4 space-y-8">
                         <p class="font-bold text-primary text-3xl">Contact Us</p>
 
                         <div class="space-y-5">

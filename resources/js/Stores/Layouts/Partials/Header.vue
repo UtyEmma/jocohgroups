@@ -8,11 +8,24 @@
     import { Link } from '@inertiajs/vue3';
     import usePlatform from "@/Shared/Hooks/usePlatform";
 import { Bars2Icon } from "@heroicons/vue/24/solid";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
     const { settings } = usePlatform()
 
     const show = ref(false)
+
+    const el = ref()
+    const btn = ref()
+
+    const hide = (e) => {
+        if(!btn.value.contains(e.target) && !el.value.contains(e.target)) {
+            if(show.value) show.value = false
+        }
+    }
+
+    onMounted(() => {
+        document.addEventListener('click', hide)
+    })
 </script>
 
 <template>
@@ -62,11 +75,11 @@ import { ref } from "vue";
                 </Link>
 
                 <div class="block md:hidden">
-                    <button v-on:click="show = !show" class="bg-primary p-2 active:scale-90 duration-500">
+                    <button ref="btn"  v-on:click="show = !show" class="bg-primary p-2 active:scale-90 duration-500">
                         <Bars2Icon class="h-6 w-6 text-white" />
                     </button>
 
-                    <ul v-if="show" v-on:click.outside="show = false" class="absolute z-50 border-y px-4 py-3 shadow-sm divide-y-[1px] top-[100%] left-0 right-0 bg-white">
+                    <ul v-if="show" ref="el" class="absolute z-50 border-y px-4 py-3 shadow-sm divide-y-[1px] top-[100%] left-0 right-0 bg-white">
                         <li>
                             <a class="py-4 block" :href="route('stores.home')">Home</a>
                         </li>

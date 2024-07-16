@@ -19,7 +19,7 @@ const caption = render({
 </script>
 
 <template>
-    <section class="md:pt-36 py-10 space-y-10">
+    <section class="md:pt-20 py-10 space-y-10">
 
         <div class="md:space-y-10 space-y-5 px-4 md:max-w-[80%] mx-auto " >
             <h1 class="text-4xl md:text-6xl" >{{ title }}</h1>
@@ -27,7 +27,7 @@ const caption = render({
         </div>
 
         <div class="w-full overflow-hidden">
-            <Banner class="ms-4 h-20"/>
+            <Banner class="ms-4 md:ms-[10%] h-20 md:h-auto"/>
         </div>
     </section>
 </template>

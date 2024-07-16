@@ -1,5 +1,6 @@
 <script setup>
 import usePlatform from '@/Shared/Hooks/usePlatform';
+import { MinusIcon } from '@heroicons/vue/24/solid';
 import { ref } from 'vue';
 
 defineProps({

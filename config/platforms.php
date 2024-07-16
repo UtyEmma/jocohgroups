@@ -9,18 +9,18 @@ return [
         'slug' => Platforms::GROUP->value,
         'logo' => 'assets/group/images/logo.png',
         'settings' => [
-            'site_title' => 'Bezalel Frontiers - Top Management consultancy firm in Nigeria',
-            'company_name' => 'Bezalel Frontiers',
-            'site_name' => 'Bezalel Frontiers',
-            'site_email' => 'info@bezalelfrontiers.com',
-            'site_description' => 'We provide actionable insights that inform, inspire, and empower minds and organizations for success.',
+            'site_title' => 'Jocoh Group',
+            'company_name' => 'Jocoh Group',
+            'site_name' => 'Jocoh Group',
+            'site_email' => 'info@jocohgroup.com',
+            'site_description' => '',
             'contact_address' => 'Lagos, Nigeria',
 
-            'contact_phone' => '0904 599 2141',
+            'contact_phone' => '',
 
-            'seo_description' => "Bezalel Frontiers - Top Management consultancy firm in Nigeria",
+            'seo_description' => "",
 
-            'seo_tags' => 'Bezalel Frontiers, Management Consultancy in Nigeria',
+            'seo_tags' => '',
 
             'twitter_link' => "",
 
@@ -42,18 +42,18 @@ return [
         'slug' => Platforms::FARMS->value,
         'logo' => 'assets/farms/images/logo.png',
         'settings' => [
-            'site_title' => 'Bezalel Frontiers - Top Management consultancy firm in Nigeria',
-            'company_name' => 'Bezalel Frontiers',
-            'site_name' => 'Bezalel Frontiers',
-            'site_email' => 'info@bezalelfrontiers.com',
-            'site_description' => 'We provide actionable insights that inform, inspire, and empower minds and organizations for success.',
+            'site_title' => 'Jocoh Farms',
+            'company_name' => 'Jocoh Farms',
+            'site_name' => 'Jocoh Farms',
+            'site_email' => 'info@jocohgroup.com',
+            'site_description' => '',
             'contact_address' => 'Lagos, Nigeria',
 
-            'contact_phone' => '0904 599 2141',
+            'contact_phone' => '',
 
-            'seo_description' => "Bezalel Frontiers - Top Management consultancy firm in Nigeria",
+            'seo_description' => "",
 
-            'seo_tags' => 'Bezalel Frontiers, Management Consultancy in Nigeria',
+            'seo_tags' => '',
 
             'twitter_link' => "",
 
@@ -75,18 +75,18 @@ return [
         'slug' => Platforms::STORES->value,
         'logo' => 'assets/stores/images/logo.png',
         'settings' => [
-            'site_title' => 'Bezalel Frontiers - Top Management consultancy firm in Nigeria',
-            'company_name' => 'Bezalel Frontiers',
-            'site_name' => 'Bezalel Frontiers',
-            'site_email' => 'info@bezalelfrontiers.com',
-            'site_description' => 'We provide actionable insights that inform, inspire, and empower minds and organizations for success.',
+            'site_title' => 'Jocoh Stores',
+            'company_name' => 'Jocoh Stores',
+            'site_name' => 'Jocoh Stores',
+            'site_email' => 'info@jocohstores.com',
+            'site_description' => '',
             'contact_address' => 'Lagos, Nigeria',
 
-            'contact_phone' => '0904 599 2141',
+            'contact_phone' => '',
 
-            'seo_description' => "Bezalel Frontiers - Top Management consultancy firm in Nigeria",
+            'seo_description' => "",
 
-            'seo_tags' => 'Bezalel Frontiers, Management Consultancy in Nigeria',
+            'seo_tags' => '',
 
             'twitter_link' => "",
 
