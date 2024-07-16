@@ -25,13 +25,13 @@ const steps = render({
                     },
                     
                     {
-                        image: '/assets/stores/images/preview.png',
+                        image: '/assets/stores/images/preview-contact.png',
                         title: 'Request on the contact page',
                         caption: "Scroll to the contact page on the website ensure that on the page you enter your name, email & the description of the product you choose to purchase"
                     },
 
                     {
-                        image: '/assets/stores/images/preview.png',
+                        image: '/assets/stores/images/shopping-cart.png',
                         title: 'Get your items delivered',
                         caption: "Log on to our website, Navigate to the product page of the item you're interested in purchasing in bulk."
                     },

@@ -48,9 +48,9 @@ class HomePage extends Page implements HasForms {
     function form(Form $form) : Form{
         return $form
             ->schema([
-                TextInput::make('title'),
-                TextInput::make('tags'),
-                Textarea::make('description'),
+                // TextInput::make('title'),
+                // TextInput::make('tags'),
+                // Textarea::make('description'),
                 Builder::make('sections')
                     ->label('Edit Page Sections')
                     ->blocks([

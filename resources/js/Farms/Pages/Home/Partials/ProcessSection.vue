@@ -43,7 +43,7 @@ const button_link = render({
 </script>
 
 <template>
-    <div class="md:py-20 py-10 bg-secondary space-y-10 md:space-y-20 bg-[url(/assets/farms/images/ridges-transparent.png)]">
+    <div v-if="processes.length > 0" class="md:py-20 py-10 bg-secondary space-y-10 md:space-y-20 bg-[url(/assets/farms/images/ridges-transparent.png)]">
         <div class="mx-auto md:max-w-[80%] px-4">
             <div class="md:flex items-center space-y-5 md:space-y-0 mt-3">
                 <div class="md:w-4/6">

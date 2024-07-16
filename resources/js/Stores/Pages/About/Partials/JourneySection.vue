@@ -11,7 +11,28 @@ const title = render({
             })
 
 const steps = render({
-                default_value: [],
+                default_value: [
+                    {
+                        image: '/assets/stores/images/cac-document.png',
+                        title: 'Operation Started.',
+                        date: '2020'
+                    },
+                    {
+                        image: '/assets/stores/images/delivery-trucks.png',
+                        title: 'Delivered over 10m products',
+                        date: '2021'
+                    },
+                    {
+                        image: '/assets/stores/images/handshakes.png',
+                        title: 'Partnered with Jocoh Farm',
+                        date: '2023'
+                    },
+                    {
+                        image: '/assets/stores/images/funds-raise.png',
+                        title: 'We raised $56m',
+                        date: '2024'
+                    },
+                ],
                 key: 'journey_section',
                 value: 'journey'
             })
@@ -52,14 +73,13 @@ onMounted(() => {
                         leave-active-class="opacity-[300]"
                     >
                         <div v-if="index == step">
-                            <div class="bg-gray-100 p-4 h-80 mb-3 bg-cover bg-center" 
-                                :style="{
-                                    backgroundImage: `url(${format(journey.image, {prepend: 'storage/'})})`
-                                }"
-                            ></div>
-                            <p class="font-semibold">{{journey.title}}</p>
+                            <div class="mb-3 w-10/12 aspect-square bg-cover bg-center">
+                                <img :src="journey.image" class="w-full h-full object-cover" v-fallback="`/storage/${journey.image}`" alt="">
+                            </div>
                         </div>
                     </Transition>
+
+                    <p  v-if="index == step" class="font-semibold">{{journey.title}}</p>
 
                 </div>
             </div>

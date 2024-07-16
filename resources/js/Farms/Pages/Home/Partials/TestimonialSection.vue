@@ -33,7 +33,7 @@ const active = ref(0)
 </script>
 
 <template>
-    <div class="md:py-20 py-10 md:max-w-[80%] px-4 mx-auto space-y-10 md:space-y-20">
+    <div v-if="testimonials.length > 0" class="md:py-20 py-10 md:max-w-[80%] px-4 mx-auto space-y-10 md:space-y-20">
         <div class="space-y-5 md:w-3/5 text-center mx-auto">
             <p class="uppercase text-primary">{{title}}</p>
             <h2 class="!font-inter text-2xl md:text-5xl font-semibold heading-title" v-html="heading"></h2>

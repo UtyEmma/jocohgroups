@@ -46,9 +46,9 @@ class Contact extends Page
     function form(Form $form) : Form{
         return $form
             ->schema([
-                TextInput::make('title'),
-                TextInput::make('tags'),
-                Textarea::make('description'),
+                // TextInput::make('title'),
+                // TextInput::make('tags'),
+                // Textarea::make('description'),
                 Builder::make('sections')
                     ->label('Edit Page Sections')
                     ->blocks([
@@ -64,7 +64,7 @@ class Contact extends Page
                                 Textarea::make('caption')
                             ]),
                     ])
-                    ->addable(true)
+                    ->addable(false)
                     ->reorderable(false)
                     ->deletable(false)
                     ->collapsible()

@@ -5,13 +5,13 @@ import {ref, onMounted} from 'vue';
 const { render, format } = usePlatform('about')
 
 const title = render({
-                default_value: 'ABOUT US',
+                default_value: 'An African food ingredient supplier company.',
                 key: 'hero_section',
                 value: 'title'
             })
 
 const caption = render({
-                default_value: 'An African food ingredient supplier company.',
+                default_value: 'ABOUT US',
                 key: 'hero_section',
                 value: 'caption'
             })

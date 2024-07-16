@@ -84,7 +84,7 @@ class Business extends Page implements HasForms {
                                 TextInput::make('title')
                             ])
                     ])
-                    ->addable(true)
+                    ->addable(false)
                     ->reorderable(false)
                     ->deletable(false)
                     ->collapsible()

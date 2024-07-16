@@ -33,7 +33,7 @@ const active = ref('')
 </script>
 
 <template>
-    <div class="py-20 bg-[#FAF7F0]">
+    <div v-if="products.length > 0" class="py-20 bg-[#FAF7F0]">
         <div class="md:max-w-[80%] px-4 mx-auto space-y-10">
             <div class="md:space-y-5 md:w-3/5 text-center mx-auto">
                 <p class="uppercase text-primary">{{ title }}</p>

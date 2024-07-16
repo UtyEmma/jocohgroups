@@ -29,7 +29,7 @@ const caption = render({
 </script>
 
 <template>
-    <div class="md:py-20 py-10 bg-[#FAF7F0]">
+    <div v-if="partners.length > 0" class="md:py-20 py-10 bg-[#FAF7F0]">
         <div class="mx-auto md:max-w-[80%] px-4 space-y-5 md:space-y-10">
             <div class="space-y-2 md:space-y-5 md:w-3/5 text-center mx-auto">
                 <p class="uppercase text-primary">{{title}}</p>

@@ -97,7 +97,7 @@ class Home extends Page implements HasForms {
                                     ])
                             ]),
                     ])
-                    ->addable(true)
+                    ->addable(false)
                     ->reorderable(false)
                     ->deletable(false)
                     ->collapsible()
