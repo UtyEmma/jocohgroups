@@ -168,7 +168,110 @@ return [
 
             'footer_scripts' => ""
         ],
-        'content' => []
+        'content' => [
+            "home" => [
+                "sections" => [
+                    [
+                        "type" => "hero_section",
+                        "data" => [
+                            "sliders" => [
+                                [
+                                    "image" => "/assets/group/images/banners/tomato-harvesters.png",
+                                    "title" => "**Organic** food products from the ground to your table.",
+                                    "caption" => "From precision farming to smart irrigation our platform offers a suite of tools designed to the enhance efficiency and increase yields",
+                                    "button_text" => "Contact Us",
+                                    "button_link" => "stores.contact"
+                                ],
+                                [
+                                    "button_text" => "Contact Us",
+                                    "button_link" => "stores.contact",
+                                    "image" => "/assets/group/images/banners/butter-processing.png",
+                                    "title" => "**Organically,** processed & delivered to you ",
+                                    "caption" => "From precision farming to smart irrigation our platform offers a suite of tools designed to the enhance efficiency and increase yields"
+                                ],
+                                [
+                                    "button_text" => "Contact Us",
+                                    "button_link" => "stores.contact",
+                                    "image" => "/assets/group/images/banners/chicken-coop.jpeg",
+                                    "title" => "**Rared,** with absolute care to produce the finest results",
+                                    "caption" => "From precision farming to smart irrigation our platform offers a suite of tools designed to the enhance efficiency and increase yields"
+                                ],
+                                [
+                                    "button_text" => "Contact Us",
+                                    "button_link" => "stores.contact",
+                                    "image" => "/assets/group/images/banners/egg-trays.jpeg",
+                                    "title" => "**Best products,** delivered with uptmost care.",
+                                    "caption" => "From precision farming to smart irrigation our platform offers a suite of tools designed to the enhance efficiency and increase yields"
+                                ]
+                            ]
+                        ]
+                    ],
+                    [
+                        "type" => "about_section",
+                        "data" => [
+                            "caption" => "Jocoh Farms",
+                            "title" => "The best producer of **organic** food imported and shipped across Africa "
+                        ]
+                    ],
+                    [
+                        "type" => "mission_section",
+                        "data" => [
+                            "vision_title" => "High-quality organic products for you and your family.",
+                            "vision_caption" => "Explore comprehensive suite of innovative farming solution tailored to meet the unique challenges of modern agriculture.",
+                            "title" => "who we are",
+                            "heading" => "Africa’s leading provider of **Agricultural ** products.",
+                            "caption" => "We believe in the transformative power of agriculture and its ability to shape sustainable future. our platform is more than just a digital space.",
+                            "image" => "/assets/group/images/banners/tomato-fruit.png",
+                            "mission_title" => "High-quality organic products for you and your family.",
+                            "mission_caption" => "Explore comprehensive suite of innovative farming solution tailored to meet the unique challenges of modern agriculture."
+                        ]
+                    ],
+                    [
+                        "type" => "product_section",
+                        "data" => [
+                            "title" => "our products",
+                            "heading" => "Explore our organic **Products**",
+                            "caption" => "We believe in the transformative power of agriculture and its ability to sustainable future. our platform is more than just a digital space."
+                        ]
+                    ],
+                    [
+                        "type" => "partners_section",
+                        "data" => [
+                            "title" => "trusted partners",
+                            "heading" => "Partnerships and **Collaborations.**",
+                            "caption" => "Share experiences, exchange ideas, and collaborate on innovative projects that have the potential to revolutionise agriculture Together, we can build a resilient agricultural."
+                        ]
+                    ],
+                    [
+                        "type" => "process_section",
+                        "data" => [
+                            "button_text" => "Contact Us",
+                            "button_link" => "stores.contact",
+                            "title" => "our Process",
+                            "heading" => "**Discover** Fresh farm produce from Jocoh Farm.",
+                            "caption" => "Our commitment goes beyond digital boundaries. Jocoh Farm is dedicated to empowering farmers. through partnerships, education initiatives and technology."
+                        ]
+                    ],
+                    [
+                        "type" => "client_section",
+                        "data" => [
+                            "title" => "client’s testimonial",
+                            "heading" => "What clients are saying about the Jocoh’s Products",
+                            "caption" => "We believe in the transformative power of agriculture and its ability to sustainable future. our platform is more than just a digital space."
+                        ]
+                    ],
+                    [
+                        "type" => "faq_section",
+                        "data" => [
+                            "title" => "frequently asked questions",
+                            "heading" => "How can agri-entrepreneurs Innovations. showcase their **innovations**",
+                            "caption" => "Explore the all resources and initiatives aimed at promoting best eco-friendly farming methods and reducing of the environmental impact of agriculture.",
+                            "image" => "/assets/group/images/banners/farm-machine-at-work.png"
+                        ]
+                    ]
+                ]
+            ]
+        ]        
     ],
 
     Platforms::STORES->value => [

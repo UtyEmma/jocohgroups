@@ -73,7 +73,7 @@ const show = ref('mission') //vision | mission
 
         <div class="relative md:mb-10 space-y-5 md:space-y-0">
             <div class="md:w-2/3">
-                <img :src="image" class="w-full aspect-[6/4] object-cover" alt="">
+                <img :src="image" v-fallback="`/storage/${image}`" class="w-full aspect-[6/4] object-cover" alt="">
             </div>
 
             <div class="md:absolute md:w-1/2 end-0 -bottom-10">

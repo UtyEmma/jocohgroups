@@ -16,7 +16,7 @@ const sliders = render({
             caption: "From precision farming to smart irrigation our platform offers a suite of tools designed to the enhance efficiency and increase yields",
             button_text: "Contact Us",
             button_link: 'stores.contact',
-        }   
+        }, 
     ],
     key: 'hero_section',
     value: 'sliders'
