@@ -1,0 +1,103 @@
+{
+    "home": {
+        "sections": [
+            {
+                "type": "hero_section",
+                "data": {
+                    "image": "01J2XTT9SZK85SKZG6RCWWK4N3.jpg",
+                    "title": "Facilitating  the production and delivery of **agricultural** produce across Africa",
+                    "caption": " Founded on the belief that farming can be both profitable and environmentally responsible, we integrate innovation, technology, and community engagement to drive positive change in the agricultural sector."
+                }
+            },
+            {
+                "type": "about_section",
+                "data": {
+                    "image_1": "01J2XTT9TDJSERRQGXB6YHFPXJ.jpg",
+                    "image_2": "01J2XTT9TPPCD11EMB2E7HT9ES.jpg",
+                    "title": "We Are Leading the Charge for Sustainable Agriculture **Join us today.**",
+                    "description": "Redefining food production with technology and collaboration to combat climate change, \nfood insecurity, and environmental degradation."
+                }
+            },
+            {
+                "type": "impact_section",
+                "data": {
+                    "title": "Our Impact over the years",
+                    "impact": {
+                        "45": "Products Produced Organically",
+                        "5+": "Years in production",
+                        "80+": "Global Partners"
+                    }
+                }
+            },
+            
+            {
+                "type": "ventures_section",
+                "data": {
+                    "ventures": [
+                        {
+                            "image": "/assets/group/images/banners/supermarket-shoppers.jpeg",
+                            "logo": "/assets/stores/images/logo.png",
+                            "title": "Jocoh Stores",
+                            "link": "https:\/\/stores.jocohgroup.com",
+                            "caption": "We believe in the transformative power of agriculture and its ability to shape sustainable future. our platform is more than just a digital space."
+                        },
+                        {
+                            "image": "01J2XTZ5507J0YMCJV0VH37FW9.png",
+                            "logo": "01J2XTZ55E8V98N6643N3F6CKM.png",
+                            "title": "Jocoh Farms",
+                            "link": "https:\/\/farms.jocoh.com",
+                            "caption": "We believe in the transformative power of agriculture and its ability to shape sustainable future. our platform is more than just an amazing digital space."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "about": {
+        "sections": [
+            {
+                "type": "banner_section",
+                "data": {
+                    "button_text": "Explore Careers",
+                    "button_link": "group.about",
+                    "image": "01J2XXBC3GBH8SSGQFQNTTYYAK.jpg",
+                    "title": "Join our team to help lead the change in food production",
+                    "caption": "A sustainable food system means more than just producing food. It means ensuring that every step in the process\u2014from farm to table\u2014is done with respect for people and the planet. Let's work together to create a brighter future for everyone."
+                }
+            },
+            {
+                "type": "about_section",
+                "data": {
+                    "title": "Our goals.",
+                    "description": "We strive to be the gold standard for high-quality, sustainably grown agricultural products. With a commitment to environmental stewardship and social responsibility, we work to deliver fresh, nutritious, and delicious food to our customers, while also creating jobs and economic opportunities for our employees and communities. By harnessing the power of technology, sustainable farming practices, and community partnerships, we hope to contribute to a more just and resilient food system for all."
+                }
+            },
+            {
+                "type": "uniqueness_section",
+                "data": {
+                    "title": "Here\u2019s what makes us Unique",
+                    "uniqueness": [
+                        {
+                            "title": "Sustainability-Driven",
+                            "caption": "Jocoh Farm Produce is committed to eco-friendly and socially responsible farming practices, which sets us apart from conventional agricultural businesses."
+                        },
+                        {
+                            "title": "Locally-Focused",
+                            "caption": "Our approach emphasizes local partnerships and community engagement, which ensures that our impact is felt beyond the farm and reaches into the neighborhoods where we operate."
+                        },
+                        {
+                            "title": "Technology-Enabled",
+                            "caption": "Jocoh leverages cutting-edge technology to optimize our farming operations and ensure the quality and freshness of our products, giving us a competitive edge in the marketplace."
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "career_section",
+                "data": {
+                    "title": "Our Openings"
+                }
+            }
+        ]
+    }
+}

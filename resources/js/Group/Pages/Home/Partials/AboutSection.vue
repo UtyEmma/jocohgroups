@@ -19,11 +19,20 @@ const caption = render({
                     element: 'span'
                 })
 
-const images = render({
-                    default_value: ['/assets/group/images/banners/factory.jpeg', '/assets/group/images/banners/harvesting.jpeg' ], 
+const image_1 = render({
+                    default_value: '/assets/group/images/banners/factory.jpeg', 
                     classes: '',
                     key: 'about_section', 
-                    value: 'images' 
+                    value: 'image_1', 
+                    prepend: 'storage/'
+                })
+
+const image_2 = render({
+                    default_value: '/assets/group/images/banners/harvesting.jpeg', 
+                    classes: '',
+                    key: 'about_section', 
+                    value: 'image_2', 
+                    prepend: 'storage/'
                 })
 
 </script>
@@ -36,13 +45,17 @@ const images = render({
         </div>
 
         <div class="grid grid-cols-2 gap-x-5 md:gap-x-10">
-            <div v-for="image in images">
-                <div class="w-full aspect-[4/3] bg-bottom bg-cover no-repeat" :class="image"
-                    v-bind:style="{
-                        backgroundImage: `url(storage/${image})`
-                    }"
-                ></div>
-            </div>
+            <div class="w-full aspect-[4/3] bg-center bg-cover no-repeat"
+                v-bind:style="{
+                    backgroundImage: `url(${image_1})`
+                }"
+            ></div>
+
+            <div class="w-full aspect-[4/3] bg-cover bg-center no-repeat"
+                v-bind:style="{
+                    backgroundImage: `url(${image_2})`
+                }"
+            ></div>
         </div>
     </div>
 </template>

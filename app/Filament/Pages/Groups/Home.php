@@ -18,6 +18,7 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class Home extends Page implements HasForms {
     use InteractsWithForms;
@@ -35,7 +36,7 @@ class Home extends Page implements HasForms {
 
     function mount(){     
         $this->platform = request()->platform()->model();   
-        $this->form->fill($this->platform->content);
+        $this->form->fill($this->platform->content['home'] ?? []);
     }
 
     public static function canAccess(): bool {
@@ -53,28 +54,26 @@ class Home extends Page implements HasForms {
     function form(Form $form) : Form{
         return $form
             ->schema([
-                TextInput::make('title'),
-                TextInput::make('tags'),
-                Textarea::make('description'),
-                Builder::make('home')
+                // TextInput::make('title'),
+                // TextInput::make('tags'),
+                // Textarea::make('description'),
+                Builder::make('sections')
                     ->label('Edit Page Sections')
                     ->blocks([
                         Block::make('hero_section')
                             ->schema([
-                                Repeater::make('sliders')
-                                    ->addable()
-                                    ->schema([
-                                        FileUpload::make('image')
-                                            ->columnSpan(2),
-                                        TextInput::make('title'),
-                                        Textarea::make('caption')
-                                            ->columnSpanFull()
-                                    ])
+                                FileUpload::make('image')
+                                    ->columnSpan(2),
+                                TextInput::make('title'),
+                                Textarea::make('caption')
+                                    ->columnSpanFull()
                             ]),
                         Block::make('about_section')
                             ->schema([
-                                FileUpload::make('images')->maxFiles(2)
-                                    ->image()->multiple(),
+                                FileUpload::make('image_1')
+                                    ->image(),
+                                FileUpload::make('image_2')
+                                    ->image(),
                                 TextInput::make('title'),
                                 Textarea::make('description'),
                             ]),
@@ -98,7 +97,7 @@ class Home extends Page implements HasForms {
                                     ])
                             ]),
                     ])
-                    ->addable(false)
+                    ->addable(true)
                     ->reorderable(false)
                     ->deletable(false)
                     ->collapsible()
@@ -109,7 +108,7 @@ class Home extends Page implements HasForms {
     }
 
     public function submit(): void {
-        $this->platform->content['home'] = $this->form->getState();
+        $this->platform['content->home'] = $this->form->getState();
         $this->platform->save();
        
         Notification::make()->success()->title('Page Updated Successfully')->send();

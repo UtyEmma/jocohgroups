@@ -1,7 +1,7 @@
 import { usePage } from "@inertiajs/vue3"
 
 export default function usePlatform (page = '') {
-    const {props} = usePage()
+    const {props, url} = usePage()
     const {logo, name, slug, settings, content: platform_content,  ...platform} = props.platform
 
     const render = ({
@@ -12,7 +12,8 @@ export default function usePlatform (page = '') {
         element = 'span',
         prepend = '',
         append = ''
-    }) => {
+    }, callback = (item) => item) => {
+        const handler = callback;
         const item = platform_content[page]?.sections;
         if(!item) return defaultValue(default_value, element, classes);
 
@@ -25,16 +26,20 @@ export default function usePlatform (page = '') {
         const val = content.data[value] ?? null;
 
         if(val) {
-            if(typeof val == 'string') return formatText(val, { append, classes, element, prepend });
-            if(Array.isArray(val) && item.length > 0) return val;
-            return val;
+            const value = respond(val, item, append, classes, element, prepend)
+            return handler(value);
         }
-        
+
         return defaultValue(default_value, element, classes);
     }
 
     return { render, logo, name, code: slug, content: platform_content, settings, page, format: formatText }
+}
 
+function respond (val, item, append, classes, element, prepend){
+    if(typeof val == 'string') return formatText(val, { append, classes, element, prepend });
+    if(Array.isArray(val) && item.length > 0) return val;
+    return val;
 }
 
 const formatText = (text, items = {}) => {
@@ -43,7 +48,6 @@ const formatText = (text, items = {}) => {
 }
 
 function defaultValue(value, element, classes = null) {
-    // if(Array.isArray(value)) return value;
     if(typeof value == 'string') return formatText(value, element, classes);
     return value;
 }

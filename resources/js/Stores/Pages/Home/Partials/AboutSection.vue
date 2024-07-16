@@ -67,9 +67,7 @@ onMounted(() => {
             <div class="grid md:grid-cols-2 gap-5 md:gap-16 items-center">
                 <div>
                     <div v-for="(item, index) in steps">
-                        <img  :src="format(item.image, {
-                            prepend: 'storage/'
-                        })" v-if="step == index" class="aspect-square overflow-hidden object-cover" alt="">
+                        <img  :src="item.image" v-fallback="`storage/${item.image}`" v-if="step == index" class="aspect-square overflow-hidden object-cover" alt="">
                     </div>
                 </div>
 

@@ -8,7 +8,7 @@ const el = ref()
 const btn = ref()
 
 const hide = (e) => {
-    if(!btn.value.contains(e.target) && !el.value.contains(e.target)) {
+    if(!btn.value?.contains(e.target) && !el.value?.contains(e.target)) {
         show.value = false
     }
 }

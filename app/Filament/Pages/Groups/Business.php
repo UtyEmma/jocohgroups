@@ -52,22 +52,18 @@ class Business extends Page implements HasForms {
                     ->blocks([
                         Block::make('banner_section')
                             ->schema([
-                                Repeater::make('sliders')
-                                    ->addable()
+                                FileUpload::make('image')
+                                    ->columnSpan(2),
+                                TextInput::make('title'),
+                                Textarea::make('caption')
+                                    ->columnSpanFull(),
+                                Grid::make()
+                                    ->columns(2)
                                     ->schema([
-                                        FileUpload::make('image')
-                                            ->columnSpan(2),
-                                        TextInput::make('title'),
-                                        Textarea::make('caption')
-                                            ->columnSpanFull(),
-                                        Grid::make()
-                                            ->columns(2)
-                                            ->schema([
-                                                TextInput::make('button_text'),
-                                                SelectRoute::make('button_link')
-                                                    ->searchable()
-                                            ]),
-                                    ])
+                                        TextInput::make('button_text'),
+                                        SelectRoute::make('button_link')
+                                            ->searchable()
+                                    ]),
                             ]),
                         Block::make('about_section')
                             ->schema([

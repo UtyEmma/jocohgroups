@@ -7,7 +7,7 @@ use App\Http\Controllers\Group\PageController;
 use App\Http\Middleware\SetActivePlatformMiddleware;
 use Illuminate\Support\Facades\Route;
 
-Route::domain(env('APP_DOMAIN'))
+Route::domain(env('APP_GROUP_DOMAIN'))
     ->name('group.')
     ->middleware(SetActivePlatformMiddleware::class)
     ->group(function(){
