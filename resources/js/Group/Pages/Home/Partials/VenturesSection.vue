@@ -38,7 +38,7 @@ const ventures = render({
                 <a :href="venture.link" target="_blank" class="flex md:gap-x-10 flex-col md:flex-row space-y-6 hover:bg-primary-50 group relative overflow-hidden duration-500">
                     <div class="md:w-1/4 shrink-0">
                         <div class="md:aspect-square aspect-video bg-bottom bg-cover no-repeat" >
-                            <img :src="venture.image" v-fallback="`storage/${venture.image}`" class="w-full h-full object-cover" alt="">
+                            <img :src="venture.image" v-fallback="`/storage/${venture.image}`" class="w-full h-full object-cover" alt="">
                         </div>
                     </div>
 
