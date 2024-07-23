@@ -77,8 +77,8 @@ return [
                                     "caption" => "We believe in the transformative power of agriculture and its ability to shape sustainable future. our platform is more than just a digital space."
                                 ],
                                 [
-                                    "image" => "/group/images/banners/tomato-harvesters.png",
-                                    "logo" => "/farms/images/logo.png",
+                                    "image" => "/assets/group/images/banners/tomato-harvesters.png",
+                                    "logo" => "/assets/farms/images/logo.png",
                                     "title" => "Jocoh Farms",
                                     "link" => "https://farms.jocoh.com",
                                     "caption" => "We believe in the transformative power of agriculture and its ability to shape sustainable future. our platform is more than just an amazing digital space."
