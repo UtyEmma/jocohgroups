@@ -40,7 +40,7 @@ return [
                     [
                         "type" => "hero_section",
                         "data" => [
-                            "image" => "asset/group/images/banners/farmers-in-the-field.jpeg",
+                            "image" => "/assets/group/images/banners/farmers-in-the-field.jpeg",
                             "title" => "Facilitating the production and delivery of **agricultural** produce across Africa",
                             "caption" => " Founded on the belief that farming can be both profitable and environmentally responsible, we integrate innovation, technology, and community engagement to drive positive change in the agricultural sector."
                         ]
@@ -48,8 +48,8 @@ return [
                     [
                         "type" => "about_section",
                         "data" => [
-                            "image_1" => "asset/group/images/banners/factory.jpeg",
-                            "image_2" => "asset/group/images/banners/harvesting.jpeg",
+                            "image_1" => "/assets/group/images/banners/factory.jpeg",
+                            "image_2" => "/assets/group/images/banners/harvesting.jpeg",
                             "title" => "We Are Leading the Charge for Sustainable Agriculture **Join us today.**",
                             "description" => "Redefining food production with technology and collaboration to combat climate change, \nfood insecurity, and environmental degradation."
                         ]
@@ -70,15 +70,15 @@ return [
                         "data" => [
                             "ventures" => [
                                 [
-                                    "image" => "asset/group/images/banners/supermarket-shoppers.jpeg",
-                                    "logo" => "asset/stores/images/logo.png",
+                                    "image" => "/assets/group/images/banners/supermarket-shoppers.jpeg",
+                                    "logo" => "/assets/stores/images/logo.png",
                                     "title" => "Jocoh Stores",
                                     "link" => "https://stores.jocohgroup.com",
                                     "caption" => "We believe in the transformative power of agriculture and its ability to shape sustainable future. our platform is more than just a digital space."
                                 ],
                                 [
-                                    "image" => "asset/group/images/banners/tomato-harvesters.png",
-                                    "logo" => "asset/farms/images/logo.png",
+                                    "image" => "/assets/group/images/banners/tomato-harvesters.png",
+                                    "logo" => "/assets/farms/images/logo.png",
                                     "title" => "Jocoh Farms",
                                     "link" => "https://farms.jocoh.com",
                                     "caption" => "We believe in the transformative power of agriculture and its ability to shape sustainable future. our platform is more than just an amazing digital space."
@@ -95,7 +95,7 @@ return [
                         "data" => [
                             "button_text" => "Explore Careers",
                             "button_link" => "group.about",
-                            "image" => "asset/group/images/banners/farmers-in-the-field.jpeg",
+                            "image" => "/assets/group/images/banners/farmers-in-the-field.jpeg",
                             "title" => "Join our team to help lead the change in food production",
                             "caption" => "A sustainable food system means more than just producing food. It means ensuring that every step in the process—from farm to table—is done with respect for people and the planet. Let's work together to create a brighter future for everyone."
                         ]
@@ -176,7 +176,7 @@ return [
                         "data" => [
                             "sliders" => [
                                 [
-                                    "image" => "assets/group/images/banners/tomato-harvesters.png",
+                                    "image" => "/assets/group/images/banners/tomato-harvesters.png",
                                     "title" => "**Organic** food products from the ground to your table.",
                                     "caption" => "From precision farming to smart irrigation our platform offers a suite of tools designed to the enhance efficiency and increase yields",
                                     "button_text" => "Contact Us",
@@ -185,21 +185,21 @@ return [
                                 [
                                     "button_text" => "Contact Us",
                                     "button_link" => "stores.contact",
-                                    "image" => "assets/farms/images/butter-processing.png",
+                                    "image" => "/assets/farms/images/butter-processing.png",
                                     "title" => "**Organically,** processed & delivered to you ",
                                     "caption" => "From precision farming to smart irrigation our platform offers a suite of tools designed to the enhance efficiency and increase yields"
                                 ],
                                 [
                                     "button_text" => "Contact Us",
                                     "button_link" => "stores.contact",
-                                    "image" => "assets/farms/images/chicken-coop.jpeg",
+                                    "image" => "/assets/farms/images/chicken-coop.jpeg",
                                     "title" => "**Rared,** with absolute care to produce the finest results",
                                     "caption" => "From precision farming to smart irrigation our platform offers a suite of tools designed to the enhance efficiency and increase yields"
                                 ],
                                 [
                                     "button_text" => "Contact Us",
                                     "button_link" => "stores.contact",
-                                    "image" => "assets/farms/images/egg-trays.jpeg",
+                                    "image" => "/assets/farms/images/egg-trays.jpeg",
                                     "title" => "**Best products,** delivered with uptmost care.",
                                     "caption" => "From precision farming to smart irrigation our platform offers a suite of tools designed to the enhance efficiency and increase yields"
                                 ]
@@ -221,7 +221,7 @@ return [
                             "title" => "who we are",
                             "heading" => "Africa’s leading provider of **Agricultural ** products.",
                             "caption" => "We believe in the transformative power of agriculture and its ability to shape sustainable future. our platform is more than just a digital space.",
-                            "image" => "assets/farms/images/tomato-fruit.png",
+                            "image" => "/assets/farms/images/tomato-fruit.png",
                             "mission_title" => "High-quality organic products for you and your family.",
                             "mission_caption" => "Explore comprehensive suite of innovative farming solution tailored to meet the unique challenges of modern agriculture."
                         ]
@@ -266,7 +266,7 @@ return [
                             "title" => "frequently asked questions",
                             "heading" => "How can agri-entrepreneurs Innovations. showcase their **innovations**",
                             "caption" => "Explore the all resources and initiatives aimed at promoting best eco-friendly farming methods and reducing of the environmental impact of agriculture.",
-                            "image" => "assets/farms/images/farm-machine-at-work.png"
+                            "image" => "/assets/farms/images/farm-machine-at-work.png"
                         ]
                     ]
                 ]
@@ -311,7 +311,7 @@ return [
                         "type" => "hero_section",
                         "data" => [
                             "title" => "We are providing you with everyday fresh & organic Products.",
-                            "image" => "assets/stores/images/banner/food-stuffs.png"
+                            "image" => "/assets/stores/images/banner/food-stuffs.png"
                         ]
                     ],
                     [
@@ -321,17 +321,17 @@ return [
                             "caption" => "We believe in the transformative power of agriculture and its ability to sustainable future. our platform is more than just a digital space.",
                             "steps" => [
                                 [
-                                    "image" => "assets/stores/images/preview.png",
+                                    "image" => "/assets/stores/images/preview.png",
                                     "title" => "Visit the website",
                                     "caption" => "Log on to our website, Navigate to the product page of the item you're interested in purchasing in bulk."
                                 ],
                                 [
-                                    "image" => "assets/stores/images/preview-contact.png",
+                                    "image" => "/assets/stores/images/preview-contact.png",
                                     "title" => "Request on the contact page",
                                     "caption" => "Scroll to the contact page on the website ensure that on the page you enter your name, email & the description of the product you choose to purchase"
                                 ],
                                 [
-                                    "image" => "assets/stores/images/shopping-cart.png",
+                                    "image" => "/assets/stores/images/shopping-cart.png",
                                     "title" => "Get your items delivered",
                                     "caption" => "Log on to our website, Navigate to the product page of the item you're interested in purchasing in bulk."
                                 ]
@@ -343,8 +343,8 @@ return [
                         "data" => [
                             "title" => "Shop Wholesale & Retails",
                             "caption" => "You have the opportunity to shop both retail and wholesale we have product available across major stores in Nigeria, ",
-                            "left_image" => "assets/stores/images/people-shopping.png",
-                            "right_image" => "assets/stores/images/bag-with-foodstuffs.png"
+                            "left_image" => "/assets/stores/images/people-shopping.png",
+                            "right_image" => "/assets/stores/images/bag-with-foodstuffs.png"
                         ]
                     ],
                     [
@@ -370,7 +370,7 @@ return [
                         "data" => [
                             "caption" => "ABOUT US",
                             "title" => "An African food ingredient supplier company.",
-                            "image" => "assets/stores/images/banner/food-stuffs.png"
+                            "image" => "/assets/stores/images/banner/food-stuffs.png"
                         ]
                     ],
                     [
@@ -380,22 +380,22 @@ return [
                             "caption" => null,
                             "journey" => [
                                 [
-                                    "image" => "assets/stores/images/cac-document.png",
+                                    "image" => "/assets/stores/images/cac-document.png",
                                     "title" => "Operation Started.",
                                     "date" => "2020"
                                 ],
                                 [
-                                    "image" => "assets/stores/images/delivery-trucks.png",
+                                    "image" => "/assets/stores/images/delivery-trucks.png",
                                     "title" => "Delivered over 10m products",
                                     "date" => "2021"
                                 ],
                                 [
-                                    "image" => "assets/stores/images/handshakes.png",
+                                    "image" => "/assets/stores/images/handshakes.png",
                                     "title" => "Partnered with Jocoh Farm",
                                     "date" => "2023"
                                 ],
                                 [
-                                    "image" => "assets/stores/images/funds-raise.png",
+                                    "image" => "/assets/stores/images/funds-raise.png",
                                     "title" => "We raised $56m",
                                     "date" => "2024"
                                 ]
