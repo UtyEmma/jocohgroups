@@ -1,10 +1,7 @@
 export default {
     mounted(el, binding) {
-        const fallbackSrc = binding.value;
-        
-        el.onerror = () => {
-            el.src = fallbackSrc;
-        };
+        if(el.src == binding.value) return;
+        el.onerror = () => el.src = binding.value;
     }
 };
   
