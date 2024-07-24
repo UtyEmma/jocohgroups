@@ -31,7 +31,8 @@ const props = defineProps({
             </div>
         </div>
 
-        <div class="py-20 max-w-[80%] mx-auto space-y-20">
+        
+        <div v-if="faqs.length > 0" class="py-20 max-w-[80%] mx-auto space-y-20">
             <div class="space-y-4">
                 <p class="text-4xl font-bold leading-tight">Frequently asked questions</p>
                 <p class="mx-auto text-lg text-muted font-medium leading-[23.04px]">We believe in the transformative power of agriculture and its ability to sustainable future. our platform is more </p>
