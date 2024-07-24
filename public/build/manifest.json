@@ -291,7 +291,7 @@
     ]
   },
   "resources/js/Group/Pages/About/Index.vue": {
-    "file": "assets/Index-DL8f5OLb.js",
+    "file": "assets/Index-DyZfELaf.js",
     "name": "Index",
     "src": "resources/js/Group/Pages/About/Index.vue",
     "isDynamicEntry": true,
@@ -336,7 +336,7 @@
     ]
   },
   "resources/js/Group/Pages/About/Partials/HeroSection.vue": {
-    "file": "assets/HeroSection-WDVyOYUx.js",
+    "file": "assets/HeroSection-4wmbbgxF.js",
     "name": "HeroSection",
     "src": "resources/js/Group/Pages/About/Partials/HeroSection.vue",
     "isDynamicEntry": true,
@@ -488,7 +488,7 @@
     ]
   },
   "resources/js/Group/app.js": {
-    "file": "assets/app-D_Lum8KE.js",
+    "file": "assets/app-CEFK3c3n.js",
     "name": "app",
     "src": "resources/js/Group/app.js",
     "isEntry": true,
