@@ -26,12 +26,14 @@ const caption = render({
 <template>
     <div  :class="`md:h-[110vh] h-[80vh] w-full bg-[15%]  bg-cover no-repeat relative`">       
         <div class="absolute top-0 bottom-0 right-0 left-0 z-0" >
-            <img :src="image" class="w-full h-full" v-fallback="`/storage/${image}`" alt="">
+            <img :src="image" class="w-full h-full object-cover" v-fallback="`/storage/${image}`" alt="">
         </div>
-        <div class="md:max-w-7xl px-4 mx-auto flex items-end  h-full py-10 md:py-20">
-            <div class="md:w-9/12 space-y-3">
-                <h1 class="md:text-[74px] text-3xl !text-left md:leading-[80px] hero-title text-white" v-html="title" ></h1>
-                <p class="md:w-5/6 text-white text-sm md:text-base !text-left">{{ caption }}</p>
+        <div class="absolute right-0 left-0 top-0 bottom-0 bg-gradient-to-t to-transparent from-black/50 z-50">
+            <div class="md:max-w-7xl px-4 mx-auto flex items-end  h-full py-10 md:py-20">
+                <div class="md:w-9/12 space-y-3">
+                    <h1 class="md:text-[74px] text-3xl !text-left md:leading-[80px] hero-title text-white" v-html="title" ></h1>
+                    <p class="md:w-5/6 text-white text-sm md:text-base !text-left">{{ caption }}</p>
+                </div>
             </div>
         </div>
     </div>
