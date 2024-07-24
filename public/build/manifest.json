@@ -140,7 +140,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Index.vue": {
-    "file": "assets/Index-nD-_hWBo.js",
+    "file": "assets/Index-nngneZq2.js",
     "name": "Index",
     "src": "resources/js/Farms/Pages/Home/Index.vue",
     "isDynamicEntry": true,
@@ -187,7 +187,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/HeroSection.vue": {
-    "file": "assets/HeroSection-Di38SKIZ.js",
+    "file": "assets/HeroSection-BkeCqKfm.js",
     "name": "HeroSection",
     "src": "resources/js/Farms/Pages/Home/Partials/HeroSection.vue",
     "isDynamicEntry": true,
@@ -258,7 +258,7 @@
     ]
   },
   "resources/js/Farms/app.js": {
-    "file": "assets/app-B42Fq52G.js",
+    "file": "assets/app-CnDO1jW_.js",
     "name": "app",
     "src": "resources/js/Farms/app.js",
     "isEntry": true,

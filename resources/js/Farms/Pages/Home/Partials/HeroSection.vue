@@ -31,7 +31,7 @@ const sliders = render({
                 <Slide v-for="(slider, index) in sliders" :key="`slide-${index}`"   >
                     <div class="md:h-[110vh] h-[70vh] w-full bg-[15%] bg-cover no-repeat relative" >   
                         <div class="absolute top-0 bottom-0 right-0 left-0 z-0" >
-                            <img :src="slider.image" class="w-full h-full" v-fallback="`/storage/${slider.image}`" alt="">
+                            <img :src="slider.image" class="w-full h-full object-cover" v-fallback="`/storage/${slider.image}`" alt="">
                         </div>
 
                         <div class="absolute right-0 left-0 top-0 bottom-0 bg-gradient-to-t to-transparent from-black/70">
