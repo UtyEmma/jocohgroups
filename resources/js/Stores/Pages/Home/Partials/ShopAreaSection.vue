@@ -19,14 +19,14 @@ const right_image = render({
                 default_value: '/assets/stores/images/bag-with-foodstuffs.png',
                 key: 'wholesale_retail',
                 value: 'right_image',
-                prepend: 'storage/'
+                prepend: ''
             })
 
 const left_image = render({
                 default_value: '/assets/stores/images/people-shopping.png',
                 key: 'wholesale_retail',
                 value: 'left_image',
-                prepend: 'storage/'
+                prepend: ''
             })
 </script>
 
@@ -38,18 +38,12 @@ const left_image = render({
         </div>
 
         <div class="grid grid-cols-2 gap-2 md:gap-x-10">
-            <div>
-                <div 
-                    class="w-full aspect-[4/3] bg-bottom bg-cover no-repeat" 
-                    :style="{ backgroundImage: `url(${left_image})` }"
-                ></div>
+            <div class="w-full aspect-[4/3] bg-center bg-cover no-repeat" >
+                <img :src="left_image" class="w-full aspect-[4/3] object-cover" v-fallback="`/storage/${left_image}`" alt="">
             </div>
-            
-            <div>
-                <div 
-                    class="w-full aspect-[4/3] bg-[15%] bg-cover no-repeat"
-                    :style="{ backgroundImage: `url(${right_image})` }"
-                ></div>
+
+            <div class="w-full aspect-[4/3] bg-center bg-cover no-repeat" >
+                <img :src="right_image" class="w-full aspect-[4/3] object-cover" v-fallback="`/storage/${right_image}`" alt="">
             </div>
         </div>
     </div>
