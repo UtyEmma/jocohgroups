@@ -523,7 +523,7 @@
     "isEntry": true
   },
   "resources/js/Stores/Pages/About/Index.vue": {
-    "file": "assets/Index--BvFmvZZ.js",
+    "file": "assets/Index-Di2u_PRk.js",
     "name": "Index",
     "src": "resources/js/Stores/Pages/About/Index.vue",
     "isDynamicEntry": true,
@@ -556,7 +556,7 @@
     ]
   },
   "resources/js/Stores/Pages/About/Partials/HeroSection.vue": {
-    "file": "assets/HeroSection-BXgEb6-g.js",
+    "file": "assets/HeroSection-Bk8JyMn0.js",
     "name": "HeroSection",
     "src": "resources/js/Stores/Pages/About/Partials/HeroSection.vue",
     "isDynamicEntry": true,
@@ -742,7 +742,7 @@
     ]
   },
   "resources/js/Stores/app.js": {
-    "file": "assets/app-XhQdgCpE.js",
+    "file": "assets/app-Dahnclel.js",
     "name": "app",
     "src": "resources/js/Stores/app.js",
     "isEntry": true,

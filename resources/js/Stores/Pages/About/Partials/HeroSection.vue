@@ -20,7 +20,7 @@ const image = render({
                 default_value: '/assets/stores/images/banner/food-stuffs.png',
                 key: 'hero_section',
                 value: 'image',
-                prepend: 'storage/'
+                prepend: ''
             })
 </script>
 
