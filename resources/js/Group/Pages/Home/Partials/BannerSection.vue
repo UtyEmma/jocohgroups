@@ -28,6 +28,7 @@ const caption = render({
         <div class="absolute top-0 bottom-0 right-0 left-0 z-0" >
             <img :src="image" class="w-full h-full object-cover" v-fallback="`/storage/${image}`" alt="">
         </div>
+        
         <div class="absolute right-0 left-0 top-0 bottom-0 bg-gradient-to-t to-transparent from-black/50 z-50">
             <div class="md:max-w-7xl px-4 mx-auto flex items-end  h-full py-10 md:py-20">
                 <div class="md:w-9/12 space-y-3">

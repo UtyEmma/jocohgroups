@@ -42,7 +42,7 @@ const button_text = render({
 </script>
 
 <template>
-    <section class="md:h-[110vh] h-[90vh] bg-[15%] w-full bg-cover no-repeat" >
+    <section class="md:h-[110vh] h-[90vh] bg-[15%] w-full bg-cover no-repeat relative"  >
         <div class="absolute top-0 bottom-0 right-0 left-0 z-0" >
             <img :src="image" class="w-full h-full object-cover" v-fallback="`/storage/${image}`" alt="">
         </div>
