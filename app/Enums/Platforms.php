@@ -27,6 +27,7 @@ enum Platforms:string {
             in_array($domain, [env('APP_GROUP_DOMAIN')]) => self::GROUP,
             in_array($domain, [env('APP_STORES_DOMAIN')]) => self::STORES,
             in_array($domain, [env('APP_FARMS_DOMAIN')]) => self::FARMS,
+            default => self::GROUP
         };
     }
 
