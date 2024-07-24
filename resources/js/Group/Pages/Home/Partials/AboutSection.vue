@@ -20,7 +20,7 @@ const caption = render({
                 })
 
 const image_1 = render({
-                    default_value: '/storage/assets/group/images/banners/factory.jpeg', 
+                    default_value: '/assets/group/images/banners/factory.jpeg', 
                     classes: '',
                     key: 'about_section', 
                     value: 'image_1', 
@@ -28,7 +28,7 @@ const image_1 = render({
                 })
 
 const image_2 = render({
-                    default_value: '/storage/assets/group/images/banners/harvesting.jpeg', 
+                    default_value: '/assets/group/images/banners/harvesting.jpeg', 
                     classes: '',
                     key: 'about_section', 
                     value: 'image_2', 

@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="md:w-4/12 bg-primary flex space-x-7 justify-center md:justify-start items-center py-3 md:pl-[5%]">
-                <a href="#">
+                <a v-if="settings.skype_link" :href="settings.skype_link">
                     <SkypeIcon class="size-4 md:size-5 fill-white" />
                 </a>
                 <a v-if="settings.facebook_link" :href="settings.facebook_link">

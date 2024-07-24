@@ -65,6 +65,8 @@ class Settings extends Page implements HasForms {
                                     ->url(),
                                 TextInput::make('facebook_link')
                                 ->url(),
+                                TextInput::make('skype_link')
+                                ->url(),
                             ]),
                         Tab::make('SEO')
                             ->schema([
