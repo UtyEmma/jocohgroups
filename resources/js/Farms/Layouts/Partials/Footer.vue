@@ -7,6 +7,7 @@ import TwitterIcon from '@/Shared/Icons/TwitterIcon.vue';
 import LinkedInIcon from '@/Shared/Icons/LinkedInIcon.vue';
 import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
 import usePlatform from '@/Shared/Hooks/usePlatform';
+import SkypeIcon from '@/Shared/Icons/SkypeIcon.vue';
 
 const {settings} = usePlatform()
 
@@ -45,6 +46,11 @@ const date = new Date();
                         <li v-if="settings.instagram_link">
                             <a :href="settings.instagram_link" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <InstagramIcon class="fill-white size-4"/>
+                            </a>
+                        </li>
+                        <li v-if="settings.skype_link">
+                            <a :href="settings.skype_link" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                                <SkypeIcon class="fill-white size-4"/>
                             </a>
                         </li>
                     </ul>
@@ -88,7 +94,7 @@ const date = new Date();
                     <p class="text-xl" >Contact Info.</p>
 
                     <ul class="space-y-3 font-light text-[#C9D7D2]" >
-                        <li class="flex space-x-2 items-center" >
+                        <li v-if="settings.contact_phone" class="flex space-x-2 items-center" >
                             <div>
                                 <CallIcon class="size-5 fill-primary" />
                             </div>
@@ -97,7 +103,7 @@ const date = new Date();
                                 <a href="#" class="hover:text-white duration-500" >{{settings.contact_phone}}</a>
                             </div>
                         </li>
-                        <li class="flex space-x-2 items-start">
+                        <li v-if="settings.site_email" class="flex space-x-2 items-start">
                             <div>
                                 <MailIcon class="size-5 stroke-primary mt-1" />
                             </div>
@@ -106,7 +112,7 @@ const date = new Date();
                                 <a href="#" class="hover:text-white duration-500 block" >{{settings.site_email}}</a>
                             </div>
                         </li>
-                        <li class="flex space-x-2 items-center">
+                        <li v-if="settings.contact_address" class="flex space-x-2 items-center">
                             <div>
                                 <LocationIcon class="size-5 stroke-primary" />
                             </div>

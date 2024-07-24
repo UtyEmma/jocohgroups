@@ -7,8 +7,14 @@ import TwitterIcon from '@/Shared/Icons/TwitterIcon.vue';
 import LinkedInIcon from '@/Shared/Icons/LinkedInIcon.vue';
 import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
 import { usePage } from '@inertiajs/vue3';
+import { computed } from 'vue';
+import SkypeIcon from '@/Shared/Icons/SkypeIcon.vue';
 
 const { props } = usePage();
+
+const date = computed(() => {
+    return new Date().getFullYear()
+})
 
 </script>
 
@@ -52,16 +58,16 @@ const { props } = usePage();
                     <p class="text-xl" >Contact Info.</p>
 
                     <ul class="space-y-3 font-light text-[#C9D7D2]" >
-                        <li class="flex space-x-2 items-center" >
+                        <li v-if="props.platform.settings.contact_phone" class="flex space-x-2 items-center" >
                             <div>
                                 <CallIcon class="size-5 fill-white" />
                             </div>
 
-                            <div>
+                            <div >
                                 <a :href="`tel:${props.platform.settings.contact_phone}`" class="hover:text-white duration-500" >{{props.platform.settings.contact_phone}}</a>
                             </div>
                         </li>
-                        <li class="flex space-x-2 items-start">
+                        <li v-if="props.platform.settings.site_email"class="flex space-x-2 items-start">
                             <div>
                                 <MailIcon class="size-5 mt-1 stroke-white" />
                             </div>
@@ -71,7 +77,7 @@ const { props } = usePage();
                                 <!-- <a href="#" class="hover:text-white duration-500 block" >jocohgroup@gmail.com</a> -->
                             </div>
                         </li>
-                        <li class="flex space-x-2 items-center">
+                        <li v-if="props.platform.settings.contact_address" class="flex space-x-2 items-center">
                             <div>
                                 <LocationIcon class="size-5 stroke-white" />
                             </div>
@@ -105,12 +111,17 @@ const { props } = usePage();
                                 <InstagramIcon class="fill-white size-4"/>
                             </a>
                         </li>
+                        <li v-if="settings.skype_link">
+                            <a :href="settings.skype_link" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
+                                <SkypeIcon class="fill-white size-4"/>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <div class="text-center md:pt-10 text-[#C9D7D2]">
-                <p>© Copyright - <a href="" class="text-[#F2C200]" >Jocoh Group</a> | 2024</p>
+                <p>© Copyright - <a :href="route('group.home')" class="text-[#F2C200]" >Jocoh Group</a> | {{date}}</p>
             </div>
         </div>
     </section>
