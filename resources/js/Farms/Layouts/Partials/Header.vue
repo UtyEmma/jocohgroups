@@ -37,15 +37,13 @@
 
                 <div class="border-l-2 hidden md:block"></div>
                 
-                <div class="flex space-x-5">
-                    <div class="flex items-center space-x-2 md:space-x-3 text-sm">
+                <div class="flex flex-end divide-x-2">
+                    <div v-if="settings.contact_address" class="flex items-center px-3 space-x-2 md:space-x-3 text-sm">
                         <LocationIcon class="md:size-5 size-4 stroke-white" />
                         <span>{{settings.contact_address}}</span>
                     </div>
                     
-                    <div class="border-l-2"></div>
-                    
-                    <div class="flex items-center space-x-2 md:space-x-3 text-sm">
+                    <div v-if="settings.contact_phone" class="flex items-center px-3 space-x-2 md:space-x-3 text-sm">
                         <CallIcon class="md:size-5 size-4 fill-white" />
                         <span>{{settings.contact_phone}}</span>
                     </div>
