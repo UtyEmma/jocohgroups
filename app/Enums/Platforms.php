@@ -22,6 +22,14 @@ enum Platforms:string {
         };
     }
 
+    static function fromDomain($domain) {
+        return match (true) {
+            in_array($domain, [env('APP_GROUP_DOMAIN')]) => self::GROUP,
+            in_array($domain, [env('APP_STORES_DOMAIN')]) => self::STORES,
+            in_array($domain, [env('APP_FARMS_DOMAIN')]) => self::FARMS,
+        };
+    }
+
     function domain() {
         return match ($this) {
             self::GROUP => env('APP_GROUP_DOMAIN'),

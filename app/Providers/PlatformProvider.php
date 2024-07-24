@@ -22,8 +22,8 @@ class PlatformProvider extends ServiceProvider
      * Bootstrap services.
      */
     public function boot(): void {
-        $domain = current(explode('.', request()->getHost()));
-        $platform = Platforms::platform($domain);
+        $domain = request()->getHost();
+        $platform = Platforms::fromDomain($domain);
         Request::macro('platform', fn() => $platform);
 
         if(!app()->runningInConsole()) {
