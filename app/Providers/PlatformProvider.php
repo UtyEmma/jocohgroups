@@ -21,12 +21,12 @@ class PlatformProvider extends ServiceProvider
     /**
      * Bootstrap services.
      */
-    public function boot(): void {
-        $domain = request()->getHost();
-        $platform = Platforms::fromDomain($domain);
-        Request::macro('platform', fn() => $platform);
-
+    public function boot(): void {        
         if(!app()->runningInConsole()) {
+            $domain = request()->getHost();
+            $platform = Platforms::fromDomain($domain);
+            Request::macro('platform', fn() => $platform);
+
             View::share([
                 'platforms' => Platforms::class,
                 'platform' => $platform->model()
