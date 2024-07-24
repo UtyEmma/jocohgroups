@@ -48,8 +48,6 @@ const vision = render({
     value: 'vision'
 })
 
-console.log(image)
-
 const show = ref('mission') //vision | mission
 
 </script>

@@ -111,7 +111,7 @@ const date = computed(() => {
                                 <InstagramIcon class="fill-white size-4"/>
                             </a>
                         </li>
-                        <li v-if="settings.skype_link">
+                        <li v-if="props.platform.settings?.skype_link">
                             <a :href="settings.skype_link" class="size-10 rounded-full border-[#ffffff30] group border flex items-center justify-center">
                                 <SkypeIcon class="fill-white size-4"/>
                             </a>
