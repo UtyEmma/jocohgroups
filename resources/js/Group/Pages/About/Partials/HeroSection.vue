@@ -12,7 +12,6 @@ const image = render({
     default_value: '/assets/group/images/banners/farmers-in-the-field.jpeg',
     key: 'banner_section',
     value: 'image',
-    prepend: 'storage/'
 })
 
 const title = render({

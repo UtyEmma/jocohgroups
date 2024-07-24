@@ -24,7 +24,7 @@ const image_1 = render({
                     classes: '',
                     key: 'about_section', 
                     value: 'image_1', 
-                    prepend: 'storage/'
+                    // prepend: 'storage/'
                 })
 
 const image_2 = render({
@@ -32,7 +32,7 @@ const image_2 = render({
                     classes: '',
                     key: 'about_section', 
                     value: 'image_2', 
-                    prepend: 'storage/'
+                    // prepend: 'storage/'
                 })
 
 </script>
@@ -45,17 +45,12 @@ const image_2 = render({
         </div>
 
         <div class="grid grid-cols-2 gap-x-5 md:gap-x-10">
-            <div class="w-full aspect-[4/3] bg-center bg-cover no-repeat"
-                v-bind:style="{
-                    backgroundImage: `url(${image_1})`
-                }"
-            ></div>
-
-            <div class="w-full aspect-[4/3] bg-cover bg-center no-repeat"
-                v-bind:style="{
-                    backgroundImage: `url(${image_2})`
-                }"
-            ></div>
+            <div class="w-full aspect-[4/3] bg-center bg-cover no-repeat" >
+                <img :src="image_1" class="w-full aspect-[4/3] object-cover" v-fallback="`/storage/${image_1}`" alt="">
+            </div>
+            <div class="w-full aspect-[4/3] bg-center bg-cover no-repeat" >
+                <img :src="image_2" class="w-full aspect-[4/3] object-cover" v-fallback="`/storage/${image_2}`" alt="">
+            </div>
         </div>
     </div>
 </template>

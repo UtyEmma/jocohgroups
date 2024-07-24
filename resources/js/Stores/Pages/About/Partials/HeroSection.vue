@@ -32,7 +32,7 @@ const image = render({
 
             <div class="md:ml-auto">
                 <div class="md:w-7/12 md:ml-auto" >
-                    <img :src="image" class="md:ml-20" alt="">
+                    <img :src="image" v-fallback="`/storage/${image}`" class="md:ml-20" alt="">
                 </div>
             </div>
         </div>
