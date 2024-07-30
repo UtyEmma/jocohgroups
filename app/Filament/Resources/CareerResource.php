@@ -38,14 +38,15 @@ class CareerResource extends Resource
                     ->required()
                     ->columnSpanFull()
                     ->maxLength(255),
+                TextInput::make('location')
+                    ->columnSpanFull()
+                    ->nullable()
+                    ->placeholder('eg. Lagos Nigeria'),
                 TextInput::make('type')
                     ->label('Job Type')
                     ->placeholder('Full Time, Part time, etc'),
                 TextInput::make('workplace')
                     ->placeholder('Remote, Hybrid, Physical etc'),
-                TextInput::make('location')
-                    ->nullable()
-                    ->placeholder('eg. Lagos Nigeria'),
                 TextInput::make('salary')
                     ->prefix('NGN')
                     ->placeholder('0.00'),
@@ -54,6 +55,9 @@ class CareerResource extends Resource
                     ->label('Application Deadline'),
                 TextInput::make('application_link')
                     ->url()->placeholder('https://')
+                    ->nullable(),
+                TextInput::make('application_email')
+                    ->email()->placeholder('johndoe@example.com')
                     ->nullable(),
                 RichEditor::make('description')
                     ->columnSpanFull(),

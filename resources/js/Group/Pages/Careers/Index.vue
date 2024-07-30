@@ -6,10 +6,16 @@ import PrimaryButton from '@/Group/Components/Buttons/PrimaryButton.vue';
 import LongBanner from '@/Group/Svgs/LongBanner.vue';
 import Flower from '@/Group/Svgs/Flower.vue';
 
-defineProps({
+const props = defineProps({
     job: {type: {}}
 })
 
+const scrollTo = () => {
+    window.scrollTo({
+        behavior: 'smooth',
+        top: document.getElementById('application-email').offsetTop
+    })
+}
 </script>
 
 <template>
@@ -29,7 +35,11 @@ defineProps({
                     <h1 class="md:text-6xl text-4xl text-primary font-semibold">{{job.role}}</h1>
                     <p class="text-[18px]">{{job.workplace}} • {{job.location}}</p>
 
-                    <div v-if="job.application_link">
+                    <div v-if="job.application_email">
+                        <PrimaryButton v-on:click="scrollTo" >Apply for Role</PrimaryButton>
+                    </div>
+
+                    <div v-if="job.application_link && !job.application_email">
                         <a href="{{ job.application_link }}" target="_blank">
                             <PrimaryButton >Apply for Role</PrimaryButton>
                         </a>
@@ -41,6 +51,9 @@ defineProps({
         <div class="md:py-20 py-10 md:max-w-[80%] px-4 mx-auto space-y-4">
             <h1 class="text-3xl font-semibold">Job description</h1>
             <div class="whitespace-pre-line prose prose-base min-w-full" v-html="job.description"></div>
+            <div v-if="job.application_email" id="application-email" class="whitespace-pre-line prose prose-base min-w-full font-semibold">
+                To apply send your CV to <a class="text-primary" :href="`mailto:${job.application_email}`">{{job.application_email}}</a>
+            </div>
         </div>
 
         <LongBanner class="w-full" />

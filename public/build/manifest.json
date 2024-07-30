@@ -258,7 +258,7 @@
     ]
   },
   "resources/js/Farms/app.js": {
-    "file": "assets/app-DMCh2alw.js",
+    "file": "assets/app-DG08lNSl.js",
     "name": "app",
     "src": "resources/js/Farms/app.js",
     "isEntry": true,
@@ -277,11 +277,11 @@
       "resources/js/Farms/Pages/Home/Partials/TestimonialSection.vue"
     ],
     "css": [
-      "assets/app-sFuUgFe0.css"
+      "assets/app-CIHMIgx1.css"
     ]
   },
   "resources/js/Group/Pages/About/Index.vue": {
-    "file": "assets/Index-Cq8J7av3.js",
+    "file": "assets/Index-B3hz5O1V.js",
     "name": "Index",
     "src": "resources/js/Group/Pages/About/Index.vue",
     "isDynamicEntry": true,
@@ -314,7 +314,7 @@
     ]
   },
   "resources/js/Group/Pages/About/Partials/CareerSection.vue": {
-    "file": "assets/CareerSection-D_GBdqwH.js",
+    "file": "assets/CareerSection-DJthYPA-.js",
     "name": "CareerSection",
     "src": "resources/js/Group/Pages/About/Partials/CareerSection.vue",
     "isDynamicEntry": true,
@@ -349,7 +349,7 @@
     ]
   },
   "resources/js/Group/Pages/Blog/Index.vue": {
-    "file": "assets/Index-fRSUa1kv.js",
+    "file": "assets/Index-CtMEFQJH.js",
     "name": "Index",
     "src": "resources/js/Group/Pages/Blog/Index.vue",
     "isDynamicEntry": true,
@@ -364,7 +364,7 @@
     ]
   },
   "resources/js/Group/Pages/Blog/Show.vue": {
-    "file": "assets/Show-DVrQi2Om.js",
+    "file": "assets/Show-D21tmZrx.js",
     "name": "Show",
     "src": "resources/js/Group/Pages/Blog/Show.vue",
     "isDynamicEntry": true,
@@ -378,7 +378,7 @@
     ]
   },
   "resources/js/Group/Pages/Careers/Index.vue": {
-    "file": "assets/Index-jKKgsGS-.js",
+    "file": "assets/Index-BGzBe3ju.js",
     "name": "Index",
     "src": "resources/js/Group/Pages/Careers/Index.vue",
     "isDynamicEntry": true,
@@ -478,7 +478,7 @@
     ]
   },
   "resources/js/Group/app.js": {
-    "file": "assets/app-DWYaA8CF.js",
+    "file": "assets/app-QKmJ5vud.js",
     "name": "app",
     "src": "resources/js/Group/app.js",
     "isEntry": true,
@@ -503,7 +503,7 @@
       "resources/js/Group/Pages/Home/Partials/VenturesSection.vue"
     ],
     "css": [
-      "assets/app-DSTJres-.css"
+      "assets/app-D70060fX.css"
     ]
   },
   "resources/js/Shared/app.js": {
@@ -727,7 +727,7 @@
     ]
   },
   "resources/js/Stores/app.js": {
-    "file": "assets/app-DPvSLEXl.js",
+    "file": "assets/app-Buzwc4lq.js",
     "name": "app",
     "src": "resources/js/Stores/app.js",
     "isEntry": true,
@@ -753,7 +753,7 @@
       "resources/js/Stores/Pages/Products/Show.vue"
     ],
     "css": [
-      "assets/app-BgIel2Uy.css"
+      "assets/app-D1iEcEmI.css"
     ]
   }
 }

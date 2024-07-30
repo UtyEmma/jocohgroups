@@ -7,7 +7,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../../vendor/tightenco/ziggy/src/js';
 import fallbackImage from '@/Shared/Directives/fallback-image';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const appName = 'Jocoh Farms';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

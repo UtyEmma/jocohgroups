@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('platform_code');
             $table->string('status');
             $table->string('application_link')->nullable();
+            $table->string('application_email')->nullable();
             $table->timestamps();
         });
     }

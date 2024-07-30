@@ -10,7 +10,8 @@ const props = defineProps({
 </script>
 
 <template>
-    <GuestLayout>        
+    <GuestLayout>   
+        <Head :title="`${post.title} - Blog`" />     
         <section class="md:py-20 md:max-w-[80%] mx-auto space-y-5 md:space-y-10 px-4 py-4">
             <div class="md:space-y-10 space-y-5">
                 <Link :href="route('group.blog')" class="inline-flex space-x-2 md:space-x-3 rounded-l-full rounded-r-full shadow hover:text-primary-700  justify-center px-4 py-2 bg-white md:text-base text-sm text-primary font-medium">

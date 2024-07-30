@@ -16,7 +16,8 @@ defineProps({
         <div class="flex-1 py-3 md:py-2 h-full">
             <div class=" md:flex flex-col h-full justify-between space-y-3 md:space-y-5">
                 <p class="text-xl md:text-2xl text-primary font-bold">{{job.role}}</p>
-                <div class="md:flex md:space-x-5 space-y-1 bottom-0">
+
+                <div class="md:flex md:space-x-5 space-y-1 md:space-y-0 bottom-0">
                     <p v-if="job.location"><span>Location:</span> {{job.location}}</p>
                     <p v-if="job.salary"><span>Salary: ₦</span> {{job.salary.toLocaleString()}}</p>
                     <p v-if="job.deadline"><span>Deadline:</span> {{job.deadline}}</p>

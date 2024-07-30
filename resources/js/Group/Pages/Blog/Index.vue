@@ -15,6 +15,7 @@ const props = defineProps({
 
 <template>
     <GuestLayout>
+        <Head title="Blog" />
         <section class="pt-32 pb-10 bg-primary-50 relative overflow-hidden">
             <div class="md:max-w-[80%] px-4 mx-auto" >
                 <div class="space-y-5">
