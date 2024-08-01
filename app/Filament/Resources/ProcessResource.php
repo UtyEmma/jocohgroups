@@ -8,6 +8,7 @@ use App\Forms\Components\SelectStatus;
 use App\Models\Process;
 use App\Tables\Columns\StatusColumn;
 use Filament\Forms;
+use Filament\Forms\Components\BaseFileUpload;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -32,7 +33,7 @@ class ProcessResource extends Resource
             ->schema([
                 FileUpload::make('image')
                     ->image()
-                    ->required(),
+                    ->required($form->getOperation() == 'create'),
                 TextInput::make('title')
                     ->columnSpanFull()
                     ->required(),

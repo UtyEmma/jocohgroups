@@ -18,7 +18,6 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
-use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class Home extends Page implements HasForms {
     use InteractsWithForms;
