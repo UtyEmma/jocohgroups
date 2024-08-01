@@ -15,6 +15,7 @@
 
         @switch(request()->platform())
             @case($platforms::GROUP)
+                {{-- <link rel="shortcut icon" href="{{asset('group/')}}" type="image/x-icon"> --}}
                 @vite(['resources/js/Group/app.js', "resources/js/Group/Pages/{$page['component']}.vue"])     
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -32,7 +32,6 @@ class CategoryResource extends Resource
             ->schema([
                 TextInput::make('name')
                     ->live(onBlur: true)
-                    ->unique(column: 'slug', ignoreRecord: true)
                     ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', str($state)->slug())),
                 TextInput::make('slug')
                     ->unique(column: 'slug', ignoreRecord: true),
