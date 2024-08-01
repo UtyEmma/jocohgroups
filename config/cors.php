@@ -17,7 +17,7 @@ return [
 
     'paths' => ['api/*', 'sanctum/csrf-cookie'],
 
-    'allowed_methods' => ['*'],
+    'allowed_methods' => ['*'], 
     // env('APP_FARMS_DOMAIN'), env('APP_STORES_DOMAIN'), env('APP_GROUP_DOMAIN'), 
     'allowed_origins' => ['*'],
 
