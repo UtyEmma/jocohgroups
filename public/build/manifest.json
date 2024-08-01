@@ -139,7 +139,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Index.vue": {
-    "file": "assets/Index-H_guzrlq.js",
+    "file": "assets/Index-W1Zn1L0W.js",
     "name": "Index",
     "src": "resources/js/Farms/Pages/Home/Index.vue",
     "isDynamicEntry": true,
@@ -190,7 +190,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/HeroSection.vue": {
-    "file": "assets/HeroSection-DvjdBvFz.js",
+    "file": "assets/HeroSection-CEAyHIEn.js",
     "name": "HeroSection",
     "src": "resources/js/Farms/Pages/Home/Partials/HeroSection.vue",
     "isDynamicEntry": true,
@@ -228,7 +228,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/ProcessSection.vue": {
-    "file": "assets/ProcessSection-BC71E2Gb.js",
+    "file": "assets/ProcessSection-KiylBHXr.js",
     "name": "ProcessSection",
     "src": "resources/js/Farms/Pages/Home/Partials/ProcessSection.vue",
     "isDynamicEntry": true,
@@ -247,7 +247,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/ProcessSection/ProcessSlider.vue": {
-    "file": "assets/ProcessSlider-CRDX34dD.js",
+    "file": "assets/ProcessSlider-DWSJTa5X.js",
     "name": "ProcessSlider",
     "src": "resources/js/Farms/Pages/Home/Partials/ProcessSection/ProcessSlider.vue",
     "isDynamicEntry": true,
@@ -262,7 +262,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/ProductSection.vue": {
-    "file": "assets/ProductSection-BUhdTAyQ.js",
+    "file": "assets/ProductSection-DQ4o4uCA.js",
     "name": "ProductSection",
     "src": "resources/js/Farms/Pages/Home/Partials/ProductSection.vue",
     "isDynamicEntry": true,
@@ -284,7 +284,7 @@
     ]
   },
   "resources/js/Farms/app.js": {
-    "file": "assets/app-DEEDrlHH.js",
+    "file": "assets/app-BLjUipK0.js",
     "name": "app",
     "src": "resources/js/Farms/app.js",
     "isEntry": true,

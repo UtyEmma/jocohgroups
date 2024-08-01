@@ -33,7 +33,7 @@ const options = {
 
 <template>
     <div class="overflow-x-auto scrollbar-none">
-        <div class="px -4 md:pl-[11.5%] ">
+        <div class="px-4 md:pl-[11.5%] ">
             <div class="flex gap-5 md:gap-0">
                 <Splide :has-track="false"  :options="options" >
                     <SplideTrack>

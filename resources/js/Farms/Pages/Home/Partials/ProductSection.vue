@@ -66,7 +66,7 @@ const active = ref('')
                 <div v-if="category.slug == active" class="grid grid-cols-3 gap-20">
                     <div v-for="product in category.products">
                         <div class="group p-4 bg-white w-full box-border aspect-[9/11] relative">
-                            <img :src="product.image" :alt="product.title" >
+                            <img :src="product.image" :alt="product.title" class="h-full object-cover w-full" >
                             <div class="z-50 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b h-full duration-300 ease-in-out from-gray-500/50 to-secondary items-end text-white p-7 opacity-0 group-hover:opacity-100 flex">
                                 <p class="text-lg text-gray-100">{{product.title}}</p>
                             </div>
