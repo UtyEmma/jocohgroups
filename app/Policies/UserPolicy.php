@@ -58,4 +58,12 @@ class UserPolicy
     public function forceDelete(User $user, User $model): bool {
         return $user->role->isSuperAdmin();
     }
+
+    function deleteAny(User $user) {
+        return $user->role->isSuperAdmin();
+    }
+
+    function forceDeleteAny(User $user) {
+        return $user->role->isSuperAdmin();
+    }
 }
