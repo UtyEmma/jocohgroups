@@ -2,9 +2,8 @@
 import PrimaryButton from '@/Farms/Components/Buttons/PrimaryButton.vue';
 import usePlatform from '@/Shared/Hooks/usePlatform';
 import { ArrowRightIcon } from '@heroicons/vue/24/solid';
-import 'vue3-carousel/dist/carousel.css'
-
-import { Carousel, Slide } from 'vue3-carousel'
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/vue-splide';
+import '@splidejs/vue-splide/css/core';
 
 const { render, format } = usePlatform('home')
 
@@ -22,13 +21,23 @@ const sliders = render({
     value: 'sliders'
 })
 
+const options = {
+    type: 'loop',
+    perPage: 1,
+    perMove: 1,
+    gap: '10px',
+    pagination: false,
+    arrows: false,
+    autoplay: true,
+}
+
 </script>
 
 <template>
     <section>
         <div >
-            <Carousel  >
-                <Slide v-for="(slider, index) in sliders" :key="`slide-${index}`"   >
+            <Splide :options="options" >
+                <SplideSlide v-for="(slider, index) in sliders" >
                     <div class="md:h-[110vh] h-[70vh] w-full bg-[15%] bg-cover no-repeat relative" >   
                         <div class="absolute top-0 bottom-0 right-0 left-0 z-0" >
                             <img :src="slider.image" class="w-full h-full object-cover" v-fallback="`/storage/${slider.image}`" alt="">
@@ -69,8 +78,8 @@ const sliders = render({
                             </div>
                         </div>
                     </div>
-                </Slide>
-            </Carousel>
+                </SplideSlide>
+            </Splide>
         </div>
     </section>
 </template> 

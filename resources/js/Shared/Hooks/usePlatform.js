@@ -33,7 +33,7 @@ export default function usePlatform (page = '') {
         return defaultValue(default_value, element, classes);
     }
 
-    return { render, logo, name, code: slug, content: platform_content, settings, page, format: formatText }
+    return { render, logo, name, code: slug, prefix: props.prefix, content: platform_content, settings, page, format: formatText }
 }
 
 function respond (val, item, append, classes, element, prepend){

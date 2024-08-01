@@ -2,6 +2,7 @@
 import usePlatform from '@/Shared/Hooks/usePlatform';
 import PrimaryButton from '@/Farms/Components/Buttons/PrimaryButton.vue';
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/vue/24/solid';
+import ProcessSlider from './ProcessSection/ProcessSlider.vue';
 
 defineProps({
     processes: {}
@@ -66,36 +67,8 @@ const button_link = render({
             </div>
         </div>
 
-        <div class="overflow-x-auto scrollbar-none">
-            <div class="pl-4 md:pl-[10%]">
-                <div class="flex gap-5 md:gap-10">
-                    <div v-for="process in processes" class="shrink-0 w-full md:w-[344px]">
-                        <div class="bg-white w-full box-border aspect-[9/11] relative">
-                            <img :src="process.image" class="h-full w-full object-cover" alt="">
-                            <div class="z-50 absolute top-0 bottom-0 left-0 right-0  h-full items-end text-white flex"
-                            >
-                                <div class="space-y-3 py-10 h-[80%] flex flex-col justify-end px-5 bg-gradient-to-t from-primary-600 to-transparent" >
-                                    <p class="text-xl font-semibold">{{process.title}} </p>
-                                    <p class="text-sm">{{process.caption}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <ProcessSlider :processes="processes" />
 
-        <div class="mx-auto md:max-w-[80%] px-4 flex space-x-5">
-            <div>
-                <button class="md:size-14 size-12 border border-white/20 rounded-full flex justify-center items-center ">
-                    <ArrowLeftIcon class="w-6 text-white/20" />
-                </button>
-            </div>
-            <div>
-                <button class="md:size-14 size-12 border border-white/20 rounded-full flex justify-center items-center ">
-                    <ArrowLeftIcon class="w-6 text-white rotate-180" />
-                </button>
-            </div>
-        </div>
+
     </div>
 </template>

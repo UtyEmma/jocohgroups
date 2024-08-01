@@ -1,7 +1,4 @@
 <script setup>
-import 'vue3-carousel/dist/carousel.css'
-
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import usePlatform from '@/Shared/Hooks/usePlatform';
 import { Link } from '@inertiajs/vue3';
 import PrimaryButton from '@/Group/Components/Buttons/PrimaryButton.vue';

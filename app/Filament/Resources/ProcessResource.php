@@ -31,11 +31,14 @@ class ProcessResource extends Resource
         return $form
             ->schema([
                 FileUpload::make('image')
-                    ->image(),
+                    ->image()
+                    ->required(),
                 TextInput::make('title')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->required(),
                 Textarea::make('caption')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->required(),
                 SelectStatus::make('status')
             ]);
     }

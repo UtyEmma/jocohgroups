@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Enums\Platforms;
 use App\Http\Middleware\SetActivePlatformMiddleware;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -54,6 +55,13 @@ class AppPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->brandLogo(function(){
+                return match (request()->platform()) {
+                    Platforms::GROUP => asset('assets/group/images/logo.png'),
+                    Platforms::FARMS => asset('assets/farms/images/logo.png'),
+                    Platforms::STORES => asset('assets/stores/images/logo.png'),
+                };
+            });
     }
 }

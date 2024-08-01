@@ -3,6 +3,10 @@ import FacebookIcon from '@/Shared/Icons/FacebookIcon.vue';
 import TwitterIcon from '@/Shared/Icons/TwitterIcon.vue';
 import LinkedInIcon from '@/Shared/Icons/LinkedInIcon.vue';
 import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
+import useContactForm from '@/Shared/Hooks/useContactForm';
+
+const {form, send, status} = useContactForm()
+
 
 </script>
 
@@ -46,24 +50,37 @@ import InstagramIcon from '@/Shared/Icons/InstagramIcon.vue';
                     <div class="rounded-[16px] bg-white p-14 space-y-8">
                         <p class="font-bold text-primary text-3xl">Contact Us</p>
 
-                        <div class="space-y-5">
+                        <form @submit.prevent="send" class="space-y-5">
                             <div class="space-y-1">
                                 <label class="text-muted font-medium">Your Name</label>
-                                <input class="p-3 rounded-[8px] bg-[#F9F9F9] hover:bg-[#ededed] border border-[#F3F3F3] w-full" type="text">
+                                <input v-model="form.name" class="p-3 rounded-[8px] bg-[#F9F9F9] hover:bg-[#ededed] border border-[#F3F3F3] w-full" type="text" placeholder="Your Name" />
+                                <InputError :message="form.errors?.name" />
                             </div>
 
                             <div class="space-y-1">
-                                <label class="text-muted font-medium">Email</label>
-                                <input class="p-3 rounded-[8px] bg-[#F9F9F9] border border-[#F3F3F3] w-full" type="text">
+                                <label class="text-muted font-medium">Your Email</label>
+                                <input v-model="form.email" class="p-3 rounded-[8px] bg-[#F9F9F9] border border-[#F3F3F3] w-full" type="email" placeholder="Your Email Address">
+                                <InputError :message="form.errors?.email" />
                             </div>
 
                             <div class="space-y-1">
-                                <label class="text-muted font-medium">Your Name</label>
-                                <textarea rows="5"class="p-3 resize-none rounded-[8px] bg-[#F9F9F9] border border-[#F3F3F3] w-full" type="text"></textarea>
+                                <label class="text-muted font-medium">Your Message</label>
+                                <textarea v-model="form.message" rows="5"class="p-3 resize-none rounded-[8px] bg-[#F9F9F9] border border-[#F3F3F3] w-full" placeholder="Your Message"></textarea>
+                                <InputError :message="form.errors?.message" />
                             </div>
 
-                            <button class="w-full text-center bg-primary hover:bg-primary-900 duration-500 text-white py-3 rounded-[4px]">Send Message</button>
-                        </div>
+                            <div v-if="status.message">
+                                <p v-bind:class="{
+                                    'text-green-700' : status.status,
+                                    'text-red-700' : !status.status,
+                                }" >{{ status.message }}</p>
+                            </div>
+
+                            <button :disabled="form.processing" type="submit" class="w-full flex items-center justify-center text-center bg-primary hover:bg-primary-900 duration-500 text-white py-3 rounded-[4px]">
+                                <Spinner v-if="form.processing" /> 
+                                <span>Send Message</span>
+                            </button>
+                        </form>
 
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Group\BlogController;
 use App\Http\Controllers\Group\CareerController;
-use App\Http\Controllers\Group\ContactController;
 use App\Http\Controllers\Group\PageController;
 use App\Http\Middleware\SetActivePlatformMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +24,6 @@ Route::domain(env('APP_GROUP_DOMAIN'))
         });
 
         Route::prefix('contact')->group(function(){
-            Route::post('message', [ContactController::class, 'send'])->name('message');
+            Route::post('', ContactController::class)->name('message');
         });
     });

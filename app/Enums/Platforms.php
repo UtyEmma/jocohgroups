@@ -39,6 +39,14 @@ enum Platforms:string {
         };
     }
 
+    function prefix() {
+        return match ($this) {
+            self::GROUP => 'group',
+            self::STORES => 'stores',
+            self::FARMS => 'farms',
+        };
+    }
+
     function label(){
         return match ($this) {
             self::GROUP => 'Jocoh Group',

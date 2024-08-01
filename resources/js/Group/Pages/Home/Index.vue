@@ -14,8 +14,8 @@ import TeamSection from './Partials/TeamSection.vue'
 import BlogSection from './Partials/BlogSection.vue'
 
 defineProps({
-    posts: {type: []},
-    team: {type: []}
+    posts: {type: {}},
+    team: {type: {}}
 });
 
 </script>

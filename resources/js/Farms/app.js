@@ -5,6 +5,7 @@ import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../../vendor/tightenco/ziggy/src/js';
+import VueSplide from '@splidejs/vue-splide';
 import fallbackImage from '@/Shared/Directives/fallback-image';
 
 const appName = 'Jocoh Farms';
@@ -17,6 +18,7 @@ createInertiaApp({
             .use(plugin)
             .directive('fallback', fallbackImage)
             .use(ZiggyVue)
+            .use(VueSplide)
             .mount(el);
     },
     progress: {

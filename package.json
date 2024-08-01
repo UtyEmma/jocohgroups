@@ -24,10 +24,7 @@
         "@headlessui/vue": "^1.7.22",
         "@heroicons/vue": "^2.1.4",
         "@inertiajs/vue3": "^1.2.0",
-        "hooper": "^0.3.4",
-        "primevue": "^4.0.0",
-        "tailwind-scrollbar": "^3.1.0",
-        "vue-slick-carousel": "^1.0.6",
-        "vue3-carousel": "^0.3.3"
+        "@splidejs/vue-splide": "^0.6.12",
+        "tailwind-scrollbar": "^3.1.0"
     }
 }

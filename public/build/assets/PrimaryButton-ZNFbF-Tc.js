@@ -1,0 +1,1 @@
+import{_ as o}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o as t,c as s,j as n}from"./fallback-image-CGf6X7z5.js";const r={},c={class:"duration-500 inline-flex items-center space-x-2 font-medium md:space-x-3 shadow-sm rounded-full"};function a(e,m){return t(),s("button",c,[n(e.$slots,"default")])}const l=o(r,[["render",a]]);export{l as P};

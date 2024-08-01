@@ -39,6 +39,7 @@ class HandleInertiaRequests extends Middleware {
                 'location' => $request->url(),
             ],
             'platform' => request()->platform()->model(),
+            'prefix' => request()->platform()->prefix()
         ];
     }
 }
