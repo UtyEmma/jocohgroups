@@ -140,7 +140,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Index.vue": {
-    "file": "assets/Index-B-iFtgbi.js",
+    "file": "assets/Index-C41gC3Uo.js",
     "name": "Index",
     "src": "resources/js/Farms/Pages/Home/Index.vue",
     "isDynamicEntry": true,
@@ -212,7 +212,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/PartnersSection.vue": {
-    "file": "assets/PartnersSection-Du7jlCdZ.js",
+    "file": "assets/PartnersSection-Bzmc2kwp.js",
     "name": "PartnersSection",
     "src": "resources/js/Farms/Pages/Home/Partials/PartnersSection.vue",
     "isDynamicEntry": true,
@@ -246,7 +246,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/TestimonialSection.vue": {
-    "file": "assets/TestimonialSection-DfCVTULB.js",
+    "file": "assets/TestimonialSection-UD1zW4jE.js",
     "name": "TestimonialSection",
     "src": "resources/js/Farms/Pages/Home/Partials/TestimonialSection.vue",
     "isDynamicEntry": true,
@@ -258,7 +258,7 @@
     ]
   },
   "resources/js/Farms/app.js": {
-    "file": "assets/app-DG08lNSl.js",
+    "file": "assets/app-C7n1Y5_S.js",
     "name": "app",
     "src": "resources/js/Farms/app.js",
     "isEntry": true,
@@ -277,7 +277,7 @@
       "resources/js/Farms/Pages/Home/Partials/TestimonialSection.vue"
     ],
     "css": [
-      "assets/app-CIHMIgx1.css"
+      "assets/app-BwN2CiJ7.css"
     ]
   },
   "resources/js/Group/Pages/About/Index.vue": {
@@ -478,7 +478,7 @@
     ]
   },
   "resources/js/Group/app.js": {
-    "file": "assets/app-QKmJ5vud.js",
+    "file": "assets/app-Cq18SI_J.js",
     "name": "app",
     "src": "resources/js/Group/app.js",
     "isEntry": true,
@@ -503,7 +503,7 @@
       "resources/js/Group/Pages/Home/Partials/VenturesSection.vue"
     ],
     "css": [
-      "assets/app-D70060fX.css"
+      "assets/app-Dn5jcjBj.css"
     ]
   },
   "resources/js/Shared/app.js": {
@@ -727,7 +727,7 @@
     ]
   },
   "resources/js/Stores/app.js": {
-    "file": "assets/app-Buzwc4lq.js",
+    "file": "assets/app-C8tI5cAO.js",
     "name": "app",
     "src": "resources/js/Stores/app.js",
     "isEntry": true,
@@ -753,7 +753,7 @@
       "resources/js/Stores/Pages/Products/Show.vue"
     ],
     "css": [
-      "assets/app-D1iEcEmI.css"
+      "assets/app-594Ezsas.css"
     ]
   }
 }

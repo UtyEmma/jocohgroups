@@ -39,10 +39,10 @@ const caption = render({
 
             <div class="border-[1px] border-gray-200"></div>
 
-            <div class="flex flex-wrap justify-center gap-5 md:gap-10">
-                <a :href="partner.website" v-for="partner in partners" target="_blank" class="block w-1/4">
-                    <div  class="md:w-[140px] md:h-[140px] bg-white flex items-center aspect-square md:aspect-auto justify-center">
-                        <img :src="partner.image" class="w-3/4" alt="">
+            <div class="flex flex-wrap justify-center mx-auto">
+                <a :href="partner.website" v-for="partner in partners" target="_blank" class="group block w-1/3 md:w-1/6 p-2">
+                    <div  class=" bg-white flex items-center w-full aspect-square justify-center">
+                        <img :src="partner.image" class="w-4/5 group-hover:scale-105 duration-300 object-contain" alt="">
                     </div>
                 </a>
             </div>
