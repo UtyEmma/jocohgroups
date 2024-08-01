@@ -139,7 +139,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Index.vue": {
-    "file": "assets/Index-CyCAXTW0.js",
+    "file": "assets/Index-C-EleX-G.js",
     "name": "Index",
     "src": "resources/js/Farms/Pages/Home/Index.vue",
     "isDynamicEntry": true,
@@ -190,7 +190,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/HeroSection.vue": {
-    "file": "assets/HeroSection-DJ7I5TX_.js",
+    "file": "assets/HeroSection-TTN7F60p.js",
     "name": "HeroSection",
     "src": "resources/js/Farms/Pages/Home/Partials/HeroSection.vue",
     "isDynamicEntry": true,
@@ -228,7 +228,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/ProcessSection.vue": {
-    "file": "assets/ProcessSection-gHbqSQ3S.js",
+    "file": "assets/ProcessSection-C7ri47M6.js",
     "name": "ProcessSection",
     "src": "resources/js/Farms/Pages/Home/Partials/ProcessSection.vue",
     "isDynamicEntry": true,
@@ -247,7 +247,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/ProcessSection/ProcessSlider.vue": {
-    "file": "assets/ProcessSlider-C9PystHu.js",
+    "file": "assets/ProcessSlider-B9QHZrfn.js",
     "name": "ProcessSlider",
     "src": "resources/js/Farms/Pages/Home/Partials/ProcessSection/ProcessSlider.vue",
     "isDynamicEntry": true,
@@ -284,7 +284,7 @@
     ]
   },
   "resources/js/Farms/app.js": {
-    "file": "assets/app-DHTYTpVe.js",
+    "file": "assets/app-Dm0zi8lm.js",
     "name": "app",
     "src": "resources/js/Farms/app.js",
     "isEntry": true,
@@ -304,7 +304,7 @@
       "resources/js/Farms/Pages/Home/Partials/TestimonialSection.vue"
     ],
     "css": [
-      "assets/app-6Ticzs5H.css"
+      "assets/app-DUv8KZlC.css"
     ]
   },
   "resources/js/Group/Pages/About/Index.vue": {
@@ -390,7 +390,7 @@
     ]
   },
   "resources/js/Group/Pages/Blog/Show.vue": {
-    "file": "assets/Show-Biig8MGF.js",
+    "file": "assets/Show-ByXxEIBM.js",
     "name": "Show",
     "src": "resources/js/Group/Pages/Blog/Show.vue",
     "isDynamicEntry": true,
@@ -505,7 +505,7 @@
     ]
   },
   "resources/js/Group/app.js": {
-    "file": "assets/app-BXPwMiwk.js",
+    "file": "assets/app-Dun0H2JT.js",
     "name": "app",
     "src": "resources/js/Group/app.js",
     "isEntry": true,
@@ -530,7 +530,7 @@
       "resources/js/Group/Pages/Home/Partials/VenturesSection.vue"
     ],
     "css": [
-      "assets/app-BQ6JsiKX.css"
+      "assets/app-AKkppMei.css"
     ]
   },
   "resources/js/Shared/app.js": {
@@ -756,7 +756,7 @@
     ]
   },
   "resources/js/Stores/app.js": {
-    "file": "assets/app-DAe7RWFM.js",
+    "file": "assets/app-H6NQKDqT.js",
     "name": "app",
     "src": "resources/js/Stores/app.js",
     "isEntry": true,
@@ -782,7 +782,7 @@
       "resources/js/Stores/Pages/Products/Show.vue"
     ],
     "css": [
-      "assets/app-L8EVrBX5.css"
+      "assets/app-iaFX29wT.css"
     ]
   }
 }
