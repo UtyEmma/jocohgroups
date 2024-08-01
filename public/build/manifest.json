@@ -139,7 +139,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Index.vue": {
-    "file": "assets/Index-W1Zn1L0W.js",
+    "file": "assets/Index-CyCAXTW0.js",
     "name": "Index",
     "src": "resources/js/Farms/Pages/Home/Index.vue",
     "isDynamicEntry": true,
@@ -190,7 +190,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/HeroSection.vue": {
-    "file": "assets/HeroSection-CEAyHIEn.js",
+    "file": "assets/HeroSection-DJ7I5TX_.js",
     "name": "HeroSection",
     "src": "resources/js/Farms/Pages/Home/Partials/HeroSection.vue",
     "isDynamicEntry": true,
@@ -228,7 +228,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/ProcessSection.vue": {
-    "file": "assets/ProcessSection-KiylBHXr.js",
+    "file": "assets/ProcessSection-gHbqSQ3S.js",
     "name": "ProcessSection",
     "src": "resources/js/Farms/Pages/Home/Partials/ProcessSection.vue",
     "isDynamicEntry": true,
@@ -247,7 +247,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/ProcessSection/ProcessSlider.vue": {
-    "file": "assets/ProcessSlider-DWSJTa5X.js",
+    "file": "assets/ProcessSlider-C9PystHu.js",
     "name": "ProcessSlider",
     "src": "resources/js/Farms/Pages/Home/Partials/ProcessSection/ProcessSlider.vue",
     "isDynamicEntry": true,
@@ -262,7 +262,7 @@
     ]
   },
   "resources/js/Farms/Pages/Home/Partials/ProductSection.vue": {
-    "file": "assets/ProductSection-DQ4o4uCA.js",
+    "file": "assets/ProductSection-cvdqEntu.js",
     "name": "ProductSection",
     "src": "resources/js/Farms/Pages/Home/Partials/ProductSection.vue",
     "isDynamicEntry": true,
@@ -284,7 +284,7 @@
     ]
   },
   "resources/js/Farms/app.js": {
-    "file": "assets/app-BLjUipK0.js",
+    "file": "assets/app-DHTYTpVe.js",
     "name": "app",
     "src": "resources/js/Farms/app.js",
     "isEntry": true,
@@ -304,7 +304,7 @@
       "resources/js/Farms/Pages/Home/Partials/TestimonialSection.vue"
     ],
     "css": [
-      "assets/app-B4KTNyvY.css"
+      "assets/app-6Ticzs5H.css"
     ]
   },
   "resources/js/Group/Pages/About/Index.vue": {

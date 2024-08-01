@@ -63,7 +63,7 @@ const active = ref('')
             </div>
 
             <div v-for="category in categories" >
-                <div v-if="category.slug == active" class="grid grid-cols-3 gap-20">
+                <div v-if="category.slug == active" class="grid grid-cols-1 md:grid-cols-3 gap-10">
                     <div v-for="product in category.products">
                         <div class="group p-4 bg-white w-full box-border aspect-[9/11] relative">
                             <img :src="product.image" :alt="product.title" class="h-full object-cover w-full" >
