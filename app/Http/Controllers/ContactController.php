@@ -12,7 +12,7 @@ class ContactController extends Controller
      * Handle the incoming request.
      */
     public function __invoke(Request $request) {
-        $validated = $request->validate([
+        $request->validate([
             'name' => 'required|string',
             'email' => 'email|required',
             'message' => 'string'
@@ -24,7 +24,7 @@ class ContactController extends Controller
             ->line("Sender Name: {$request->name}")
             ->line("Sender Email Address: {$request->email}")
             ->line("Message: {$request->message}")
-            ->send(User::isAdmin()->get(), ['mail']);
+            ->sendNow(User::isAdmin()->get(), ['mail']);
 
         return back()->with('success', 'Your message has been submitted successfully!');
     }
